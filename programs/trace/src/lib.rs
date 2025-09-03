@@ -27,6 +27,7 @@ pub mod trace {
     ) -> Result<()> {
         let chain_actor = &mut ctx.accounts.chain_actor;
         
+        chain_actor.discriminator = ChainActor::DISCRIMINATOR;
         chain_actor.name = name;
         chain_actor.actor_type = actor_type;
         chain_actor.farm_id = farm_id;
@@ -93,6 +94,7 @@ pub mod trace {
     ) -> Result<()> {
         let production_season = &mut ctx.accounts.production_season;
         
+        production_season.discriminator = ProductionSeason::DISCRIMINATOR;
         production_season.name = name;
         production_season.start_date = start_date;
         production_season.end_date = end_date;
@@ -309,7 +311,9 @@ pub mod trace {
 // ============= DATA STRUCTURES =============
 
 #[account]
+#[derive(Default)]
 pub struct ChainActor {
+    pub discriminator: [u8; 8],
     pub name: String,
     pub actor_type: String,
     pub farm_id: Option<u64>,
@@ -326,8 +330,29 @@ pub struct ChainActor {
     pub updated_at: i64,
 }
 
+impl ChainActor {
+    pub const DISCRIMINATOR: [u8; 8] = [1, 0, 0, 0, 0, 0, 0, 0];
+    pub const LEN: usize = 8 + // discriminator
+        4 + 64 + // name (max 64 chars)
+        4 + 32 + // actor_type (max 32 chars)
+        9 + // farm_id (1 + 8)
+        9 + // farmer_id (1 + 8)
+        8 + // assigned_tps
+        1 + 4 + 64 + 4 + 32 + 4 + 64 + // organization (optional)
+        9 + // province_id (1 + 8)
+        9 + // city_id (1 + 8)
+        4 + 128 + // address (max 128 chars)
+        1 + // is_active
+        8 + // balance
+        1 + 4 + 32 + // pin (optional, max 32 chars)
+        8 + // created_at
+        8; // updated_at
+}
+
 #[account]
+#[derive(Default)]
 pub struct ProductionSeason {
+    pub discriminator: [u8; 8],
     pub name: String,
     pub start_date: i64,
     pub end_date: i64,
@@ -337,8 +362,22 @@ pub struct ProductionSeason {
     pub updated_at: i64,
 }
 
+impl ProductionSeason {
+    pub const DISCRIMINATOR: [u8; 8] = [2, 0, 0, 0, 0, 0, 0, 0];
+    pub const LEN: usize = 8 + // discriminator
+        4 + 64 + // name (max 64 chars)
+        8 + // start_date
+        8 + // end_date
+        1 + 4 + 256 + // description (optional, max 256 chars)
+        1 + // is_active
+        8 + // created_at
+        8; // updated_at
+}
+
 #[account]
+#[derive(Default)]
 pub struct MilledRice {
+    pub discriminator: [u8; 8],
     pub variety: String,
     pub grade: String,
     pub quantity_kg: u64,
@@ -350,8 +389,24 @@ pub struct MilledRice {
     pub updated_at: i64,
 }
 
+impl MilledRice {
+    pub const DISCRIMINATOR: [u8; 8] = [3, 0, 0, 0, 0, 0, 0, 0];
+    pub const LEN: usize = 8 + // discriminator
+        4 + 32 + // variety (max 32 chars)
+        4 + 16 + // grade (max 16 chars)
+        8 + // quantity_kg
+        8 + // milling_date
+        9 + // expiry_date (optional)
+        4 + 128 + // storage_location (max 128 chars)
+        1 + // is_available
+        8 + // created_at
+        8; // updated_at
+}
+
 #[account]
+#[derive(Default)]
 pub struct RiceBatch {
+    pub discriminator: [u8; 8],
     pub batch_number: String,
     pub variety: String,
     pub quantity_kg: u64,
@@ -364,8 +419,25 @@ pub struct RiceBatch {
     pub updated_at: i64,
 }
 
+impl RiceBatch {
+    pub const DISCRIMINATOR: [u8; 8] = [4, 0, 0, 0, 0, 0, 0, 0];
+    pub const LEN: usize = 8 + // discriminator
+        4 + 32 + // batch_number (max 32 chars)
+        4 + 32 + // variety (max 32 chars)
+        8 + // quantity_kg
+        8 + // harvest_date
+        8 + // farmer_id
+        4 + 128 + // farm_location (max 128 chars)
+        4 + 16 + // quality_grade (max 16 chars)
+        4 + 32 + // status (max 32 chars)
+        8 + // created_at
+        8; // updated_at
+}
+
 #[account]
+#[derive(Default)]
 pub struct ChainTransaction {
+    pub discriminator: [u8; 8],
     pub transaction_type: String,
     pub from_actor_id: Option<Pubkey>,
     pub to_actor_id: Option<Pubkey>,
@@ -376,6 +448,21 @@ pub struct ChainTransaction {
     pub timestamp: i64,
     pub created_at: i64,
     pub updated_at: i64,
+}
+
+impl ChainTransaction {
+    pub const DISCRIMINATOR: [u8; 8] = [5, 0, 0, 0, 0, 0, 0, 0];
+    pub const LEN: usize = 8 + // discriminator
+        4 + 32 + // transaction_type (max 32 chars)
+        1 + 32 + // from_actor_id (optional)
+        1 + 32 + // to_actor_id (optional)
+        8 + // amount
+        4 + 256 + // description (max 256 chars)
+        1 + 4 + 512 + // metadata (optional, max 512 chars)
+        4 + 32 + // status (max 32 chars)
+        8 + // timestamp
+        8 + // created_at
+        8; // updated_at
 }
 
 #[derive(AnchorSerialize, AnchorDeserialize, Clone)]
@@ -396,7 +483,7 @@ pub struct CreateChainActor<'info> {
     #[account(
         init,
         payer = user,
-        space = 8 + 32 + 32 + 8 + 8 + 8 + 200 + 8 + 8 + 200 + 1 + 8 + 100 + 8 + 8
+        space = ChainActor::LEN
     )]
     pub chain_actor: Account<'info, ChainActor>,
     #[account(mut)]
@@ -417,7 +504,7 @@ pub struct CreateProductionSeason<'info> {
     #[account(
         init,
         payer = user,
-        space = 8 + 32 + 8 + 8 + 100 + 1 + 8 + 8
+        space = ProductionSeason::LEN
     )]
     pub production_season: Account<'info, ProductionSeason>,
     #[account(mut)]
