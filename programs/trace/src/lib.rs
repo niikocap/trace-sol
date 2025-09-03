@@ -313,7 +313,7 @@ pub mod trace {
 #[account]
 #[derive(Default)]
 pub struct ChainActor {
-    pub discriminator: [u8; 8],
+    pub discriminator: Vec<u8>,
     pub name: String,
     pub actor_type: String,
     pub farm_id: Option<u64>,
@@ -352,7 +352,7 @@ impl ChainActor {
 #[account]
 #[derive(Default)]
 pub struct ProductionSeason {
-    pub discriminator: [u8; 8],
+    pub discriminator: Vec<u8>,
     pub name: String,
     pub start_date: i64,
     pub end_date: i64,
@@ -377,7 +377,7 @@ impl ProductionSeason {
 #[account]
 #[derive(Default)]
 pub struct MilledRice {
-    pub discriminator: [u8; 8],
+    pub discriminator: Vec<u8>,
     pub variety: String,
     pub grade: String,
     pub quantity_kg: u64,
@@ -406,7 +406,7 @@ impl MilledRice {
 #[account]
 #[derive(Default)]
 pub struct RiceBatch {
-    pub discriminator: [u8; 8],
+    pub discriminator: Vec<u8>,
     pub batch_number: String,
     pub variety: String,
     pub quantity_kg: u64,
@@ -437,7 +437,7 @@ impl RiceBatch {
 #[account]
 #[derive(Default)]
 pub struct ChainTransaction {
-    pub discriminator: [u8; 8],
+    pub discriminator: Vec<u8>,
     pub transaction_type: String,
     pub from_actor_id: Option<Pubkey>,
     pub to_actor_id: Option<Pubkey>,
