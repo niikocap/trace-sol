@@ -27,7 +27,6 @@ pub mod trace {
     ) -> Result<()> {
         let chain_actor = &mut ctx.accounts.chain_actor;
         
-        chain_actor.discriminator = ChainActor::DISCRIMINATOR;
         chain_actor.name = name;
         chain_actor.actor_type = actor_type;
         chain_actor.farm_id = farm_id;
@@ -94,7 +93,6 @@ pub mod trace {
     ) -> Result<()> {
         let production_season = &mut ctx.accounts.production_season;
         
-        production_season.discriminator = ProductionSeason::DISCRIMINATOR;
         production_season.name = name;
         production_season.start_date = start_date;
         production_season.end_date = end_date;
@@ -313,7 +311,6 @@ pub mod trace {
 #[account]
 #[derive(Default)]
 pub struct ChainActor {
-    pub discriminator: Vec<u8>,
     pub name: String,
     pub actor_type: String,
     pub farm_id: Option<u64>,
@@ -332,7 +329,7 @@ pub struct ChainActor {
 
 impl ChainActor {
     pub const DISCRIMINATOR: [u8; 8] = [1, 0, 0, 0, 0, 0, 0, 0];
-    pub const LEN: usize = 8 + // discriminator
+    pub const LEN: usize = 8 + // discriminator (handled by Anchor)
         4 + 64 + // name (max 64 chars)
         4 + 32 + // actor_type (max 32 chars)
         9 + // farm_id (1 + 8)
@@ -352,7 +349,6 @@ impl ChainActor {
 #[account]
 #[derive(Default)]
 pub struct ProductionSeason {
-    pub discriminator: Vec<u8>,
     pub name: String,
     pub start_date: i64,
     pub end_date: i64,
@@ -364,7 +360,7 @@ pub struct ProductionSeason {
 
 impl ProductionSeason {
     pub const DISCRIMINATOR: [u8; 8] = [2, 0, 0, 0, 0, 0, 0, 0];
-    pub const LEN: usize = 8 + // discriminator
+    pub const LEN: usize = 8 + // discriminator (handled by Anchor)
         4 + 64 + // name (max 64 chars)
         8 + // start_date
         8 + // end_date
@@ -377,7 +373,6 @@ impl ProductionSeason {
 #[account]
 #[derive(Default)]
 pub struct MilledRice {
-    pub discriminator: Vec<u8>,
     pub variety: String,
     pub grade: String,
     pub quantity_kg: u64,
@@ -391,7 +386,7 @@ pub struct MilledRice {
 
 impl MilledRice {
     pub const DISCRIMINATOR: [u8; 8] = [3, 0, 0, 0, 0, 0, 0, 0];
-    pub const LEN: usize = 8 + // discriminator
+    pub const LEN: usize = 8 + // discriminator (handled by Anchor)
         4 + 32 + // variety (max 32 chars)
         4 + 16 + // grade (max 16 chars)
         8 + // quantity_kg
@@ -406,7 +401,6 @@ impl MilledRice {
 #[account]
 #[derive(Default)]
 pub struct RiceBatch {
-    pub discriminator: Vec<u8>,
     pub batch_number: String,
     pub variety: String,
     pub quantity_kg: u64,
@@ -421,7 +415,7 @@ pub struct RiceBatch {
 
 impl RiceBatch {
     pub const DISCRIMINATOR: [u8; 8] = [4, 0, 0, 0, 0, 0, 0, 0];
-    pub const LEN: usize = 8 + // discriminator
+    pub const LEN: usize = 8 + // discriminator (handled by Anchor)
         4 + 32 + // batch_number (max 32 chars)
         4 + 32 + // variety (max 32 chars)
         8 + // quantity_kg
@@ -437,7 +431,6 @@ impl RiceBatch {
 #[account]
 #[derive(Default)]
 pub struct ChainTransaction {
-    pub discriminator: Vec<u8>,
     pub transaction_type: String,
     pub from_actor_id: Option<Pubkey>,
     pub to_actor_id: Option<Pubkey>,
@@ -452,7 +445,7 @@ pub struct ChainTransaction {
 
 impl ChainTransaction {
     pub const DISCRIMINATOR: [u8; 8] = [5, 0, 0, 0, 0, 0, 0, 0];
-    pub const LEN: usize = 8 + // discriminator
+    pub const LEN: usize = 8 + // discriminator (handled by Anchor)
         4 + 32 + // transaction_type (max 32 chars)
         1 + 32 + // from_actor_id (optional)
         1 + 32 + // to_actor_id (optional)
