@@ -1,0 +1,16 @@
+[
+  {
+    "publicKey": "9RpdFLAb7pV3vGzCLRpBXwTMABq4NaESBv72MbezKk1S",
+    "qrCode": "BATCH002",
+    "millingId": "ACxuDeDP4Wmga1T497xoHLxNJP5RQPKonfYPGKRJJeey",
+    "batchWeightKg": 100,
+    "moistureContent": 12,
+    "seasonId": "J9fph16siAUwpeeXcWoiMCuqxLtqpTFenrMnzC4yLU31",
+    "currentHolderId": "4wcW6BMEKLeEb5JTBtm8uUj7No6eR5XewxApDAbxhX37",
+    "pricePerKg": 5.5,
+    "status": "forSale",
+    "blockchainTx": "5cqtCthsiA7GFaESQ1hiuvKtGfUQPaMGxzPCxfgxbqGgGPKWYYA1ZV66cdV58dXgLDMZtmc2haKVLd1rhGFdqiqX",
+    "createdAt": "2025-09-10T13:27:59.652Z",
+    "updatedAt": "2025-09-10T13:27:59.652Z"
+  }
+]

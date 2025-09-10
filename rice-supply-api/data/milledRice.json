@@ -1,0 +1,17 @@
+[
+  {
+    "publicKey": "ACxuDeDP4Wmga1T497xoHLxNJP5RQPKonfYPGKRJJeey",
+    "farmerId": "4wcW6BMEKLeEb5JTBtm8uUj7No6eR5XewxApDAbxhX37",
+    "totalWeightKg": 500,
+    "millingType": "White Rice",
+    "quality": "Premium",
+    "photoUrls": [
+      "https://example.com/rice1.jpg"
+    ],
+    "moisture": 12,
+    "totalWeightProcessedKg": 480,
+    "blockchainTx": "3ibKrEHTXH3NT7jGpJ8y44saT1ZQM5394nj7ZSSG7sXBGHd55TxZgtrUjQicno1wbpkoA8NsfdMFy6ji4zHMg2DP",
+    "createdAt": "2025-09-10T13:27:16.495Z",
+    "updatedAt": "2025-09-10T13:27:16.495Z"
+  }
+]

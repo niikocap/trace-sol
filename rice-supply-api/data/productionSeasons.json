@@ -1,0 +1,19 @@
+[
+  {
+    "publicKey": "J9fph16siAUwpeeXcWoiMCuqxLtqpTFenrMnzC4yLU31",
+    "farmerId": "4wcW6BMEKLeEb5JTBtm8uUj7No6eR5XewxApDAbxhX37",
+    "cropYear": "2024",
+    "processedYieldKg": 1500,
+    "variety": "Jasmine",
+    "plantingDate": "2024-01-15T00:00:00.000Z",
+    "harvestDate": "2024-06-15T00:00:00.000Z",
+    "totalYieldKg": 2000,
+    "moistureContent": 14,
+    "carbonSmartCertified": true,
+    "validationStatus": "pending",
+    "validatorId": null,
+    "blockchainTx": "5biYu97jMMQGoY3k9WVbNJJ34hGjUaxtZ65fARkdKkZajbB7c8N57vCdUgdQSqbJ9T7uACdiS233AZHk6RFGmXpL",
+    "createdAt": "2025-09-10T13:02:34.933Z",
+    "updatedAt": "2025-09-10T13:02:34.933Z"
+  }
+]

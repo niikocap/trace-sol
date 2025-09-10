@@ -1,0 +1,2138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rice Supply Chain dApp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+    <style>
+        .chip-button {
+            padding: 0.25rem 0.75rem;
+            font-size: 0.875rem;
+            background-color: #e5e7eb;
+            color: #374151;
+            border-radius: 9999px;
+            border: 1px solid #d1d5db;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .chip-button:hover {
+            background-color: #dbeafe;
+            border-color: #93c5fd;
+        }
+        .chip-button.selected {
+            background-color: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background-color: white;
+            border-radius: 8px;
+            padding: 24px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <header class="bg-white shadow-md rounded-lg p-6 mb-8">
+            <div class="flex justify-between items-center">
+                <h1 class="text-3xl font-bold text-green-600">🌾 Rice Supply Chain dApp</h1>
+                <div id="wallet-section">
+                    <button id="connect-wallet" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Connect Wallet
+                    </button>
+                    <div id="wallet-info" class="hidden">
+                        <span class="text-sm text-gray-600">Connected: </span>
+                        <span id="wallet-address" class="text-sm font-mono"></span>
+                        <button id="disconnect-wallet" class="ml-2 bg-red-500 hover:bg-red-700 text-white text-xs py-1 px-2 rounded">
+                            Disconnect
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <div class="bg-white shadow-md rounded-lg mb-8">
+            <nav class="flex space-x-8 px-6">
+                <button class="tab-button py-4 px-2 border-b-2 border-green-500 text-green-600 font-medium" data-tab="chain-actors">Chain Actors</button>
+                <button class="tab-button py-4 px-2 border-b-2 border-transparent text-gray-500 hover:text-gray-700 font-medium" data-tab="production-seasons">Production Seasons</button>
+                <button class="tab-button py-4 px-2 border-b-2 border-transparent text-gray-500 hover:text-gray-700 font-medium" data-tab="milling">Milling</button>
+                <button class="tab-button py-4 px-2 border-b-2 border-transparent text-gray-500 hover:text-gray-700 font-medium" data-tab="rice-batches">Rice Batches</button>
+                <button class="tab-button py-4 px-2 border-b-2 border-transparent text-gray-500 hover:text-gray-700 font-medium" data-tab="transactions">Transactions</button>
+                <button class="tab-button py-4 px-2 border-b-2 border-transparent text-gray-500 hover:text-gray-700 font-medium" data-tab="batch-tracker">Batch Tracker</button>
+            </nav>
+        </div>
+
+        <!-- Chain Actors Tab -->
+        <div id="chain-actors-tab" class="tab-content">
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-bold text-gray-800">Chain Actors</h2>
+                    <button id="add-actor-btn" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                        Add Actor
+                    </button>
+                </div>
+                
+                <!-- System Status -->
+                <div class="mb-6 p-4 bg-gray-50 rounded-lg">
+                    <div class="flex space-x-8">
+                        <div class="flex items-center space-x-2">
+                            <div id="solana-status" class="w-3 h-3 bg-gray-400 rounded-full"></div>
+                            <span class="text-sm">Solana: <span id="solana-status-text">Checking...</span></span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div id="api-status" class="w-3 h-3 bg-gray-400 rounded-full"></div>
+                            <span class="text-sm">API: <span id="api-status-text">Checking...</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="min-w-full table-auto">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Name</th>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Type</th>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Organization</th>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="actors-table" class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td colspan="5" class="px-4 py-4 text-center text-gray-500">No actors found</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button id="refresh-actors" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Refresh Actors
+                </button>
+            </div>
+        </div>
+
+        <!-- Production Seasons Tab -->
+        <div id="production-seasons-tab" class="tab-content hidden">
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-bold text-gray-800">Production Seasons</h2>
+                    <button id="add-season-btn" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                        Add Season
+                    </button>
+                </div>
+                
+                <!-- System Status -->
+                <div class="mb-6 p-4 bg-gray-50 rounded-lg">
+                    <div class="flex space-x-8">
+                        <div class="flex items-center space-x-2">
+                            <div id="seasons-solana-status" class="w-3 h-3 bg-gray-400 rounded-full"></div>
+                            <span class="text-sm">Solana: <span id="seasons-solana-status-text">Checking...</span></span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div id="seasons-api-status" class="w-3 h-3 bg-gray-400 rounded-full"></div>
+                            <span class="text-sm">API: <span id="seasons-api-status-text">Checking...</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="min-w-full table-auto">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Season</th>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Farmer</th>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Variety</th>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Yield</th>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Carbon Certified</th>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="seasons-table" class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td colspan="6" class="px-4 py-4 text-center text-gray-500">No seasons found</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button id="refresh-seasons" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Refresh Seasons
+                </button>
+            </div>
+        </div>
+
+        <!-- Milling Tab -->
+        <div id="milling-tab" class="tab-content hidden">
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-bold text-gray-800">Milled Rice Records</h2>
+                    <button id="add-milling-btn" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                        Add Milled Rice
+                    </button>
+                </div>
+                
+                <!-- System Status -->
+                <div class="mb-6 p-4 bg-gray-50 rounded-lg">
+                    <div class="flex space-x-8">
+                        <div class="flex items-center space-x-2">
+                            <div id="milling-solana-status" class="w-3 h-3 bg-gray-400 rounded-full"></div>
+                            <span class="text-sm">Solana: <span id="milling-solana-status-text">Checking...</span></span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div id="milling-api-status" class="w-3 h-3 bg-gray-400 rounded-full"></div>
+                            <span class="text-sm">API: <span id="milling-api-status-text">Checking...</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="min-w-full table-auto">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Machine</th>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Batch</th>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Grade</th>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Quantity</th>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Moisture</th>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="milling-table" class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td colspan="6" class="px-4 py-4 text-center text-gray-500">No milled rice found</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button id="refresh-milling" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Refresh Milled Rice
+                </button>
+            </div>
+        </div>
+
+        <!-- Rice Batches Tab -->
+        <div id="rice-batches-tab" class="tab-content hidden">
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-bold text-gray-800">Rice Batches</h2>
+                    <button id="add-batch-btn" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                        Add Batch
+                    </button>
+                </div>
+                
+                <!-- System Status -->
+                <div class="mb-6 p-4 bg-gray-50 rounded-lg">
+                    <div class="flex space-x-8">
+                        <div class="flex items-center space-x-2">
+                            <div id="batches-solana-status" class="w-3 h-3 bg-gray-400 rounded-full"></div>
+                            <span class="text-sm">Solana: <span id="batches-solana-status-text">Checking...</span></span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div id="batches-api-status" class="w-3 h-3 bg-gray-400 rounded-full"></div>
+                            <span class="text-sm">API: <span id="batches-api-status-text">Checking...</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="min-w-full table-auto">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Batch ID</th>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Quantity</th>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Season</th>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Validation</th>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="batches-table" class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td colspan="6" class="px-4 py-4 text-center text-gray-500">No batches found</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button id="refresh-batches" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Refresh Batches
+                </button>
+            </div>
+        </div>
+
+        <!-- Transactions Tab -->
+        <div id="transactions-tab" class="tab-content hidden">
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-bold text-gray-800">Chain Transactions</h2>
+                    <button id="add-transaction-btn" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                        Add Transaction
+                    </button>
+                </div>
+                
+                <!-- System Status -->
+                <div class="mb-6 p-4 bg-gray-50 rounded-lg">
+                    <div class="flex space-x-8">
+                        <div class="flex items-center space-x-2">
+                            <div id="transactions-solana-status" class="w-3 h-3 bg-gray-400 rounded-full"></div>
+                            <span class="text-sm">Solana: <span id="transactions-solana-status-text">Checking...</span></span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div id="transactions-api-status" class="w-3 h-3 bg-gray-400 rounded-full"></div>
+                            <span class="text-sm">API: <span id="transactions-api-status-text">Checking...</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="min-w-full table-auto">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Batch</th>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">From</th>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">To</th>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Amount</th>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transactions-table" class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td colspan="6" class="px-4 py-4 text-center text-gray-500">No transactions found</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button id="refresh-transactions" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Refresh Transactions
+                </button>
+            </div>
+        </div>
+
+        <!-- Batch Tracker Tab -->
+        <div id="batch-tracker-tab" class="tab-content hidden">
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <h2 class="text-xl font-bold text-gray-800 mb-6">Batch Tracker</h2>
+                
+                <!-- Batch Selection -->
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Select Batch:</label>
+                    <select id="batch-selector" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="">Select a batch...</option>
+                    </select>
+                </div>
+
+                <!-- Batch Details -->
+                <div id="batch-details" class="hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Batch Information -->
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-3">Batch Information</h3>
+                            <div class="space-y-2">
+                                <div><span class="font-medium">QR Code:</span> <span id="batch-qr-code"></span></div>
+                                <div><span class="font-medium">Weight:</span> <span id="batch-weight"></span> kg</div>
+                                <div><span class="font-medium">Moisture Content:</span> <span id="batch-moisture"></span>%</div>
+                                <div><span class="font-medium">Price per kg:</span> $<span id="batch-price"></span></div>
+                                <div><span class="font-medium">Status:</span> <span id="batch-status" class="px-2 py-1 rounded text-sm"></span></div>
+                                <div><span class="font-medium">Blockchain Tx:</span> <span id="batch-blockchain-tx" class="font-mono text-xs break-all"></span></div>
+                            </div>
+                        </div>
+
+                        <!-- Production Season Details -->
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-3">Production Season</h3>
+                            <div id="season-details" class="space-y-2">
+                                <div><span class="font-medium">Crop Year:</span> <span id="season-crop-year"></span></div>
+                                <div><span class="font-medium">Rice Variety:</span> <span id="season-variety"></span></div>
+                                <div><span class="font-medium">Planting Date:</span> <span id="season-planting-date"></span></div>
+                                <div><span class="font-medium">Harvest Date:</span> <span id="season-harvest-date"></span></div>
+                                <div><span class="font-medium">Total Yield:</span> <span id="season-total-yield"></span> kg</div>
+                                <div><span class="font-medium">Carbon Certified:</span> <span id="season-carbon-certified"></span></div>
+                            </div>
+                        </div>
+
+                        <!-- Milling Information -->
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-3">Milling Information</h3>
+                            <div id="milling-details" class="space-y-2">
+                                <div><span class="font-medium">Milling Type:</span> <span id="milling-type"></span></div>
+                                <div><span class="font-medium">Quality:</span> <span id="milling-quality"></span></div>
+                                <div><span class="font-medium">Total Weight:</span> <span id="milling-total-weight"></span> kg</div>
+                                <div><span class="font-medium">Processed Weight:</span> <span id="milling-processed-weight"></span> kg</div>
+                                <div><span class="font-medium">Moisture:</span> <span id="milling-moisture"></span>%</div>
+                            </div>
+                        </div>
+
+                        <!-- Chain Actor Information -->
+                        <div class="bg-yellow-50 p-4 rounded-lg">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-3">Current Holder</h3>
+                            <div id="actor-details" class="space-y-2">
+                                <div><span class="font-medium">Name:</span> <span id="actor-name"></span></div>
+                                <div><span class="font-medium">Type:</span> <span id="actor-type"></span></div>
+                                <div><span class="font-medium">Organization:</span> <span id="actor-organization"></span></div>
+                                <div><span class="font-medium">Assigned TPS:</span> <span id="actor-tps"></span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Transaction History -->
+                    <div class="mt-6 bg-purple-50 p-4 rounded-lg">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">Transaction History</h3>
+                        <div id="transaction-history" class="space-y-2">
+                            <!-- Transaction entries will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <!-- Chain Actor Modal -->
+    <div id="actor-modal" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold text-gray-800">Add Chain Actor</h2>
+                <button class="close-modal text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            <form id="actor-form" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Name</label>
+                    <input type="text" id="actor-name" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Actor Type (Select multiple)</label>
+                    <div id="actor-type-chips" class="mt-2 flex flex-wrap gap-2">
+                        <button type="button" class="chip-button" data-value="Farmer">Farmer</button>
+                        <button type="button" class="chip-button" data-value="Miller">Miller</button>
+                        <button type="button" class="chip-button" data-value="Distributor">Distributor</button>
+                        <button type="button" class="chip-button" data-value="Retailer">Retailer</button>
+                    </div>
+                    <input type="hidden" id="actor-type" value="">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Organization</label>
+                    <select id="actor-organization" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
+                        <option value="">Select Organization</option>
+                        <option value="blo">BLO (Barangay Level Organization)</option>
+                        <option value="buyback">Buyback Program</option>
+                        <option value="coop">Cooperative</option>
+                        <option value="none">None</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">PIN</label>
+                    <input type="text" id="actor-pin" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Assigned TPS</label>
+                    <input type="number" id="actor-tps" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
+                </div>
+                <div class="flex justify-end space-x-2">
+                    <button type="button" class="close-modal bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Cancel</button>
+                    <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Create Actor</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Production Season Modal -->
+    <div id="season-modal" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold text-gray-800">Add Production Season</h2>
+                <button class="close-modal text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            <form id="season-form" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Farmer</label>
+                    <select id="season-farmer" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
+                        <option value="">Select Farmer</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Season Name</label>
+                    <input type="text" id="season-name" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Rice Variety</label>
+                    <select id="season-variety" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
+                        <option value="">Select Variety</option>
+                        <option value="Jasmine">Jasmine</option>
+                        <option value="Basmati">Basmati</option>
+                        <option value="Arborio">Arborio</option>
+                        <option value="Brown Rice">Brown Rice</option>
+                        <option value="Wild Rice">Wild Rice</option>
+                        <option value="Red Rice">Red Rice</option>
+                        <option value="Black Rice">Black Rice</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Planting Date</label>
+                    <input type="date" id="season-planting" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Harvest Date</label>
+                    <input type="date" id="season-harvest" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Expected Yield (kg)</label>
+                    <input type="number" id="season-yield" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Moisture Content (%)</label>
+                    <input type="number" step="0.1" id="season-moisture" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" value="14.0" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Fertilizers Used</label>
+                    <div id="fertilizer-chips" class="mt-2 flex flex-wrap gap-2">
+                        <button type="button" class="chip-button" data-value="Organic Compost">Organic Compost</button>
+                        <button type="button" class="chip-button" data-value="NPK 14-14-14">NPK 14-14-14</button>
+                        <button type="button" class="chip-button" data-value="Urea">Urea</button>
+                        <button type="button" class="chip-button" data-value="Phosphate">Phosphate</button>
+                        <button type="button" class="chip-button" data-value="Potash">Potash</button>
+                    </div>
+                    <input type="hidden" id="season-fertilizers" value="">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Pesticides Used</label>
+                    <div id="pesticide-chips" class="mt-2 flex flex-wrap gap-2">
+                        <button type="button" class="chip-button" data-value="Neem Oil">Neem Oil</button>
+                        <button type="button" class="chip-button" data-value="Bt Spray">Bt Spray</button>
+                        <button type="button" class="chip-button" data-value="Copper Sulfate">Copper Sulfate</button>
+                        <button type="button" class="chip-button" data-value="Pyrethrin">Pyrethrin</button>
+                        <button type="button" class="chip-button" data-value="None">None</button>
+                    </div>
+                    <input type="hidden" id="season-pesticides" value="">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Irrigation Practice</label>
+                    <select id="season-irrigation" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
+                        <option value="">Select Practice</option>
+                        <option value="Flood Irrigation">Flood Irrigation</option>
+                        <option value="Drip Irrigation">Drip Irrigation</option>
+                        <option value="Sprinkler Irrigation">Sprinkler Irrigation</option>
+                        <option value="Alternate Wetting and Drying">Alternate Wetting and Drying</option>
+                        <option value="Rain-fed">Rain-fed</option>
+                    </select>
+                </div>
+                <div class="flex items-center">
+                    <input type="checkbox" id="season-carbon-certified" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                    <label for="season-carbon-certified" class="ml-2 block text-sm text-gray-700">Carbon Smart Certified</label>
+                </div>
+                <div class="flex justify-end space-x-2">
+                    <button type="button" class="close-modal bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Cancel</button>
+                    <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Create Season</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Milling Modal -->
+    <div id="milling-modal" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold text-gray-800">Add Milled Rice</h2>
+                <button class="close-modal text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            <form id="milling-form" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Batch</label>
+                    <select id="milling-batch" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
+                        <option value="">Select Batch</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Machine Name</label>
+                    <input type="text" id="milling-machine" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Quality Grade</label>
+                    <select id="milling-grade" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
+                        <option value="">Select Grade</option>
+                        <option value="Premium">Premium</option>
+                        <option value="Regular">Regular</option>
+                        <option value="Well Milled">Well Milled</option>
+                        <option value="Regular Milled">Regular Milled</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Quantity (kg)</label>
+                    <input type="number" id="milling-quantity" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Moisture Content (%)</label>
+                    <input type="number" step="0.1" id="milling-moisture" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" value="14.0" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Mill Date</label>
+                    <input type="date" id="milling-date" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Photo URLs (one per line)</label>
+                    <textarea id="milling-photos" rows="3" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" placeholder="Enter photo URLs, one per line"></textarea>
+                </div>
+                <div class="flex justify-end space-x-2">
+                    <button type="button" class="close-modal bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Cancel</button>
+                    <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Create Milled Rice</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Batch Modal -->
+    <div id="batch-modal" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold text-gray-800">Add Rice Batch</h2>
+                <button class="close-modal text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            <form id="batch-form" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Quantity (kg)</label>
+                    <input type="number" id="batch-quantity" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Season</label>
+                    <select id="batch-season-id" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
+                        <option value="">Select Season</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Validation Actor</label>
+                    <select id="batch-validation-id" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
+                        <option value="">Select Validator</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Drying Actor</label>
+                    <select id="batch-drying-id" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
+                        <option value="">Select Dryer</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Status</label>
+                    <select id="batch-status" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
+                        <option value="">Select Status</option>
+                        <option value="for_sale">For Sale</option>
+                        <option value="stock">Stock</option>
+                    </select>
+                </div>
+                <div class="flex justify-end space-x-2">
+                    <button type="button" class="close-modal bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Cancel</button>
+                    <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Create Batch</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Transaction Modal -->
+    <div id="transaction-modal" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold text-gray-800">Add Transaction</h2>
+                <button class="close-modal text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            <form id="transaction-form" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Batch</label>
+                    <select id="transaction-batch" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
+                        <option value="">Select Batch</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">From Actor</label>
+                    <select id="transaction-from" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
+                        <option value="">Select From Actor</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">To Actor</label>
+                    <select id="transaction-to" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
+                        <option value="">Select To Actor</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Amount</label>
+                    <input type="number" step="0.01" id="transaction-amount" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Payment Method</label>
+                    <select id="transaction-payment" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
+                        <option value="">Select Method</option>
+                        <option value="cash">Cash</option>
+                        <option value="cheque">Cheque</option>
+                        <option value="online">Online</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Status</label>
+                    <select id="transaction-status" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
+                        <option value="">Select Status</option>
+                        <option value="completed">Completed</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+                </div>
+                <div class="flex justify-end space-x-2">
+                    <button type="button" class="close-modal bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Cancel</button>
+                    <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Create Transaction</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Global state
+        let wallet = null;
+        let connection = null;
+        const API_BASE = 'http://localhost:3001/api';
+        
+        // Auto-refresh status every 10 seconds
+        setInterval(checkSystemStatus, 10000);
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            checkSystemStatus();
+            loadActors();
+            setupEventListeners();
+        });
+
+        function setupEventListeners() {
+            document.getElementById('connect-wallet').addEventListener('click', connectWallet);
+            document.getElementById('disconnect-wallet').addEventListener('click', disconnectWallet);
+            
+            // Tab switching
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.addEventListener('click', () => switchTab(button.dataset.tab));
+            });
+            
+            // Modal buttons
+            document.getElementById('add-actor-btn').addEventListener('click', () => openModal('actor-modal'));
+            document.getElementById('add-season-btn').addEventListener('click', () => openModal('season-modal'));
+            document.getElementById('add-milling-btn').addEventListener('click', () => openModal('milling-modal'));
+            document.getElementById('add-batch-btn').addEventListener('click', () => openModal('batch-modal'));
+            document.getElementById('add-transaction-btn').addEventListener('click', () => openModal('transaction-modal'));
+            
+            // Close modal buttons
+            document.querySelectorAll('.close-modal').forEach(button => {
+                button.addEventListener('click', closeModal);
+            });
+            
+            // Close modal on backdrop click
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) closeModal();
+                });
+            });
+            
+            // Form submissions
+            document.getElementById('actor-form').addEventListener('submit', createActor);
+            document.getElementById('season-form').addEventListener('submit', createSeason);
+            document.getElementById('milling-form').addEventListener('submit', createMilledRice);
+            document.getElementById('batch-form').addEventListener('submit', createBatch);
+            document.getElementById('transaction-form').addEventListener('submit', createTransaction);
+            
+            // Refresh buttons
+            document.getElementById('refresh-actors').addEventListener('click', loadActors);
+            document.getElementById('refresh-seasons').addEventListener('click', loadSeasons);
+            document.getElementById('refresh-milling').addEventListener('click', loadMilledRice);
+            document.getElementById('refresh-batches').addEventListener('click', loadBatches);
+            document.getElementById('refresh-transactions').addEventListener('click', loadTransactions);
+            
+            // Chip button functionality
+            setupChipButtons();
+            
+            // Initialize batch tracker
+            initializeBatchTracker();
+        }
+
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.add('show');
+            
+            // Populate dropdowns when opening modals
+            if (modalId === 'season-modal') {
+                populateFarmersDropdown();
+            } else if (modalId === 'milling-modal') {
+                populateBatchesDropdown('milling-batch');
+            } else if (modalId === 'batch-modal') {
+                populateSeasonsDropdown();
+                populateActorsDropdown('batch-validation-id');
+                populateActorsDropdown('batch-drying-id');
+            } else if (modalId === 'transaction-modal') {
+                populateBatchesDropdown('transaction-batch');
+                populateActorsDropdown('transaction-from');
+                populateActorsDropdown('transaction-to');
+            }
+        }
+
+        function closeModal() {
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.classList.remove('show');
+            });
+            
+            // Reset forms
+            document.querySelectorAll('form').forEach(form => {
+                form.reset();
+                // Reset chip selections
+                form.querySelectorAll('.chip-button.selected').forEach(chip => {
+                    chip.classList.remove('selected');
+                });
+                form.querySelectorAll('input[type="hidden"]').forEach(hidden => {
+                    hidden.value = '';
+                });
+            });
+        }
+
+        async function populateFarmersDropdown() {
+            try {
+                const response = await fetch(`${API_BASE}/chain-actors`);
+                const result = await response.json();
+                const farmerSelect = document.getElementById('season-farmer');
+                
+                console.log('API response:', result);
+                
+                farmerSelect.innerHTML = '<option value="">Select Farmer</option>';
+                
+                // Handle the API response structure
+                const actors = result.success ? (result.data.actors || []) : (result || []);
+                console.log('All actors:', actors);
+                
+                const farmers = actors.filter(actor => {
+                    console.log('Actor:', actor.name, 'Type:', actor.actorType);
+                    return actor.actorType && Array.isArray(actor.actorType) && actor.actorType.includes('Farmer');
+                });
+                
+                console.log('Filtered farmers:', farmers);
+                
+                farmers.forEach(farmer => {
+                    const option = document.createElement('option');
+                    option.value = farmer.publicKey;
+                    option.textContent = farmer.name;
+                    farmerSelect.appendChild(option);
+                });
+                
+                if (farmers.length === 0) {
+                    console.log('No farmers found. Check if actors have "Farmer" in their actorType array.');
+                }
+            } catch (error) {
+                console.error('Error loading farmers:', error);
+            }
+        }
+
+        async function populateActorsDropdown(selectId) {
+            try {
+                const response = await fetch(`${API_BASE}/chain-actors`);
+                const result = await response.json();
+                const select = document.getElementById(selectId);
+                
+                console.log('Actors API response for', selectId, ':', result);
+                
+                select.innerHTML = '<option value="">Select Actor</option>';
+                
+                // Handle the API response structure
+                const actors = result.success ? (result.data.actors || []) : (result || []);
+                
+                actors.forEach(actor => {
+                    const option = document.createElement('option');
+                    option.value = actor.publicKey;
+                    option.textContent = `${actor.name} (${Array.isArray(actor.actorType) ? actor.actorType.join(', ') : actor.actorType})`;
+                    select.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Error loading actors:', error);
+            }
+        }
+
+        async function populateSeasonsDropdown() {
+            try {
+                const response = await fetch(`${API_BASE}/production-seasons`);
+                const result = await response.json();
+                const select = document.getElementById('batch-season-id');
+                
+                console.log('Seasons API response:', result);
+                
+                select.innerHTML = '<option value="">Select Season</option>';
+                
+                // Handle the API response structure
+                const seasons = result.success ? (result.data.seasons || []) : (result || []);
+                
+                seasons.forEach(season => {
+                    const option = document.createElement('option');
+                    option.value = season.publicKey;
+                    option.textContent = `${season.seasonName} - ${season.riceVariety}`;
+                    select.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Error loading seasons:', error);
+            }
+        }
+
+        async function populateBatchesDropdown(selectId) {
+            try {
+                const response = await fetch(`${API_BASE}/rice-batches`);
+                const result = await response.json();
+                const select = document.getElementById(selectId);
+                
+                console.log('Batches API response for', selectId, ':', result);
+                
+                select.innerHTML = '<option value="">Select Batch</option>';
+                
+                // Handle the API response structure
+                const batches = result.success ? (result.data.batches || []) : (result || []);
+                
+                batches.forEach(batch => {
+                    const option = document.createElement('option');
+                    option.value = batch.publicKey;
+                    option.textContent = `${batch.qrCode} (${batch.batchWeightKg}kg)`;
+                    select.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Error loading batches:', error);
+            }
+        }
+
+        function setupChipButtons() {
+            // Fertilizer chips
+            document.querySelectorAll('#fertilizer-chips .chip-button').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    toggleChip(button, 'season-fertilizers');
+                });
+            });
+            
+            // Pesticide chips
+            document.querySelectorAll('#pesticide-chips .chip-button').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    toggleChip(button, 'season-pesticides');
+                });
+            });
+            
+            // Actor type chips
+            document.querySelectorAll('#actor-type-chips .chip-button').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    toggleChip(button, 'actor-type');
+                });
+            });
+        }
+
+        function toggleChip(button, hiddenInputId) {
+            button.classList.toggle('selected');
+            
+            const hiddenInput = document.getElementById(hiddenInputId);
+            const currentValues = hiddenInput.value ? hiddenInput.value.split(',') : [];
+            const value = button.dataset.value;
+            
+            if (button.classList.contains('selected')) {
+                if (!currentValues.includes(value)) {
+                    currentValues.push(value);
+                }
+            } else {
+                const index = currentValues.indexOf(value);
+                if (index > -1) {
+                    currentValues.splice(index, 1);
+                }
+            }
+            
+            hiddenInput.value = currentValues.join(',');
+        }
+
+        async function checkSystemStatus() {
+            // Update status for all tabs
+            const tabs = ['', 'seasons-', 'milling-', 'batches-', 'transactions-'];
+            
+            // Check API status
+            try {
+                const response = await fetch('http://localhost:3001/health', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                if (response.ok) {
+                    tabs.forEach(prefix => {
+                        const statusEl = document.getElementById(`${prefix}api-status`);
+                        const textEl = document.getElementById(`${prefix}api-status-text`);
+                        if (statusEl) statusEl.className = 'w-3 h-3 bg-green-500 rounded-full';
+                        if (textEl) textEl.textContent = 'Connected';
+                    });
+                    addActivity('✅ API server connected');
+                } else {
+                    throw new Error(`API responded with status: ${response.status}`);
+                }
+            } catch (error) {
+                tabs.forEach(prefix => {
+                    const statusEl = document.getElementById(`${prefix}api-status`);
+                    const textEl = document.getElementById(`${prefix}api-status-text`);
+                    if (statusEl) statusEl.className = 'w-3 h-3 bg-red-500 rounded-full';
+                    if (textEl) textEl.textContent = 'Disconnected';
+                });
+                addActivity('❌ API server disconnected: ' + error.message);
+                console.error('API Connection Error:', error);
+            }
+
+            // Check Solana connection
+            try {
+                connection = new solanaWeb3.Connection('https://api.devnet.solana.com', 'confirmed');
+                const version = await connection.getVersion();
+                tabs.forEach(prefix => {
+                    const statusEl = document.getElementById(`${prefix}solana-status`);
+                    const textEl = document.getElementById(`${prefix}solana-status-text`);
+                    if (statusEl) statusEl.className = 'w-3 h-3 bg-green-500 rounded-full';
+                    if (textEl) textEl.textContent = 'Connected';
+                });
+                addActivity('✅ Solana validator connected');
+            } catch (error) {
+                tabs.forEach(prefix => {
+                    const statusEl = document.getElementById(`${prefix}solana-status`);
+                    const textEl = document.getElementById(`${prefix}solana-status-text`);
+                    if (statusEl) statusEl.className = 'w-3 h-3 bg-red-500 rounded-full';
+                    if (textEl) textEl.textContent = 'Disconnected';
+                });
+                addActivity('❌ Solana validator disconnected');
+            }
+        }
+
+        async function connectWallet() {
+            try {
+                if (window.solana && window.solana.isPhantom) {
+                    const response = await window.solana.connect();
+                    wallet = response.publicKey.toString();
+                    
+                    document.getElementById('connect-wallet').classList.add('hidden');
+                    document.getElementById('wallet-info').classList.remove('hidden');
+                    document.getElementById('wallet-address').textContent = wallet.substring(0, 8) + '...';
+                    
+                    addActivity(`🔗 Wallet connected: ${wallet.substring(0, 16)}...`);
+                } else {
+                    alert('Phantom wallet not found! Please install Phantom wallet.');
+                }
+            } catch (error) {
+                console.error('Wallet connection failed:', error);
+                addActivity('❌ Wallet connection failed');
+            }
+        }
+
+        function disconnectWallet() {
+            wallet = null;
+            document.getElementById('connect-wallet').classList.remove('hidden');
+            document.getElementById('wallet-info').classList.add('hidden');
+            addActivity('🔌 Wallet disconnected');
+        }
+
+        async function createActor(event) {
+            event.preventDefault();
+            
+            if (!wallet) {
+                alert('Please connect your wallet first!');
+                return;
+            }
+
+            const actorTypes = document.getElementById('actor-type').value.split(',').filter(t => t.trim());
+            
+            const formData = {
+                name: document.getElementById('actor-name').value,
+                actorType: actorTypes,
+                organization: document.getElementById('actor-organization').value,
+                pin: document.getElementById('actor-pin').value,
+                assignedTps: parseInt(document.getElementById('actor-tps').value),
+                address: null,
+                farmId: null,
+                farmerId: null
+            };
+
+            try {
+                const response = await fetch(`${API_BASE}/chain-actors`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+                
+                if (response.ok) {
+                    addActivity(`✅ Created actor: ${formData.name}`);
+                    closeModal();
+                    loadActors();
+                } else {
+                    throw new Error(result.message || 'Failed to create actor');
+                }
+            } catch (error) {
+                console.error('Error creating actor:', error);
+                addActivity(`❌ Failed to create actor: ${error.message}`);
+            }
+        }
+
+        async function loadActors() {
+            try {
+                const response = await fetch(`${API_BASE}/chain-actors`);
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    displayActors(result.data.actors || []);
+                    addActivity(`📊 Loaded ${result.data.actors?.length || 0} actors`);
+                } else {
+                    throw new Error(result.message || 'Failed to load actors');
+                }
+            } catch (error) {
+                console.error('Error loading actors:', error);
+                addActivity(`❌ Failed to load actors: ${error.message}`);
+            }
+        }
+
+        function displayActors(actors) {
+            const tbody = document.getElementById('actors-table');
+            
+            if (actors.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5" class="px-4 py-4 text-center text-gray-500">No actors found</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = actors.map(actor => `
+                <tr class="hover:bg-gray-50">
+                    <td class="px-4 py-2 text-sm font-medium text-gray-900">${actor.name}</td>
+                    <td class="px-4 py-2 text-sm text-gray-500">${actor.actorType?.join(', ') || 'N/A'}</td>
+                    <td class="px-4 py-2 text-sm text-gray-500">${actor.organization}</td>
+                    <td class="px-4 py-2 text-sm">
+                        <span class="px-2 py-1 text-xs font-semibold rounded-full ${actor.isActive ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}">
+                            ${actor.isActive ? 'Active' : 'Inactive'}
+                        </span>
+                    </td>
+                    <td class="px-4 py-2 text-sm font-mono text-gray-500">${actor.publicKey?.substring(0, 16)}...</td>
+                </tr>
+            `).join('');
+        }
+
+        // Tab switching functionality
+        function switchTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.add('hidden');
+            });
+            
+            // Show selected tab
+            document.getElementById(`${tabName}-tab`).classList.remove('hidden');
+            
+            // Update tab button styles
+            document.querySelectorAll('.tab-button').forEach(button => {
+                if (button.dataset.tab === tabName) {
+                    button.className = 'tab-button py-4 px-2 border-b-2 border-green-500 text-green-600 font-medium';
+                } else {
+                    button.className = 'tab-button py-4 px-2 border-b-2 border-transparent text-gray-500 hover:text-gray-700 font-medium';
+                }
+            });
+            
+            // Load data for the selected tab
+            switch(tabName) {
+                case 'chain-actors':
+                    loadActors();
+                    break;
+                case 'production-seasons':
+                    loadSeasons();
+                    break;
+                case 'milling':
+                    loadMilledRice();
+                    break;
+                case 'rice-batches':
+                    loadBatches();
+                    break;
+                case 'transactions':
+                    loadTransactions();
+                    break;
+            }
+        }
+
+        // Production Season functions
+        async function createSeason(event) {
+            event.preventDefault();
+            console.log('createSeason called');
+            
+            if (!wallet) {
+                console.log('No wallet connected, proceeding without wallet for testing');
+                // alert('Please connect your wallet first!');
+                // return;
+            }
+
+            const form = document.getElementById('season-form');
+            const editId = form.getAttribute('data-edit-id');
+            const isEdit = !!editId;
+
+            const formData = {
+                farmerId: document.getElementById('season-farmer').value,
+                cropYear: new Date().getFullYear().toString(),
+                processedYieldKg: parseInt(document.getElementById('season-yield').value),
+                carbonSmartCertified: document.getElementById('season-carbon-certified').checked,
+                seasonName: document.getElementById('season-name').value,
+                riceVariety: document.getElementById('season-variety').value,
+                plantingDate: document.getElementById('season-planting').value,
+                harvestDate: document.getElementById('season-harvest').value,
+                totalYieldKg: parseInt(document.getElementById('season-yield').value),
+                moistureContent: parseFloat(document.getElementById('season-moisture').value),
+                irrigationPractice: document.getElementById('season-irrigation').value,
+                fertilizersUsed: document.getElementById('season-fertilizers').value.split(',').filter(f => f.trim()),
+                pesticidesUsed: document.getElementById('season-pesticides').value.split(',').filter(p => p.trim()),
+                validationStatus: 'pending'
+            };
+            
+            console.log('Season form data:', formData);
+
+            try {
+                const url = isEdit ? `${API_BASE}/production-seasons/${editId}` : `${API_BASE}/production-seasons`;
+                const method = isEdit ? 'PUT' : 'POST';
+                
+                const response = await fetch(url, {
+                    method: method,
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+                console.log('Season API response:', response.status, result);
+                
+                if (response.ok && result.success) {
+                    addActivity(`✅ ${isEdit ? 'Updated' : 'Created'} season: ${formData.seasonName}`);
+                    closeModal();
+                    loadSeasons();
+                } else {
+                    console.error('Season creation failed:', result);
+                    throw new Error(result.message || `Failed to ${isEdit ? 'update' : 'create'} season`);
+                }
+            } catch (error) {
+                console.error(`Error ${isEdit ? 'updating' : 'creating'} season:`, error);
+                addActivity(`❌ Failed to ${isEdit ? 'update' : 'create'} season: ${error.message}`);
+                alert(`Failed to ${isEdit ? 'update' : 'create'} season: ${error.message}`);
+            }
+        }
+
+        async function loadSeasons() {
+            try {
+                const response = await fetch(`${API_BASE}/production-seasons`);
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    // Enrich seasons with farmer names
+                    const enrichedSeasons = await Promise.all((result.data.seasons || []).map(async (season) => {
+                        try {
+                            const farmerResponse = await fetch(`${API_BASE}/chain-actors/${season.farmerId}`);
+                            const farmerResult = await farmerResponse.json();
+                            if (farmerResponse.ok && farmerResult.success) {
+                                const farmer = farmerResult.data.data || farmerResult.data;
+                                season.farmerName = farmer.name;
+                            }
+                        } catch (error) {
+                            console.error('Error loading farmer for season:', error);
+                        }
+                        return season;
+                    }));
+                    
+                    displaySeasons(enrichedSeasons);
+                    addActivity(`📊 Loaded ${enrichedSeasons.length} seasons`);
+                } else {
+                    throw new Error(result.message || 'Failed to load seasons');
+                }
+            } catch (error) {
+                console.error('Error loading seasons:', error);
+                addActivity(`❌ Failed to load seasons: ${error.message}`);
+            }
+        }
+
+        function displaySeasons(seasons) {
+            const tbody = document.getElementById('seasons-table');
+            
+            if (seasons.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6" class="px-4 py-4 text-center text-gray-500">No seasons found</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = seasons.map(season => `
+                <tr class="hover:bg-gray-50">
+                    <td class="px-4 py-2 text-sm font-medium text-gray-900">${season.seasonName || season.cropYear + ' Season' || 'Season ' + season.publicKey.slice(0,8)}</td>
+                    <td class="px-4 py-2 text-sm text-gray-500">${season.farmerName || 'Loading...'}</td>
+                    <td class="px-4 py-2 text-sm text-gray-500">${season.riceVariety || 'Standard Rice'}</td>
+                    <td class="px-4 py-2 text-sm text-gray-500">${season.totalYieldKg || season.processedYieldKg || 'N/A'} kg</td>
+                    <td class="px-4 py-2 text-sm">
+                        <span class="px-2 py-1 text-xs font-semibold rounded-full ${season.carbonSmartCertified ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}">
+                            ${season.carbonSmartCertified ? 'Certified' : 'Not Certified'}
+                        </span>
+                    </td>
+                    <td class="px-4 py-2 text-sm">
+                        <button onclick="editSeason('${season.publicKey}')" class="bg-yellow-500 hover:bg-yellow-700 text-white text-xs py-1 px-2 rounded mr-1">
+                            Edit
+                        </button>
+                        <button onclick="deleteSeason('${season.publicKey}')" class="bg-red-500 hover:bg-red-700 text-white text-xs py-1 px-2 rounded">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // Milled Rice functions
+        async function createMilledRice(event) {
+            event.preventDefault();
+            console.log('createMilledRice called');
+            
+            if (!wallet) {
+                console.log('No wallet connected, proceeding without wallet for testing');
+                // alert('Please connect your wallet first!');
+                // return;
+            }
+
+            const form = document.getElementById('milling-form');
+            const editId = form.getAttribute('data-edit-id');
+            const isEdit = !!editId;
+
+            const photoUrls = document.getElementById('milling-photos').value
+                .split('\n')
+                .map(url => url.trim())
+                .filter(url => url.length > 0);
+
+            // Get farmer ID from the selected batch's season
+            const batchId = document.getElementById('milling-batch').value;
+            if (!batchId) {
+                alert('Please select a batch first!');
+                return;
+            }
+
+            let farmerId = null;
+            try {
+                // Get batch details to find the season and farmer
+                const batchResponse = await fetch(`${API_BASE}/rice-batches/${batchId}`);
+                const batchResult = await batchResponse.json();
+                
+                if (batchResponse.ok && batchResult.success) {
+                    const batch = batchResult.data.data || batchResult.data;
+                    const seasonId = batch.seasonId;
+                    
+                    // Get season details to find the farmer
+                    const seasonResponse = await fetch(`${API_BASE}/production-seasons/${seasonId}`);
+                    const seasonResult = await seasonResponse.json();
+                    
+                    if (seasonResponse.ok && seasonResult.success) {
+                        const season = seasonResult.data.data || seasonResult.data;
+                        farmerId = season.farmerId;
+                    }
+                }
+                
+                if (!farmerId) {
+                    throw new Error('Could not determine farmer ID from selected batch');
+                }
+            } catch (error) {
+                console.error('Error getting farmer ID:', error);
+                alert('Error: Could not determine farmer from selected batch. Please try again.');
+                return;
+            }
+
+            const formData = {
+                batchId: batchId,
+                farmerId: farmerId,
+                totalWeightKg: document.getElementById('milling-quantity').value,
+                millingType: 'Standard',
+                quality: document.getElementById('milling-grade').value,
+                moisture: parseInt(document.getElementById('milling-moisture').value),
+                totalWeightProcessedKg: parseInt(parseInt(document.getElementById('milling-quantity').value) * 0.8),
+                machineName: document.getElementById('milling-machine').value,
+                millDate: document.getElementById('milling-date').value,
+                photoUrls: photoUrls
+            };
+
+            try {
+                const url = isEdit ? `${API_BASE}/milled-rice/${editId}` : `${API_BASE}/milled-rice`;
+                const method = isEdit ? 'PUT' : 'POST';
+                
+                const response = await fetch(url, {
+                    method: method,
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+                
+                if (response.ok) {
+                    addActivity(`✅ ${isEdit ? 'Updated' : 'Created'} milled rice: ${formData.machineName}`);
+                    closeModal();
+                    loadMilledRice();
+                } else {
+                    throw new Error(result.message || `Failed to ${isEdit ? 'update' : 'create'} milled rice`);
+                }
+            } catch (error) {
+                console.error(`Error ${isEdit ? 'updating' : 'creating'} milled rice:`, error);
+                addActivity(`❌ Failed to ${isEdit ? 'update' : 'create'} milled rice: ${error.message}`);
+                alert(`Failed to ${isEdit ? 'update' : 'create'} milled rice: ${error.message}`);
+            }
+        }
+
+        async function loadMilledRice() {
+            try {
+                const response = await fetch(`${API_BASE}/milled-rice`);
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    // Enrich milled rice with batch and machine names
+                    const enrichedMilledRice = await Promise.all((result.data.milledRice || []).map(async (rice) => {
+                        try {
+                            if (rice.batchId) {
+                                const batchResponse = await fetch(`${API_BASE}/rice-batches/${rice.batchId}`);
+                                const batchResult = await batchResponse.json();
+                                if (batchResponse.ok && batchResult.success) {
+                                    const batch = batchResult.data.data || batchResult.data;
+                                    rice.batchName = batch.qrCode || batch.publicKey.slice(0,8);
+                                }
+                            }
+                        } catch (error) {
+                            console.error('Error loading batch for milled rice:', error);
+                        }
+                        return rice;
+                    }));
+                    
+                    displayMilledRice(enrichedMilledRice);
+                    addActivity(`📊 Loaded ${enrichedMilledRice.length} milled rice records`);
+                } else {
+                    throw new Error(result.message || 'Failed to load milled rice');
+                }
+            } catch (error) {
+                console.error('Error loading milled rice:', error);
+                addActivity(`❌ Failed to load milled rice: ${error.message}`);
+            }
+        }
+
+        function displayMilledRice(milledRice) {
+            const tbody = document.getElementById('milling-table');
+            
+            if (milledRice.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6" class="px-4 py-4 text-center text-gray-500">No milled rice found</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = milledRice.map(rice => `
+                <tr class="hover:bg-gray-50">
+                    <td class="px-4 py-2 text-sm font-medium text-gray-900">${rice.machineName || 'Mill-' + rice.publicKey.slice(0,6)}</td>
+                    <td class="px-4 py-2 text-sm text-gray-500">${rice.batchName || rice.batchId?.slice(0,8) || 'Batch-' + rice.publicKey.slice(0,6)}</td>
+                    <td class="px-4 py-2 text-sm text-gray-500">${rice.quality || rice.qualityGrade || 'Standard'}</td>
+                    <td class="px-4 py-2 text-sm text-gray-500">${rice.totalWeightKg || rice.quantity || 'N/A'} kg</td>
+                    <td class="px-4 py-2 text-sm text-gray-500">${rice.moisture || 'N/A'}%</td>
+                    <td class="px-4 py-2 text-sm">
+                        <button onclick="editMilledRice('${rice.publicKey}')" class="bg-yellow-500 hover:bg-yellow-700 text-white text-xs py-1 px-2 rounded mr-1">
+                            Edit
+                        </button>
+                        <button onclick="deleteMilledRice('${rice.publicKey}')" class="bg-red-500 hover:bg-red-700 text-white text-xs py-1 px-2 rounded">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // Rice Batch functions
+        async function createBatch(event) {
+            event.preventDefault();
+            console.log('createBatch called');
+            
+            if (!wallet) {
+                console.log('No wallet connected, proceeding without wallet for testing');
+                // alert('Please connect your wallet first!');
+                // return;
+            }
+
+            const form = document.getElementById('batch-form');
+            const editId = form.getAttribute('data-edit-id');
+            const isEdit = !!editId;
+
+            const seasonId = document.getElementById('batch-season-id').value;
+            const validationId = document.getElementById('batch-validation-id').value;
+            const dryingId = document.getElementById('batch-drying-id').value;
+            
+            // Validate required fields
+            if (!seasonId || !validationId || !dryingId) {
+                alert('Please select Season, Validator, and Dryer before creating the batch.');
+                return;
+            }
+
+            const formData = {
+                qrCode: `QR${Date.now()}`,
+                batchWeightKg: parseInt(document.getElementById('batch-quantity').value),
+                seasonId: seasonId,
+                validator: validationId,
+                dryingId: dryingId,
+                status: document.getElementById('batch-status').value,
+                moistureContent: 14.0,
+                pricePerKg: 50.0
+            };
+
+            try {
+                const url = isEdit ? `${API_BASE}/rice-batches/${editId}` : `${API_BASE}/rice-batches`;
+                const method = isEdit ? 'PUT' : 'POST';
+                
+                const response = await fetch(url, {
+                    method: method,
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+                
+                if (response.ok) {
+                    addActivity(`✅ ${isEdit ? 'Updated' : 'Created'} batch: ${formData.qrCode}`);
+                    closeModal();
+                    loadBatches();
+                } else {
+                    throw new Error(result.message || `Failed to ${isEdit ? 'update' : 'create'} batch`);
+                }
+            } catch (error) {
+                console.error(`Error ${isEdit ? 'updating' : 'creating'} batch:`, error);
+                addActivity(`❌ Failed to ${isEdit ? 'update' : 'create'} batch: ${error.message}`);
+                alert(`Failed to ${isEdit ? 'update' : 'create'} batch: ${error.message}`);
+            }
+        }
+
+        async function loadBatches() {
+            try {
+                const response = await fetch(`${API_BASE}/rice-batches`);
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    displayBatches(result.data.batches || []);
+                    addActivity(`📊 Loaded ${result.data.batches?.length || 0} batches`);
+                } else {
+                    throw new Error(result.message || 'Failed to load batches');
+                }
+            } catch (error) {
+                console.error('Error loading batches:', error);
+                addActivity(`❌ Failed to load batches: ${error.message}`);
+            }
+        }
+
+        function displayBatches(batches) {
+            const tbody = document.getElementById('batches-table');
+            
+            if (batches.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6" class="px-4 py-4 text-center text-gray-500">No batches found</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = batches.map(batch => `
+                <tr class="hover:bg-gray-50">
+                    <td class="px-4 py-2 text-sm font-medium text-gray-900">${batch.qrCode || batch.publicKey?.slice(0,8) || 'N/A'}</td>
+                    <td class="px-4 py-2 text-sm text-gray-500">${batch.batchWeightKg || batch.quantity || 'N/A'} kg</td>
+                    <td class="px-4 py-2 text-sm text-gray-500">${batch.seasonName || batch.seasonId?.slice(0,8) || 'N/A'}</td>
+                    <td class="px-4 py-2 text-sm text-gray-500">${batch.validatorName || batch.validationId?.slice(0,8) || 'N/A'}</td>
+                    <td class="px-4 py-2 text-sm">
+                        <span class="px-2 py-1 text-xs font-semibold rounded-full ${batch.status === 'for_sale' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'}">
+                            ${batch.status === 'for_sale' ? 'For Sale' : batch.status === 'stock' ? 'Stock' : batch.status || 'Active'}
+                        </span>
+                    </td>
+                    <td class="px-4 py-2 text-sm">
+                        <button onclick="editBatch('${batch.publicKey}')" class="bg-yellow-500 hover:bg-yellow-700 text-white text-xs py-1 px-2 rounded mr-1">
+                            Edit
+                        </button>
+                        <button onclick="deleteBatch('${batch.publicKey}')" class="bg-red-500 hover:bg-red-700 text-white text-xs py-1 px-2 rounded">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // Transaction functions
+        async function createTransaction(event) {
+            event.preventDefault();
+            console.log('createTransaction called');
+            
+            if (!wallet) {
+                console.log('No wallet connected, proceeding without wallet for testing');
+                // alert('Please connect your wallet first!');
+                // return;
+            }
+
+            const form = document.getElementById('transaction-form');
+            const editId = form.getAttribute('data-edit-id');
+            const isEdit = !!editId;
+
+            const formData = {
+                batchIds: [document.getElementById('transaction-batch').value],
+                toActorId: document.getElementById('transaction-to').value,
+                fromActorId: document.getElementById('transaction-from').value,
+                pricePerKg: parseFloat(document.getElementById('transaction-amount').value),
+                paymentMethod: document.getElementById('transaction-payment').value,
+                status: document.getElementById('transaction-status').value,
+                moisture: 14.0,
+                paymentReference: [],
+                geotagging: []
+            };
+
+            try {
+                const url = isEdit ? `${API_BASE}/chain-transactions/${editId}` : `${API_BASE}/chain-transactions`;
+                const method = isEdit ? 'PUT' : 'POST';
+                
+                const response = await fetch(url, {
+                    method: method,
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+                
+                if (response.ok) {
+                    addActivity(`✅ ${isEdit ? 'Updated' : 'Created'} transaction`);
+                    closeModal();
+                    loadTransactions();
+                } else {
+                    throw new Error(result.message || `Failed to ${isEdit ? 'update' : 'create'} transaction`);
+                }
+            } catch (error) {
+                console.error(`Error ${isEdit ? 'updating' : 'creating'} transaction:`, error);
+                addActivity(`❌ Failed to ${isEdit ? 'update' : 'create'} transaction: ${error.message}`);
+                alert(`Failed to ${isEdit ? 'update' : 'create'} transaction: ${error.message}`);
+            } finally {
+                // Always close modal and refresh data
+                closeModal();
+                loadTransactions();
+            }
+        }
+
+        async function loadTransactions() {
+            try {
+                const response = await fetch(`${API_BASE}/chain-transactions`);
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    displayTransactions(result.data.transactions || []);
+                    addActivity(`📊 Loaded ${result.data.transactions?.length || 0} transactions`);
+                } else {
+                    throw new Error(result.message || 'Failed to load transactions');
+                }
+            } catch (error) {
+                console.error('Error loading transactions:', error);
+                addActivity(`❌ Failed to load transactions: ${error.message}`);
+            }
+        }
+
+        function displayTransactions(transactions) {
+            const tbody = document.getElementById('transactions-table');
+            
+            if (transactions.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6" class="px-4 py-4 text-center text-gray-500">No transactions found</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = transactions.map(tx => `
+                <tr class="hover:bg-gray-50">
+                    <td class="px-4 py-2 text-sm font-medium text-gray-900">${tx.batchIds?.[0]?.slice(0,8) || 'N/A'}</td>
+                    <td class="px-4 py-2 text-sm text-gray-500">${tx.fromActorId?.slice(0,8) || tx.fromActor || 'N/A'}</td>
+                    <td class="px-4 py-2 text-sm text-gray-500">${tx.toActorId?.slice(0,8) || tx.toActor || 'N/A'}</td>
+                    <td class="px-4 py-2 text-sm text-gray-500">${tx.pricePerKg || tx.amount || 'N/A'}</td>
+                    <td class="px-4 py-2 text-sm">
+                        <span class="px-2 py-1 text-xs font-semibold rounded-full ${tx.status === 'completed' ? 'bg-green-100 text-green-800' : tx.status === 'cancelled' ? 'bg-red-100 text-red-800' : 'bg-yellow-100 text-yellow-800'}">
+                            ${tx.status === 'completed' ? 'Completed' : tx.status === 'cancelled' ? 'Cancelled' : tx.status || 'Pending'}
+                        </span>
+                    </td>
+                    <td class="px-4 py-2 text-sm">
+                        <button onclick="editTransaction('${tx.publicKey}')" class="bg-yellow-500 hover:bg-yellow-700 text-white text-xs py-1 px-2 rounded mr-1">
+                            Edit
+                        </button>
+                        <button onclick="deleteTransaction('${tx.publicKey}')" class="bg-red-500 hover:bg-red-700 text-white text-xs py-1 px-2 rounded">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // Edit and Delete functions
+        async function editSeason(publicKey) {
+            try {
+                const response = await fetch(`${API_BASE}/production-seasons/${publicKey}`);
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    const season = result.data.data || result.data;
+                    
+                    // Populate form with existing data
+                    document.getElementById('season-name').value = season.seasonName || '';
+                    document.getElementById('season-variety').value = season.riceVariety || '';
+                    document.getElementById('season-planting').value = season.plantingDate || '';
+                    document.getElementById('season-harvest').value = season.harvestDate || '';
+                    document.getElementById('season-yield').value = season.totalYieldKg || season.processedYieldKg || '';
+                    document.getElementById('season-moisture').value = season.moistureContent || 14.0;
+                    document.getElementById('season-irrigation').value = season.irrigationPractice || '';
+                    document.getElementById('season-carbon-certified').checked = season.carbonSmartCertified || false;
+                    
+                    // Set farmer dropdown
+                    const farmerSelect = document.getElementById('season-farmer');
+                    if (farmerSelect) {
+                        farmerSelect.value = season.farmerId || '';
+                    }
+                    
+                    // Change form to edit mode
+                    const form = document.getElementById('season-form');
+                    form.setAttribute('data-edit-id', publicKey);
+                    form.querySelector('button[type="submit"]').textContent = 'Update Season';
+                    
+                    // Open the modal
+                    openModal('season-modal');
+                    
+                    addActivity(`✏️ Editing season: ${season.seasonName || publicKey.slice(0,8)}`);
+                } else {
+                    throw new Error(result.message || 'Failed to load season data');
+                }
+            } catch (error) {
+                console.error('Error loading season for edit:', error);
+                addActivity(`❌ Failed to load season: ${error.message}`);
+            }
+        }
+
+        async function deleteSeason(publicKey) {
+            if (confirm('Are you sure you want to delete this season?')) {
+                try {
+                    const response = await fetch(`${API_BASE}/production-seasons/${publicKey}`, {
+                        method: 'DELETE'
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (response.ok) {
+                        addActivity(`🗑️ Deleted season: ${publicKey.slice(0,8)}`);
+                        loadSeasons(); // Auto refresh
+                    } else {
+                        throw new Error(result.message || 'Failed to delete season');
+                    }
+                } catch (error) {
+                    console.error('Error deleting season:', error);
+                    addActivity(`❌ Failed to delete season: ${error.message}`);
+                }
+            }
+        }
+
+        async function editMilledRice(publicKey) {
+            try {
+                const response = await fetch(`${API_BASE}/milled-rice/${publicKey}`);
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    const rice = result.data.data || result.data;
+                    
+                    // Populate form with existing data
+                    document.getElementById('milling-batch').value = rice.batchId || '';
+                    document.getElementById('milling-machine').value = rice.machineName || '';
+                    document.getElementById('milling-grade').value = rice.quality || rice.qualityGrade || '';
+                    document.getElementById('milling-quantity').value = rice.totalWeightKg || '';
+                    document.getElementById('milling-moisture').value = rice.moisture || 14.0;
+                    document.getElementById('milling-date').value = rice.millDate || '';
+                    document.getElementById('milling-photos').value = rice.photoUrls?.join('\n') || '';
+                    
+                    // Change form to edit mode
+                    const form = document.getElementById('milling-form');
+                    form.setAttribute('data-edit-id', publicKey);
+                    form.querySelector('button[type="submit"]').textContent = 'Update Milled Rice';
+                    
+                    // Open the modal
+                    openModal('milling-modal');
+                    
+                    addActivity(`✏️ Editing milled rice: ${rice.machineName || publicKey.slice(0,8)}`);
+                } else {
+                    throw new Error(result.message || 'Failed to load milled rice data');
+                }
+            } catch (error) {
+                console.error('Error loading milled rice for edit:', error);
+                addActivity(`❌ Failed to load milled rice: ${error.message}`);
+            }
+        }
+
+        async function deleteMilledRice(publicKey) {
+            if (confirm('Are you sure you want to delete this milled rice record?')) {
+                try {
+                    const response = await fetch(`${API_BASE}/milled-rice/${publicKey}`, {
+                        method: 'DELETE'
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (response.ok) {
+                        addActivity(`🗑️ Deleted milled rice: ${publicKey.slice(0,8)}`);
+                        loadMilledRice(); // Auto refresh
+                    } else {
+                        throw new Error(result.message || 'Failed to delete milled rice');
+                    }
+                } catch (error) {
+                    console.error('Error deleting milled rice:', error);
+                    addActivity(`❌ Failed to delete milled rice: ${error.message}`);
+                }
+            }
+        }
+
+        async function editBatch(publicKey) {
+            try {
+                const response = await fetch(`${API_BASE}/rice-batches/${publicKey}`);
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    const batch = result.data.data || result.data;
+                    // Populate form with existing data
+                    document.getElementById('batch-variety').value = batch.riceVariety || '';
+                    document.getElementById('batch-quantity').value = batch.totalQuantityKg || '';
+                    document.getElementById('batch-harvest-date').value = batch.harvestDate || '';
+                    
+                    // Change form to edit mode
+                    const form = document.getElementById('batch-form');
+                    form.setAttribute('data-edit-id', publicKey);
+                    form.querySelector('button[type="submit"]').textContent = 'Update Batch';
+                    
+                    addActivity(`✏️ Editing batch: ${batch.riceVariety || publicKey.slice(0,8)}`);
+                } else {
+                    throw new Error(result.message || 'Failed to load batch data');
+                }
+            } catch (error) {
+                console.error('Error loading batch for edit:', error);
+                addActivity(`❌ Failed to load batch: ${error.message}`);
+            }
+        }
+
+        async function deleteBatch(publicKey) {
+            if (confirm('Are you sure you want to delete this batch?')) {
+                try {
+                    const response = await fetch(`${API_BASE}/rice-batches/${publicKey}`, {
+                        method: 'DELETE'
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (response.ok) {
+                        addActivity(`🗑️ Deleted batch: ${publicKey.slice(0,8)}`);
+                        loadBatches(); // Auto refresh
+                    } else {
+                        throw new Error(result.message || 'Failed to delete batch');
+                    }
+                } catch (error) {
+                    console.error('Error deleting batch:', error);
+                    addActivity(`❌ Failed to delete batch: ${error.message}`);
+                }
+            }
+        }
+
+        async function editTransaction(publicKey) {
+            try {
+                const response = await fetch(`${API_BASE}/chain-transactions/${publicKey}`);
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    const tx = result.data.data || result.data;
+                    // Populate form with existing data
+                    document.getElementById('transaction-type').value = tx.transactionType || '';
+                    document.getElementById('transaction-amount').value = tx.pricePerKg || '';
+                    document.getElementById('transaction-payment').value = tx.paymentMethod || '';
+                    
+                    // Change form to edit mode
+                    const form = document.getElementById('transaction-form');
+                    form.setAttribute('data-edit-id', publicKey);
+                    form.querySelector('button[type="submit"]').textContent = 'Update Transaction';
+                    
+                    addActivity(`✏️ Editing transaction: ${tx.transactionType || publicKey.slice(0,8)}`);
+                } else {
+                    throw new Error(result.message || 'Failed to load transaction data');
+                }
+            } catch (error) {
+                console.error('Error loading transaction for edit:', error);
+                addActivity(`❌ Failed to load transaction: ${error.message}`);
+            }
+        }
+
+        async function deleteTransaction(publicKey) {
+            if (confirm('Are you sure you want to delete this transaction?')) {
+                try {
+                    const response = await fetch(`${API_BASE}/chain-transactions/${publicKey}`, {
+                        method: 'DELETE'
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (response.ok) {
+                        addActivity(`🗑️ Deleted transaction: ${publicKey.slice(0,8)}`);
+                        loadTransactions(); // Auto refresh
+                    } else {
+                        throw new Error(result.message || 'Failed to delete transaction');
+                    }
+                } catch (error) {
+                    console.error('Error deleting transaction:', error);
+                    addActivity(`❌ Failed to delete transaction: ${error.message}`);
+                }
+            }
+        }
+
+        function addActivity(message) {
+            // Add to all activity logs
+            const activityLogs = ['activity-log', 'seasons-activity-log', 'milling-activity-log', 'batches-activity-log', 'transactions-activity-log'];
+            
+            activityLogs.forEach(logId => {
+                const activityLog = document.getElementById(logId);
+                if (!activityLog) return;
+                
+                const timestamp = new Date().toLocaleTimeString();
+                const entry = document.createElement('div');
+                entry.className = 'text-sm mb-2 pb-2 border-b border-gray-200';
+                entry.innerHTML = `<span class="text-gray-400">[${timestamp}]</span> ${message}`;
+                
+                if (activityLog.children.length === 1 && activityLog.children[0].textContent.includes('Activity will appear here')) {
+                    activityLog.innerHTML = '';
+                }
+                
+                activityLog.insertBefore(entry, activityLog.firstChild);
+                
+                // Keep only last 10 entries
+                while (activityLog.children.length > 10) {
+                    activityLog.removeChild(activityLog.lastChild);
+                }
+            });
+        }
+
+        // Add batch tracker functionality
+        async function loadBatchTracker() {
+            try {
+                const response = await fetch(`${API_BASE}/rice-batches`);
+                const data = await response.json();
+                
+                const batchSelector = document.getElementById('batch-selector');
+                batchSelector.innerHTML = '<option value="">Select a batch...</option>';
+                
+                if (data.success && data.data && data.data.batches) {
+                    data.data.batches.forEach(batch => {
+                        const option = document.createElement('option');
+                        option.value = batch.publicKey;
+                        option.textContent = `${batch.qrCode} - ${batch.batchWeightKg}kg`;
+                        batchSelector.appendChild(option);
+                    });
+                } else {
+                    console.log('No batches found or invalid response structure:', data);
+                }
+            } catch (error) {
+                console.error('Error loading batches:', error);
+            }
+        }
+
+        async function displayBatchDetails(batchId) {
+            if (!batchId) {
+                document.getElementById('batch-details').classList.add('hidden');
+                return;
+            }
+
+            try {
+                // Load batch details
+                const batchResponse = await fetch(`${API_BASE}/rice-batches`);
+                const batchData = await batchResponse.json();
+                const batch = batchData.data.batches.find(b => b.publicKey === batchId);
+
+                if (!batch) return;
+
+                // Display batch information
+                document.getElementById('batch-qr-code').textContent = batch.qrCode;
+                document.getElementById('batch-weight').textContent = batch.batchWeightKg;
+                document.getElementById('batch-moisture').textContent = batch.moistureContent;
+                document.getElementById('batch-price').textContent = batch.pricePerKg;
+                document.getElementById('batch-blockchain-tx').textContent = batch.blockchainTx || 'N/A';
+                
+                const statusElement = document.getElementById('batch-status');
+                statusElement.textContent = batch.status;
+                statusElement.className = `px-2 py-1 rounded text-sm ${batch.status === 'forSale' ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}`;
+
+                // Load production season details
+                if (batch.seasonId) {
+                    const seasonResponse = await fetch(`${API_BASE}/production-seasons`);
+                    const seasonData = await seasonResponse.json();
+                    const season = seasonData.data.seasons.find(s => s.publicKey === batch.seasonId);
+                    
+                    if (season) {
+                        document.getElementById('season-crop-year').textContent = season.cropYear;
+                        document.getElementById('season-variety').textContent = season.variety || 'N/A';
+                        document.getElementById('season-planting-date').textContent = season.plantingDate ? new Date(season.plantingDate).toLocaleDateString() : 'N/A';
+                        document.getElementById('season-harvest-date').textContent = season.harvestDate ? new Date(season.harvestDate).toLocaleDateString() : 'N/A';
+                        document.getElementById('season-total-yield').textContent = season.totalYieldKg || 'N/A';
+                        document.getElementById('season-carbon-certified').textContent = season.carbonSmartCertified ? 'Yes' : 'No';
+                    }
+                }
+
+                // Load milling information
+                if (batch.millingId) {
+                    const millingResponse = await fetch(`${API_BASE}/milled-rice`);
+                    const millingData = await millingResponse.json();
+                    const milling = millingData.data.milledRice.find(m => m.publicKey === batch.millingId);
+                    
+                    if (milling) {
+                        document.getElementById('milling-type').textContent = milling.millingType;
+                        document.getElementById('milling-quality').textContent = milling.quality;
+                        document.getElementById('milling-total-weight').textContent = milling.totalWeightKg;
+                        document.getElementById('milling-processed-weight').textContent = milling.totalWeightProcessedKg;
+                        document.getElementById('milling-moisture').textContent = milling.moisture;
+                    }
+                }
+
+                // Load current holder information
+                if (batch.currentHolderId) {
+                    const actorResponse = await fetch(`${API_BASE}/chain-actors`);
+                    const actorData = await actorResponse.json();
+                    const actor = actorData.data.actors.find(a => a.publicKey === batch.currentHolderId);
+                    
+                    if (actor) {
+                        document.getElementById('actor-name').textContent = actor.name;
+                        document.getElementById('actor-type').textContent = actor.actorType.join(', ');
+                        document.getElementById('actor-organization').textContent = actor.organization;
+                        document.getElementById('actor-tps').textContent = actor.assignedTps;
+                    }
+                }
+
+                // Load transaction history
+                const transactionResponse = await fetch(`${API_BASE}/chain-transactions`);
+                const transactionData = await transactionResponse.json();
+                const relatedTransactions = transactionData.data.transactions.filter(t => 
+                    t.batchIds && t.batchIds.includes(batchId)
+                );
+
+                const transactionHistory = document.getElementById('transaction-history');
+                transactionHistory.innerHTML = '';
+
+                if (relatedTransactions.length === 0) {
+                    transactionHistory.innerHTML = '<p class="text-gray-500">No transactions found for this batch.</p>';
+                } else {
+                    relatedTransactions.forEach(transaction => {
+                        const transactionDiv = document.createElement('div');
+                        transactionDiv.className = 'bg-white p-3 rounded border';
+                        transactionDiv.innerHTML = `
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <div class="font-medium">Transaction: ${transaction.publicKey.substring(0, 8)}...</div>
+                                    <div class="text-sm text-gray-600">From: ${transaction.fromActorId ? transaction.fromActorId.substring(0, 8) + '...' : 'N/A'}</div>
+                                    <div class="text-sm text-gray-600">To: ${transaction.toActorId.substring(0, 8)}...</div>
+                                    <div class="text-sm text-gray-600">Price: $${transaction.pricePerKg}/kg</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-sm font-medium ${transaction.status === 'completed' ? 'text-green-600' : 'text-yellow-600'}">${transaction.status}</div>
+                                    <div class="text-xs text-gray-500">${new Date(transaction.createdAt).toLocaleDateString()}</div>
+                                </div>
+                            </div>
+                        `;
+                        transactionHistory.appendChild(transactionDiv);
+                    });
+                }
+
+                document.getElementById('batch-details').classList.remove('hidden');
+
+            } catch (error) {
+                console.error('Error loading batch details:', error);
+            }
+        }
+
+        // Dropdown population functions
+        async function populateFarmersDropdown() {
+            try {
+                const response = await fetch(`${API_BASE}/chain-actors`);
+                const result = await response.json();
+                const dropdown = document.getElementById('season-farmer');
+                dropdown.innerHTML = '<option value="">Select Farmer</option>';
+                
+                if (result.success && result.data && result.data.actors) {
+                    result.data.actors.forEach(actor => {
+                        if (actor.actorType && actor.actorType.includes('Farmer')) {
+                            const option = document.createElement('option');
+                            option.value = actor.publicKey;
+                            option.textContent = actor.name;
+                            dropdown.appendChild(option);
+                        }
+                    });
+                }
+            } catch (error) {
+                console.error('Error loading farmers:', error);
+            }
+        }
+
+        async function populateBatchesDropdown(dropdownId) {
+            try {
+                const response = await fetch(`${API_BASE}/rice-batches`);
+                const result = await response.json();
+                const dropdown = document.getElementById(dropdownId);
+                dropdown.innerHTML = '<option value="">Select Batch</option>';
+                
+                if (result.success && result.data && result.data.batches) {
+                    result.data.batches.forEach(batch => {
+                        const option = document.createElement('option');
+                        option.value = batch.publicKey;
+                        option.textContent = `${batch.qrCode} - ${batch.batchWeightKg}kg`;
+                        dropdown.appendChild(option);
+                    });
+                }
+            } catch (error) {
+                console.error('Error loading batches:', error);
+            }
+        }
+
+        async function populateSeasonsDropdown() {
+            try {
+                const response = await fetch(`${API_BASE}/production-seasons`);
+                const result = await response.json();
+                const dropdown = document.getElementById('batch-season-id');
+                dropdown.innerHTML = '<option value="">Select Season</option>';
+                
+                if (result.success && result.data && result.data.seasons) {
+                    result.data.seasons.forEach(season => {
+                        const option = document.createElement('option');
+                        option.value = season.publicKey;
+                        option.textContent = season.seasonName || `${season.cropYear} Season`;
+                        dropdown.appendChild(option);
+                    });
+                }
+            } catch (error) {
+                console.error('Error loading seasons:', error);
+            }
+        }
+
+        async function populateActorsDropdown(dropdownId) {
+            try {
+                const response = await fetch(`${API_BASE}/chain-actors`);
+                const result = await response.json();
+                const dropdown = document.getElementById(dropdownId);
+                dropdown.innerHTML = '<option value="">Select Actor</option>';
+                
+                if (result.success && result.data && result.data.actors) {
+                    result.data.actors.forEach(actor => {
+                        const option = document.createElement('option');
+                        option.value = actor.publicKey;
+                        option.textContent = `${actor.name} (${actor.actorType.join(', ')})`;
+                        dropdown.appendChild(option);
+                    });
+                }
+            } catch (error) {
+                console.error('Error loading actors:', error);
+            }
+        }
+
+        // Add batch tracker initialization to main DOMContentLoaded
+        function initializeBatchTracker() {
+            loadBatchTracker();
+            // Add event listener for batch selector
+            document.getElementById('batch-selector').addEventListener('change', function() {
+                displayBatchDetails(this.value);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+[
+  {
+    "publicKey": "4wcW6BMEKLeEb5JTBtm8uUj7No6eR5XewxApDAbxhX37",
+    "name": "aa",
+    "actorType": [
+      "Farmer"
+    ],
+    "assignedTps": 1,
+    "isActive": true,
+    "balance": 0,
+    "pin": "111111",
+    "organization": "blo",
+    "address": null,
+    "farmId": null,
+    "farmerId": null,
+    "blockchainTx": "i8zHvpiPJ5jarrRuJ5Sj4qwT4LgcvceXwaUTg638jQpFR5uTPeFfRSJraNnhtni9nz4HsyYJQXgRv7EuRi7tc1c",
+    "createdAt": "2025-09-10T12:34:58.075Z",
+    "updatedAt": "2025-09-10T12:34:58.075Z"
+  },
+  {
+    "publicKey": "FS9QjtGBpdwqiCHxegvXhRfR6bJKm4q1T5KQ2iyk58RZ",
+    "name": "aa",
+    "actorType": [
+      "Farmer"
+    ],
+    "assignedTps": 1,
+    "isActive": true,
+    "balance": 0,
+    "pin": "111111",
+    "organization": "blo",
+    "address": null,
+    "farmId": null,
+    "farmerId": null,
+    "blockchainTx": "3TVpqXuhGTFgbKfWbAr3VavgWMexpZmvP1REFrx9vc91SVTg3tX1CmEf3ZFDktaYZivoqjU12iGzqqVDYZzmGH7r",
+    "createdAt": "2025-09-10T12:34:59.097Z",
+    "updatedAt": "2025-09-10T12:34:59.097Z"
+  },
+  {
+    "publicKey": "BcnNfQncfrVHwUWBw7VmwFhHhAN2UzaQVrM1naimqURD",
+    "name": "Persistent Test Actor",
+    "actorType": [
+      "farmer"
+    ],
+    "assignedTps": 1000,
+    "isActive": true,
+    "balance": 0,
+    "pin": "1234",
+    "organization": "coop",
+    "blockchainTx": "54B6aJ4nSqrS1Rpif5Fdu5eqfxGDoyQfzcXDhK4bwLZ8TbwdjPWYpGFzdByYCDagCbziUWprgiATxFd48hht4tCs",
+    "createdAt": "2025-09-10T12:35:16.403Z",
+    "updatedAt": "2025-09-10T12:35:16.403Z"
+  }
+]

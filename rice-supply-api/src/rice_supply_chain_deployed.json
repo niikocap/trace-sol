@@ -1,0 +1,1398 @@
+{
+  "accounts": [
+    {
+      "discriminator": [
+        13,
+        226,
+        28,
+        236,
+        63,
+        221,
+        228,
+        254
+      ],
+      "name": "ChainActor"
+    },
+    {
+      "discriminator": [
+        201,
+        93,
+        106,
+        115,
+        255,
+        110,
+        36,
+        116
+      ],
+      "name": "ChainTransaction"
+    },
+    {
+      "discriminator": [
+        251,
+        230,
+        98,
+        170,
+        117,
+        177,
+        137,
+        163
+      ],
+      "name": "MilledRice"
+    },
+    {
+      "discriminator": [
+        213,
+        38,
+        243,
+        144,
+        246,
+        206,
+        146,
+        53
+      ],
+      "name": "ProductionSeason"
+    },
+    {
+      "discriminator": [
+        113,
+        79,
+        166,
+        252,
+        182,
+        250,
+        9,
+        205
+      ],
+      "name": "RiceBatch"
+    }
+  ],
+  "address": "816ZRCrPkSAzEyoPvvLiKcfJhvFkqPknK1JeM8MEtgR8",
+  "instructions": [
+    {
+      "accounts": [
+        {
+          "name": "chain_actor",
+          "signer": true,
+          "writable": true
+        },
+        {
+          "name": "user",
+          "signer": true,
+          "writable": true
+        },
+        {
+          "address": "11111111111111111111111111111111",
+          "name": "system_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "actor_type",
+          "type": {
+            "vec": "string"
+          }
+        },
+        {
+          "name": "farm_id",
+          "type": {
+            "option": "pubkey"
+          }
+        },
+        {
+          "name": "farmer_id",
+          "type": {
+            "option": "pubkey"
+          }
+        },
+        {
+          "name": "assigned_tps",
+          "type": "u64"
+        },
+        {
+          "name": "pin",
+          "type": "string"
+        },
+        {
+          "name": "organization",
+          "type": {
+            "defined": {
+              "name": "Organization"
+            }
+          }
+        },
+        {
+          "name": "address",
+          "type": {
+            "option": "string"
+          }
+        }
+      ],
+      "discriminator": [
+        176,
+        249,
+        93,
+        67,
+        204,
+        28,
+        63,
+        166
+      ],
+      "name": "create_chain_actor"
+    },
+    {
+      "accounts": [
+        {
+          "name": "chain_transaction",
+          "signer": true,
+          "writable": true
+        },
+        {
+          "name": "user",
+          "signer": true,
+          "writable": true
+        },
+        {
+          "address": "11111111111111111111111111111111",
+          "name": "system_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "from_actor_id",
+          "type": "pubkey"
+        },
+        {
+          "name": "to_actor_id",
+          "type": "pubkey"
+        },
+        {
+          "name": "rice_batch_ids",
+          "type": {
+            "vec": "pubkey"
+          }
+        },
+        {
+          "name": "amount",
+          "type": "u64"
+        },
+        {
+          "name": "payment_method",
+          "type": {
+            "defined": {
+              "name": "PaymentMethod"
+            }
+          }
+        },
+        {
+          "name": "payment_reference",
+          "type": {
+            "option": "string"
+          }
+        },
+        {
+          "name": "geotag_latitude",
+          "type": {
+            "option": "string"
+          }
+        },
+        {
+          "name": "geotag_longitude",
+          "type": {
+            "option": "string"
+          }
+        },
+        {
+          "name": "quality",
+          "type": {
+            "option": "string"
+          }
+        }
+      ],
+      "discriminator": [
+        124,
+        137,
+        60,
+        81,
+        49,
+        243,
+        119,
+        139
+      ],
+      "name": "create_chain_transaction"
+    },
+    {
+      "accounts": [
+        {
+          "name": "milled_rice",
+          "signer": true,
+          "writable": true
+        },
+        {
+          "name": "user",
+          "signer": true,
+          "writable": true
+        },
+        {
+          "address": "11111111111111111111111111111111",
+          "name": "system_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "farmer_id",
+          "type": "pubkey"
+        },
+        {
+          "name": "total_weight_kg",
+          "type": "string"
+        },
+        {
+          "name": "milling_type",
+          "type": "string"
+        },
+        {
+          "name": "quality",
+          "type": "string"
+        },
+        {
+          "name": "photo_urls",
+          "type": {
+            "vec": "string"
+          }
+        },
+        {
+          "name": "moisture",
+          "type": "u32"
+        },
+        {
+          "name": "total_weight_processed_kg",
+          "type": "u32"
+        }
+      ],
+      "discriminator": [
+        99,
+        33,
+        16,
+        74,
+        32,
+        13,
+        173,
+        158
+      ],
+      "name": "create_milled_rice"
+    },
+    {
+      "accounts": [
+        {
+          "name": "production_season",
+          "signer": true,
+          "writable": true
+        },
+        {
+          "name": "user",
+          "signer": true,
+          "writable": true
+        },
+        {
+          "address": "11111111111111111111111111111111",
+          "name": "system_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "farmer_id",
+          "type": "pubkey"
+        },
+        {
+          "name": "crop_year",
+          "type": "string"
+        },
+        {
+          "name": "processed_yield_kg",
+          "type": "u64"
+        },
+        {
+          "name": "variety",
+          "type": {
+            "option": "string"
+          }
+        },
+        {
+          "name": "planned_practice",
+          "type": {
+            "option": "string"
+          }
+        },
+        {
+          "name": "planting_date",
+          "type": {
+            "option": "i64"
+          }
+        },
+        {
+          "name": "irrigation_practice",
+          "type": {
+            "option": "string"
+          }
+        },
+        {
+          "name": "fertilizer_used",
+          "type": {
+            "option": "string"
+          }
+        },
+        {
+          "name": "pesticide_used",
+          "type": {
+            "option": "string"
+          }
+        },
+        {
+          "name": "harvest_date",
+          "type": {
+            "option": "i64"
+          }
+        },
+        {
+          "name": "total_yield_kg",
+          "type": {
+            "option": "u64"
+          }
+        },
+        {
+          "name": "moisture_content",
+          "type": {
+            "option": "u32"
+          }
+        },
+        {
+          "name": "carbon_smart_certified",
+          "type": "bool"
+        }
+      ],
+      "discriminator": [
+        6,
+        186,
+        103,
+        149,
+        28,
+        243,
+        147,
+        41
+      ],
+      "name": "create_production_season"
+    },
+    {
+      "accounts": [
+        {
+          "name": "rice_batch",
+          "signer": true,
+          "writable": true
+        },
+        {
+          "name": "user",
+          "signer": true,
+          "writable": true
+        },
+        {
+          "address": "11111111111111111111111111111111",
+          "name": "system_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "milled_rice_id",
+          "type": "pubkey"
+        },
+        {
+          "name": "batch_status",
+          "type": {
+            "defined": {
+              "name": "BatchStatus"
+            }
+          }
+        },
+        {
+          "name": "quality_score",
+          "type": "u32"
+        },
+        {
+          "name": "weight_kg",
+          "type": "u32"
+        },
+        {
+          "name": "qr_code",
+          "type": "string"
+        }
+      ],
+      "discriminator": [
+        39,
+        86,
+        232,
+        61,
+        19,
+        76,
+        95,
+        150
+      ],
+      "name": "create_rice_batch"
+    },
+    {
+      "accounts": [
+        {
+          "name": "chain_actor",
+          "writable": true
+        },
+        {
+          "name": "user",
+          "signer": true
+        }
+      ],
+      "args": [],
+      "discriminator": [
+        92,
+        54,
+        129,
+        99,
+        86,
+        148,
+        147,
+        232
+      ],
+      "name": "delete_chain_actor"
+    },
+    {
+      "accounts": [
+        {
+          "name": "chain_transaction",
+          "writable": true
+        },
+        {
+          "name": "user",
+          "signer": true
+        }
+      ],
+      "args": [],
+      "discriminator": [
+        210,
+        226,
+        244,
+        19,
+        187,
+        236,
+        8,
+        130
+      ],
+      "name": "delete_chain_transaction"
+    },
+    {
+      "accounts": [
+        {
+          "name": "production_season",
+          "writable": true
+        },
+        {
+          "name": "user",
+          "signer": true
+        }
+      ],
+      "args": [],
+      "discriminator": [
+        194,
+        193,
+        144,
+        228,
+        113,
+        137,
+        27,
+        28
+      ],
+      "name": "delete_production_season"
+    },
+    {
+      "accounts": [
+        {
+          "name": "rice_batch",
+          "writable": true
+        },
+        {
+          "name": "user",
+          "signer": true
+        }
+      ],
+      "args": [],
+      "discriminator": [
+        91,
+        252,
+        188,
+        235,
+        212,
+        102,
+        166,
+        240
+      ],
+      "name": "delete_rice_batch"
+    },
+    {
+      "accounts": [
+        {
+          "name": "chain_actor",
+          "writable": true
+        },
+        {
+          "name": "user",
+          "signer": true
+        }
+      ],
+      "args": [
+        {
+          "name": "name",
+          "type": {
+            "option": "string"
+          }
+        },
+        {
+          "name": "actor_type",
+          "type": {
+            "option": {
+              "vec": "string"
+            }
+          }
+        },
+        {
+          "name": "farm_id",
+          "type": {
+            "option": "pubkey"
+          }
+        },
+        {
+          "name": "farmer_id",
+          "type": {
+            "option": "pubkey"
+          }
+        },
+        {
+          "name": "assigned_tps",
+          "type": {
+            "option": "u64"
+          }
+        },
+        {
+          "name": "pin",
+          "type": {
+            "option": "string"
+          }
+        },
+        {
+          "name": "organization",
+          "type": {
+            "option": {
+              "defined": {
+                "name": "Organization"
+              }
+            }
+          }
+        },
+        {
+          "name": "address",
+          "type": {
+            "option": "string"
+          }
+        },
+        {
+          "name": "is_active",
+          "type": {
+            "option": "bool"
+          }
+        },
+        {
+          "name": "balance",
+          "type": {
+            "option": "u64"
+          }
+        }
+      ],
+      "discriminator": [
+        14,
+        45,
+        87,
+        224,
+        251,
+        124,
+        72,
+        90
+      ],
+      "name": "update_chain_actor"
+    },
+    {
+      "accounts": [
+        {
+          "name": "chain_transaction",
+          "writable": true
+        },
+        {
+          "name": "user",
+          "signer": true
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": {
+            "option": "u64"
+          }
+        },
+        {
+          "name": "payment_method",
+          "type": {
+            "option": {
+              "defined": {
+                "name": "PaymentMethod"
+              }
+            }
+          }
+        },
+        {
+          "name": "payment_reference",
+          "type": {
+            "option": "string"
+          }
+        },
+        {
+          "name": "geotag_latitude",
+          "type": {
+            "option": "string"
+          }
+        },
+        {
+          "name": "geotag_longitude",
+          "type": {
+            "option": "string"
+          }
+        },
+        {
+          "name": "quality",
+          "type": {
+            "option": "string"
+          }
+        },
+        {
+          "name": "transaction_status",
+          "type": {
+            "option": {
+              "defined": {
+                "name": "TransactionStatus"
+              }
+            }
+          }
+        }
+      ],
+      "discriminator": [
+        202,
+        191,
+        198,
+        116,
+        63,
+        87,
+        104,
+        212
+      ],
+      "name": "update_chain_transaction"
+    },
+    {
+      "accounts": [
+        {
+          "name": "milled_rice",
+          "writable": true
+        },
+        {
+          "name": "user",
+          "signer": true
+        }
+      ],
+      "args": [
+        {
+          "name": "total_weight_kg",
+          "type": {
+            "option": "string"
+          }
+        },
+        {
+          "name": "milling_type",
+          "type": {
+            "option": "string"
+          }
+        },
+        {
+          "name": "quality",
+          "type": {
+            "option": "string"
+          }
+        },
+        {
+          "name": "photo_urls",
+          "type": {
+            "option": {
+              "vec": "string"
+            }
+          }
+        },
+        {
+          "name": "moisture",
+          "type": {
+            "option": "u32"
+          }
+        },
+        {
+          "name": "total_weight_processed_kg",
+          "type": {
+            "option": "u32"
+          }
+        }
+      ],
+      "discriminator": [
+        170,
+        8,
+        98,
+        201,
+        194,
+        3,
+        25,
+        238
+      ],
+      "name": "update_milled_rice"
+    },
+    {
+      "accounts": [
+        {
+          "name": "production_season",
+          "writable": true
+        },
+        {
+          "name": "user",
+          "signer": true
+        }
+      ],
+      "args": [
+        {
+          "name": "crop_year",
+          "type": {
+            "option": "string"
+          }
+        },
+        {
+          "name": "processed_yield_kg",
+          "type": {
+            "option": "u64"
+          }
+        },
+        {
+          "name": "variety",
+          "type": {
+            "option": "string"
+          }
+        },
+        {
+          "name": "planned_practice",
+          "type": {
+            "option": "string"
+          }
+        },
+        {
+          "name": "planting_date",
+          "type": {
+            "option": "i64"
+          }
+        },
+        {
+          "name": "irrigation_practice",
+          "type": {
+            "option": "string"
+          }
+        },
+        {
+          "name": "fertilizer_used",
+          "type": {
+            "option": "string"
+          }
+        },
+        {
+          "name": "pesticide_used",
+          "type": {
+            "option": "string"
+          }
+        },
+        {
+          "name": "harvest_date",
+          "type": {
+            "option": "i64"
+          }
+        },
+        {
+          "name": "total_yield_kg",
+          "type": {
+            "option": "u64"
+          }
+        },
+        {
+          "name": "moisture_content",
+          "type": {
+            "option": "u32"
+          }
+        },
+        {
+          "name": "carbon_smart_certified",
+          "type": {
+            "option": "bool"
+          }
+        },
+        {
+          "name": "validation_status",
+          "type": {
+            "option": {
+              "defined": {
+                "name": "ValidationStatus"
+              }
+            }
+          }
+        },
+        {
+          "name": "validator_id",
+          "type": {
+            "option": "pubkey"
+          }
+        }
+      ],
+      "discriminator": [
+        150,
+        220,
+        14,
+        74,
+        33,
+        82,
+        151,
+        10
+      ],
+      "name": "update_production_season"
+    },
+    {
+      "accounts": [
+        {
+          "name": "rice_batch",
+          "writable": true
+        },
+        {
+          "name": "user",
+          "signer": true
+        }
+      ],
+      "args": [
+        {
+          "name": "batch_status",
+          "type": {
+            "option": {
+              "defined": {
+                "name": "BatchStatus"
+              }
+            }
+          }
+        },
+        {
+          "name": "quality_score",
+          "type": {
+            "option": "u32"
+          }
+        },
+        {
+          "name": "weight_kg",
+          "type": {
+            "option": "u32"
+          }
+        },
+        {
+          "name": "qr_code",
+          "type": {
+            "option": "string"
+          }
+        }
+      ],
+      "discriminator": [
+        69,
+        132,
+        217,
+        108,
+        126,
+        226,
+        102,
+        221
+      ],
+      "name": "update_rice_batch"
+    }
+  ],
+  "metadata": {
+    "description": "Created with Anchor",
+    "name": "rice_supply_chain",
+    "spec": "0.1.0",
+    "version": "0.1.0"
+  },
+  "types": [
+    {
+      "name": "BatchStatus",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Created"
+          },
+          {
+            "name": "InTransit"
+          },
+          {
+            "name": "Delivered"
+          },
+          {
+            "name": "Consumed"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ChainActor",
+      "type": {
+        "fields": [
+          {
+            "name": "public_key",
+            "type": "pubkey"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "actor_type",
+            "type": {
+              "vec": "string"
+            }
+          },
+          {
+            "name": "farm_id",
+            "type": {
+              "option": "pubkey"
+            }
+          },
+          {
+            "name": "farmer_id",
+            "type": {
+              "option": "pubkey"
+            }
+          },
+          {
+            "name": "assigned_tps",
+            "type": "u64"
+          },
+          {
+            "name": "is_active",
+            "type": "bool"
+          },
+          {
+            "name": "balance",
+            "type": "u64"
+          },
+          {
+            "name": "pin",
+            "type": "string"
+          },
+          {
+            "name": "organization",
+            "type": {
+              "defined": {
+                "name": "Organization"
+              }
+            }
+          },
+          {
+            "name": "address",
+            "type": {
+              "option": "string"
+            }
+          },
+          {
+            "name": "created_at",
+            "type": "i64"
+          },
+          {
+            "name": "updated_at",
+            "type": "i64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "ChainTransaction",
+      "type": {
+        "fields": [
+          {
+            "name": "public_key",
+            "type": "pubkey"
+          },
+          {
+            "name": "from_actor_id",
+            "type": "pubkey"
+          },
+          {
+            "name": "to_actor_id",
+            "type": "pubkey"
+          },
+          {
+            "name": "rice_batch_ids",
+            "type": {
+              "vec": "pubkey"
+            }
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          },
+          {
+            "name": "payment_method",
+            "type": {
+              "defined": {
+                "name": "PaymentMethod"
+              }
+            }
+          },
+          {
+            "name": "payment_reference",
+            "type": {
+              "option": "string"
+            }
+          },
+          {
+            "name": "geotag_latitude",
+            "type": {
+              "option": "string"
+            }
+          },
+          {
+            "name": "geotag_longitude",
+            "type": {
+              "option": "string"
+            }
+          },
+          {
+            "name": "quality",
+            "type": {
+              "option": "string"
+            }
+          },
+          {
+            "name": "transaction_status",
+            "type": {
+              "defined": {
+                "name": "TransactionStatus"
+              }
+            }
+          },
+          {
+            "name": "created_at",
+            "type": "i64"
+          },
+          {
+            "name": "updated_at",
+            "type": "i64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "MilledRice",
+      "type": {
+        "fields": [
+          {
+            "name": "public_key",
+            "type": "pubkey"
+          },
+          {
+            "name": "farmer_id",
+            "type": "pubkey"
+          },
+          {
+            "name": "total_weight_kg",
+            "type": "string"
+          },
+          {
+            "name": "milling_type",
+            "type": "string"
+          },
+          {
+            "name": "quality",
+            "type": "string"
+          },
+          {
+            "name": "photo_urls",
+            "type": {
+              "vec": "string"
+            }
+          },
+          {
+            "name": "moisture",
+            "type": "u32"
+          },
+          {
+            "name": "total_weight_processed_kg",
+            "type": "u32"
+          },
+          {
+            "name": "created_at",
+            "type": "i64"
+          },
+          {
+            "name": "updated_at",
+            "type": "i64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "Organization",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Farmer"
+          },
+          {
+            "name": "Miller"
+          },
+          {
+            "name": "Distributor"
+          },
+          {
+            "name": "Retailer"
+          },
+          {
+            "name": "Government"
+          },
+          {
+            "name": "Cooperative"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PaymentMethod",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Cash"
+          },
+          {
+            "name": "BankTransfer"
+          },
+          {
+            "name": "DigitalWallet"
+          },
+          {
+            "name": "Cryptocurrency"
+          },
+          {
+            "name": "Credit"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ProductionSeason",
+      "type": {
+        "fields": [
+          {
+            "name": "public_key",
+            "type": "pubkey"
+          },
+          {
+            "name": "farmer_id",
+            "type": "pubkey"
+          },
+          {
+            "name": "crop_year",
+            "type": "string"
+          },
+          {
+            "name": "processed_yield_kg",
+            "type": "u64"
+          },
+          {
+            "name": "variety",
+            "type": {
+              "option": "string"
+            }
+          },
+          {
+            "name": "planned_practice",
+            "type": {
+              "option": "string"
+            }
+          },
+          {
+            "name": "planting_date",
+            "type": {
+              "option": "i64"
+            }
+          },
+          {
+            "name": "irrigation_practice",
+            "type": {
+              "option": "string"
+            }
+          },
+          {
+            "name": "fertilizer_used",
+            "type": {
+              "option": "string"
+            }
+          },
+          {
+            "name": "pesticide_used",
+            "type": {
+              "option": "string"
+            }
+          },
+          {
+            "name": "harvest_date",
+            "type": {
+              "option": "i64"
+            }
+          },
+          {
+            "name": "total_yield_kg",
+            "type": {
+              "option": "u64"
+            }
+          },
+          {
+            "name": "moisture_content",
+            "type": {
+              "option": "u32"
+            }
+          },
+          {
+            "name": "carbon_smart_certified",
+            "type": "bool"
+          },
+          {
+            "name": "validation_status",
+            "type": {
+              "defined": {
+                "name": "ValidationStatus"
+              }
+            }
+          },
+          {
+            "name": "validator_id",
+            "type": {
+              "option": "pubkey"
+            }
+          },
+          {
+            "name": "created_at",
+            "type": "i64"
+          },
+          {
+            "name": "updated_at",
+            "type": "i64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "RiceBatch",
+      "type": {
+        "fields": [
+          {
+            "name": "public_key",
+            "type": "pubkey"
+          },
+          {
+            "name": "milled_rice_id",
+            "type": "pubkey"
+          },
+          {
+            "name": "batch_status",
+            "type": {
+              "defined": {
+                "name": "BatchStatus"
+              }
+            }
+          },
+          {
+            "name": "quality_score",
+            "type": "u32"
+          },
+          {
+            "name": "weight_kg",
+            "type": "u32"
+          },
+          {
+            "name": "qr_code",
+            "type": "string"
+          },
+          {
+            "name": "created_at",
+            "type": "i64"
+          },
+          {
+            "name": "updated_at",
+            "type": "i64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "TransactionStatus",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Pending"
+          },
+          {
+            "name": "Completed"
+          },
+          {
+            "name": "Failed"
+          },
+          {
+            "name": "Cancelled"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ValidationStatus",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Pending"
+          },
+          {
+            "name": "Approved"
+          },
+          {
+            "name": "Rejected"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "publicKey": "J3ikhgi318VTME5nKgbdMebYbSG77ipRHbWbun2bTaof",
+    "batchIds": [
+      "9RpdFLAb7pV3vGzCLRpBXwTMABq4NaESBv72MbezKk1S"
+    ],
+    "fromActorId": "4wcW6BMEKLeEb5JTBtm8uUj7No6eR5XewxApDAbxhX37",
+    "toActorId": "BcnNfQncfrVHwUWBw7VmwFhHhAN2UzaQVrM1naimqURD",
+    "pricePerKg": 5.5,
+    "paymentMethod": "cash",
+    "status": "pending",
+    "blockchainTx": "3CS6psB4BM8hD1V2pAoVo3z2twaWXEsc2pw8hiTmxEDV7fqMA3X8SeDEBHwbukTfgR2duxKXhaA4hHLonZA6yUEN",
+    "createdAt": "2025-09-10T13:28:49.322Z",
+    "updatedAt": "2025-09-10T13:28:49.322Z"
+  }
+]
