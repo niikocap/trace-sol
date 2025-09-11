@@ -1,65 +1,56 @@
 [
   {
-    "publicKey": "J9fph16siAUwpeeXcWoiMCuqxLtqpTFenrMnzC4yLU31",
-    "farmerId": "4wcW6BMEKLeEb5JTBtm8uUj7No6eR5XewxApDAbxhX37",
+    "publicKey": "3Reguei7S4VSjcM3XBoSWy1U1KB8PH1nXippxmKBgM3J",
+    "farmerId": "FqmahXUd8uAgrrFoRBRtmpjg3rQubiFJyALRWPZKe4Rt",
     "cropYear": "2024",
-    "processedYieldKg": 1500,
-    "variety": "Jasmine",
+    "processedYieldKg": 5000,
+    "variety": "IR64",
     "plantingDate": "2024-01-15T00:00:00.000Z",
     "harvestDate": "2024-06-15T00:00:00.000Z",
-    "totalYieldKg": 2000,
     "moistureContent": 14,
     "carbonSmartCertified": true,
     "validationStatus": "pending",
     "validatorId": null,
-    "blockchainTx": "5biYu97jMMQGoY3k9WVbNJJ34hGjUaxtZ65fARkdKkZajbB7c8N57vCdUgdQSqbJ9T7uACdiS233AZHk6RFGmXpL",
-    "createdAt": "2025-09-10T13:02:34.933Z",
-    "updatedAt": "2025-09-10T23:46:17.002Z",
-    "isActive": false
+    "blockchainTx": "3X44iCZcpidcobHpGXFQ2rcCmQNwd9FSHaAQiUy98JpAwBD6cBDUQCJCF6VCq6eDMucyhAc2Rz39oJiPea5xNFmU",
+    "createdAt": "2025-09-11T01:22:09.524Z",
+    "updatedAt": "2025-09-11T01:22:09.524Z"
   },
   {
-    "publicKey": "GaGoMykLUavQrrBqvSw8hpKrqzQgn16VLi2MZsyybMKU",
-    "farmerId": "DoQJV32ZSmcoVDDF6zbvsrADdHT8GtvW7Q9Ns3M6ZxeR",
+    "publicKey": "4LDtMSh5Dg7i6aJGGPWNnb6uGR93QRW4vdeg8LoQR9zv",
+    "farmerId": "6PjhxsRxP6QzcZoN2odBDC3jScpJjbzxfkbFUMm4WmFd",
     "cropYear": "2025",
-    "processedYieldKg": 1900,
-    "plantingDate": "2025-09-11",
+    "processedYieldKg": 1000,
+    "plantingDate": "2025-09-11T00:00:00.000Z",
     "irrigationPractice": "Flood Irrigation",
-    "harvestDate": "2025-09-11",
-    "totalYieldKg": 1900,
-    "moistureContent": 14,
+    "harvestDate": "2025-09-18T00:00:00.000Z",
+    "totalYieldKg": 1000,
+    "moistureContent": 15,
     "carbonSmartCertified": false,
     "validationStatus": "pending",
     "validatorId": null,
-    "blockchainTx": "2D5TvJeKe8KP9CR3xFhbGFo3koB1XBRkUiGrKcpjXjWeg8MK9eFU5jFHkuGdezKboRCW1a9Qc1VRx7qLDvtMotB2",
-    "createdAt": "2025-09-10T23:00:18.417Z",
-    "updatedAt": "2025-09-10T23:45:24.904Z",
-    "isActive": false,
-    "seasonName": "1111",
-    "riceVariety": "",
-    "fertilizersUsed": [
-      "Organic Compost"
-    ],
-    "pesticidesUsed": [
-      "Neem Oil"
-    ]
+    "blockchainTx": "2Xmi5Z6CKJB8g2f3snu6x9kM5GaCR3wTmE1Xs9DhxUbDM6zwKSuiSMRHn8zTTmQDWPDKFcthgXHZnJc5QyzzSfTy",
+    "createdAt": "2025-09-11T01:23:06.649Z",
+    "updatedAt": "2025-09-11T01:23:06.649Z"
   },
   {
-    "publicKey": "9FbWkmWhzQ4HeNsskqVcMMpfqdM6PRobZ2zRAEfUpb2p",
-    "farmerId": "4wcW6BMEKLeEb5JTBtm8uUj7No6eR5XewxApDAbxhX37",
+    "publicKey": "CiFZp6iuAPuAQG4aHkwEsYYCsScJgD734iPQpGbDs5Sy",
+    "farmerId": "G2M2G46bXAFwbAxMSmQUywJaAxcpf8ynn7r4y9LWufMK",
     "cropYear": "2024",
-    "processedYieldKg": 1000,
-    "plantingDate": null,
-    "harvestDate": null,
+    "processedYieldKg": 3000,
+    "variety": "IR64",
+    "plantingDate": "2024-01-15T00:00:00.000Z",
+    "harvestDate": "2024-06-15T00:00:00.000Z",
+    "moistureContent": 14,
     "carbonSmartCertified": true,
     "validationStatus": "pending",
     "validatorId": null,
-    "blockchainTx": "26EzGdMtvD744XrGxJgXjVnaDLfrMRA3VEAFoHhA1kdZ6HTCqK6FzkPe6sSARbGbZN83Ci49wW4fZECfD45tzazZ",
-    "createdAt": "2025-09-10T23:27:56.372Z",
-    "updatedAt": "2025-09-10T23:27:56.372Z"
+    "blockchainTx": "file-persistence-1757554550589",
+    "createdAt": "2025-09-11T01:35:50.590Z",
+    "updatedAt": "2025-09-11T01:35:50.590Z"
   },
   {
-    "publicKey": "o51RD453PL31LvuFeBw6FNdM1ZRyFQXzi9dpKGMfejS",
-    "farmerId": "4wcW6BMEKLeEb5JTBtm8uUj7No6eR5XewxApDAbxhX37",
+    "publicKey": "CTYXzEx2CP8kAJSg9gF5LB9ohTf6WSMCYB4WjMKYtQ7f",
+    "farmerId": "6PjhxsRxP6QzcZoN2odBDC3jScpJjbzxfkbFUMm4WmFd",
     "cropYear": "2025",
     "processedYieldKg": 1000,
     "plantingDate": "2025-09-11T00:00:00.000Z",
@@ -70,8 +61,8 @@
     "carbonSmartCertified": false,
     "validationStatus": "pending",
     "validatorId": null,
-    "blockchainTx": "23Pcu8Q1bQbqZ4oVZZcV5TBthWa24VGcKr9pHn6ummY5b53xUMuT7PMT1xAaJUH4LKUZFUs7hevudgm3rZ1429h7",
-    "createdAt": "2025-09-11T00:46:22.148Z",
-    "updatedAt": "2025-09-11T00:46:22.148Z"
+    "blockchainTx": "file-persistence-1757555022772",
+    "createdAt": "2025-09-11T01:43:42.772Z",
+    "updatedAt": "2025-09-11T01:43:42.772Z"
   }
 ]

@@ -7514,3 +7514,1179 @@
 {"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T00:55:16.178Z"}
 {"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T00:55:26.177Z"}
 {"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T00:55:55.176Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T00:56:55.176Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T00:57:55.176Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T00:58:55.177Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T00:59:55.177Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:00:55.177Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:01:55.178Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:02:55.177Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:03:55.177Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:04:55.177Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:05:55.177Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:06:55.177Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:07:55.178Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:08:55.178Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:09:55.178Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:10:55.178Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:11:55.176Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:12:55.177Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:13:55.177Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:14:55.178Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:15:55.176Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:16:32.628Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:16:34.774Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:16:34.775Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:16:34.777Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:16:44.772Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:16:54.909Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:16:54.910Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:16:54.913Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:17:04.897Z"}
+{"level":"info","message":"POST /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:17:07.485Z"}
+{"level":"info","message":"Saved 6 chainActors to file","service":"rice-supply-api","timestamp":"2025-09-11T01:17:09.053Z"}
+{"level":"info","message":"Chain actor created on blockchain: DWFexVqFHk3k8uEXFxWdMitgfZ5kFhS91oaXQJZPdqfs, tx: 5ogcydvLxbXd1GpCSF3nq9ZJMQL7BTjeBz58FCEjs9fe3FpAG2NY8G2NfJwssHbrjVY5CPHMaKxHc9cY4Gp7vYsB","service":"rice-supply-api","timestamp":"2025-09-11T01:17:09.053Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:17:09.060Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:17:14.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:17:24.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:17:34.898Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:17:36.104Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:17:36.105Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:17:36.106Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:17:36.997Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:17:36.998Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:17:36.999Z"}
+{"level":"info","message":"GET /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:17:37.922Z"}
+{"level":"info","message":"GET /api/chain-actors/4wcW6BMEKLeEb5JTBtm8uUj7No6eR5XewxApDAbxhX37 - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:17:37.937Z"}
+{"level":"info","message":"GET /api/milled-rice - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:17:38.579Z"}
+{"level":"info","message":"GET /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:17:40.356Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:17:40.786Z"}
+{"level":"info","message":"GET /api/chain-actors/4wcW6BMEKLeEb5JTBtm8uUj7No6eR5XewxApDAbxhX37 - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:17:40.788Z"}
+{"level":"info","message":"GET /api/chain-actors/DoQJV32ZSmcoVDDF6zbvsrADdHT8GtvW7Q9Ns3M6ZxeR - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:17:40.791Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:17:41.101Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:17:41.209Z"}
+{"level":"info","message":"GET /api/chain-actors/DoQJV32ZSmcoVDDF6zbvsrADdHT8GtvW7Q9Ns3M6ZxeR - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:17:41.212Z"}
+{"level":"info","message":"GET /api/chain-actors/4wcW6BMEKLeEb5JTBtm8uUj7No6eR5XewxApDAbxhX37 - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:17:41.215Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:17:41.338Z"}
+{"level":"info","message":"GET /api/chain-actors/4wcW6BMEKLeEb5JTBtm8uUj7No6eR5XewxApDAbxhX37 - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:17:41.343Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:17:41.447Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:17:41.452Z"}
+{"level":"info","message":"GET /api/chain-actors/4wcW6BMEKLeEb5JTBtm8uUj7No6eR5XewxApDAbxhX37 - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:17:41.454Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:17:42.190Z"}
+{"level":"info","message":"GET /api/chain-actors/4wcW6BMEKLeEb5JTBtm8uUj7No6eR5XewxApDAbxhX37 - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:17:42.195Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:17:42.498Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:17:46.985Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:17:56.985Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:18:06.984Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:18:17.123Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:18:17.125Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:18:17.127Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:18:18.393Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:18:18.394Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:18:18.395Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:18:28.379Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:18:38.379Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:18:48.379Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:18:58.379Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:19:08.379Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:19:15.325Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:19:15.326Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:19:15.326Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:19:22.133Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:19:22.133Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:19:22.138Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:19:25.769Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:19:25.770Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:19:25.771Z"}
+{"level":"info","message":"Solana service initialized with direct blockchain access (no Anchor program)","service":"rice-supply-api","timestamp":"2025-09-11T01:19:37.792Z"}
+{"level":"info","message":"Rice Supply Chain API server running on port 3001","service":"rice-supply-api","timestamp":"2025-09-11T01:19:37.819Z"}
+{"level":"info","message":"Environment: development","service":"rice-supply-api","timestamp":"2025-09-11T01:19:37.819Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:19:38.233Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:19:38.237Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:19:38.238Z"}
+{"level":"info","message":"Wallet balance: 0.8749658 SOL","service":"rice-supply-api","timestamp":"2025-09-11T01:19:38.594Z"}
+{"level":"info","message":"GET /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:19:40.186Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:19:41.322Z"}
+{"level":"info","message":"GET /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:19:41.674Z"}
+{"level":"info","message":"GET /api/milled-rice - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:19:42.170Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:19:42.770Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:19:48.215Z"}
+{"level":"info","message":"POST /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:19:51.636Z"}
+{"level":"info","message":"Saved 1 chainActors to file","service":"rice-supply-api","timestamp":"2025-09-11T01:19:53.202Z"}
+{"level":"info","message":"Chain actor created on blockchain: 6PjhxsRxP6QzcZoN2odBDC3jScpJjbzxfkbFUMm4WmFd, tx: 7uQojEbCbPzcMvNqTnmzSmQXC5AFzZT84eK9LKJZ4NPRypcNEAqh3GHF1RmMVM7ksqBAzRj78HvdyM3NbuDKiYp","service":"rice-supply-api","timestamp":"2025-09-11T01:19:53.202Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:19:53.209Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:19:58.213Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:20:08.213Z"}
+{"level":"info","message":"POST /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:20:08.219Z"}
+{"level":"info","message":"POST /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:20:14.702Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:20:18.213Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:20:28.212Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:20:38.213Z"}
+{"level":"info","message":"POST /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:20:45.989Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:20:48.213Z"}
+{"level":"info","message":"Loaded 1 chainActors from file","service":"rice-supply-api","timestamp":"2025-09-11T01:20:59.577Z"}
+{"level":"info","message":"Solana service initialized with direct blockchain access (no Anchor program)","service":"rice-supply-api","timestamp":"2025-09-11T01:20:59.618Z"}
+{"level":"info","message":"Rice Supply Chain API server running on port 3001","service":"rice-supply-api","timestamp":"2025-09-11T01:20:59.641Z"}
+{"level":"info","message":"Environment: development","service":"rice-supply-api","timestamp":"2025-09-11T01:20:59.641Z"}
+{"level":"info","message":"Wallet balance: 0.8739608 SOL","service":"rice-supply-api","timestamp":"2025-09-11T01:21:00.496Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:21:08.217Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:21:12.861Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:21:12.862Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:21:12.864Z"}
+{"level":"info","message":"POST /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:21:17.673Z"}
+{"level":"info","message":"Saved 2 chainActors to file","service":"rice-supply-api","timestamp":"2025-09-11T01:21:19.835Z"}
+{"level":"info","message":"Chain actor created on blockchain: FqmahXUd8uAgrrFoRBRtmpjg3rQubiFJyALRWPZKe4Rt, tx: 4AggCmtcpZZmYBtNVdfMYMaxNjFZHHUPmAj15sF7ouVRBPDbiSg8xrjuEmkfEvf9urhKVm2bVMSn3oJ9qYXxr5XL","service":"rice-supply-api","timestamp":"2025-09-11T01:21:19.835Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:21:22.852Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:21:32.853Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:21:42.853Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:21:52.852Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:22:02.852Z"}
+{"level":"info","message":"POST /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:22:07.419Z"}
+{"level":"info","message":"Saved 1 productionSeasons to file","service":"rice-supply-api","timestamp":"2025-09-11T01:22:09.524Z"}
+{"level":"info","message":"Production season created on blockchain: 3Reguei7S4VSjcM3XBoSWy1U1KB8PH1nXippxmKBgM3J, tx: 3X44iCZcpidcobHpGXFQ2rcCmQNwd9FSHaAQiUy98JpAwBD6cBDUQCJCF6VCq6eDMucyhAc2Rz39oJiPea5xNFmU","service":"rice-supply-api","timestamp":"2025-09-11T01:22:09.524Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:22:12.853Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:22:22.853Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:22:32.854Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:22:42.852Z"}
+{"level":"info","message":"GET /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:22:48.317Z"}
+{"level":"info","message":"GET /api/chain-actors/FqmahXUd8uAgrrFoRBRtmpjg3rQubiFJyALRWPZKe4Rt - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:22:48.323Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:22:48.931Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:22:50.061Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:22:52.853Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:02.852Z"}
+{"level":"info","message":"POST /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:05.320Z"}
+{"level":"info","message":"Saved 2 productionSeasons to file","service":"rice-supply-api","timestamp":"2025-09-11T01:23:06.649Z"}
+{"level":"info","message":"Production season created on blockchain: 4LDtMSh5Dg7i6aJGGPWNnb6uGR93QRW4vdeg8LoQR9zv, tx: 2Xmi5Z6CKJB8g2f3snu6x9kM5GaCR3wTmE1Xs9DhxUbDM6zwKSuiSMRHn8zTTmQDWPDKFcthgXHZnJc5QyzzSfTy","service":"rice-supply-api","timestamp":"2025-09-11T01:23:06.649Z"}
+{"level":"info","message":"GET /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:06.654Z"}
+{"level":"info","message":"GET /api/chain-actors/FqmahXUd8uAgrrFoRBRtmpjg3rQubiFJyALRWPZKe4Rt - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:06.659Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:23:06.762Z"}
+{"level":"info","message":"GET /api/chain-actors/6PjhxsRxP6QzcZoN2odBDC3jScpJjbzxfkbFUMm4WmFd - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:06.767Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:23:06.953Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:12.853Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:23.178Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:33.178Z"}
+{"level":"info","message":"GET /api/milled-rice - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:41.406Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:42.854Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:49.123Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:49.124Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:49.126Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:49.446Z"}
+{"level":"info","message":"GET /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:50.430Z"}
+{"level":"info","message":"GET /api/chain-actors/FqmahXUd8uAgrrFoRBRtmpjg3rQubiFJyALRWPZKe4Rt - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:50.434Z"}
+{"level":"info","message":"GET /api/milled-rice - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:50.822Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:23:51.120Z"}
+{"level":"info","message":"GET /api/chain-actors/6PjhxsRxP6QzcZoN2odBDC3jScpJjbzxfkbFUMm4WmFd - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:51.126Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:23:51.351Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:51.446Z"}
+{"level":"info","message":"GET /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:51.974Z"}
+{"level":"info","message":"GET /api/chain-actors/FqmahXUd8uAgrrFoRBRtmpjg3rQubiFJyALRWPZKe4Rt - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:51.978Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:23:52.212Z"}
+{"level":"info","message":"GET /api/chain-actors/6PjhxsRxP6QzcZoN2odBDC3jScpJjbzxfkbFUMm4WmFd - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:52.216Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:23:52.519Z"}
+{"level":"info","message":"GET /api/milled-rice - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:52.654Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:53.119Z"}
+{"level":"info","message":"GET /api/chain-transactions - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:53.999Z"}
+{"level":"info","message":"GET /api/milled-rice - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:56.159Z"}
+{"level":"info","message":"GET /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:57.183Z"}
+{"level":"info","message":"GET /api/chain-actors/FqmahXUd8uAgrrFoRBRtmpjg3rQubiFJyALRWPZKe4Rt - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:57.189Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:23:57.541Z"}
+{"level":"info","message":"GET /api/chain-actors/6PjhxsRxP6QzcZoN2odBDC3jScpJjbzxfkbFUMm4WmFd - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:57.546Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:23:57.742Z"}
+{"level":"info","message":"GET /api/milled-rice - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:57.750Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:58.687Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:59.113Z"}
+{"level":"info","message":"GET /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:59.455Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:59.457Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:23:59.459Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:24:09.113Z"}
+{"level":"info","message":"POST /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:24:09.898Z"}
+{"level":"info","message":"Saved 1 riceBatches to file","service":"rice-supply-api","timestamp":"2025-09-11T01:24:11.360Z"}
+{"level":"info","message":"Rice batch created on blockchain: 58PjVu5bshoS2L4zbuqNSru3B3ztpQZT2RVnPHh6gfwM, tx: 5Bqf2oQqbTdEpA5iEUx32VGZr8Yo4msm76dyYue9cSW6SapAy1rANpxLCUtgDNmAvcPSL14vFxgciYt77fJpxG6b","service":"rice-supply-api","timestamp":"2025-09-11T01:24:11.360Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:24:11.366Z"}
+{"level":"info","message":"GET /api/production-seasons/3Reguei7S4VSjcM3XBoSWy1U1KB8PH1nXippxmKBgM3J - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:24:11.371Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:24:13.387Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:24:13.388Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:24:13.389Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:24:15.519Z"}
+{"level":"info","message":"GET /api/production-seasons/3Reguei7S4VSjcM3XBoSWy1U1KB8PH1nXippxmKBgM3J - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:24:15.525Z"}
+{"level":"info","message":"GET /api/milled-rice - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:24:18.088Z"}
+{"level":"info","message":"GET /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:24:19.048Z"}
+{"level":"info","message":"GET /api/chain-actors/FqmahXUd8uAgrrFoRBRtmpjg3rQubiFJyALRWPZKe4Rt - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:24:19.054Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:24:19.860Z"}
+{"level":"info","message":"GET /api/chain-actors/6PjhxsRxP6QzcZoN2odBDC3jScpJjbzxfkbFUMm4WmFd - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:24:19.865Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:24:20.004Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:24:20.079Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:24:23.369Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:24:33.370Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:24:43.369Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:24:53.369Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:25:03.368Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:25:13.368Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:25:23.368Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:25:33.368Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:25:43.369Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:25:53.368Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:26:03.369Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:26:13.369Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:26:22.871Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:26:22.872Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:26:22.876Z"}
+{"level":"info","message":"GET /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:26:26.348Z"}
+{"level":"info","message":"GET /api/chain-actors/FqmahXUd8uAgrrFoRBRtmpjg3rQubiFJyALRWPZKe4Rt - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:26:26.352Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:26:27.073Z"}
+{"level":"info","message":"GET /api/chain-actors/6PjhxsRxP6QzcZoN2odBDC3jScpJjbzxfkbFUMm4WmFd - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:26:27.078Z"}
+{"level":"info","message":"GET /api/milled-rice - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:26:27.091Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:26:27.251Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:26:27.564Z"}
+{"level":"info","message":"GET /api/production-seasons/3Reguei7S4VSjcM3XBoSWy1U1KB8PH1nXippxmKBgM3J - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:26:27.569Z"}
+{"level":"info","message":"GET /api/chain-transactions - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:26:28.028Z"}
+{"level":"info","message":"GET /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:26:30.357Z"}
+{"level":"info","message":"GET /api/chain-actors/FqmahXUd8uAgrrFoRBRtmpjg3rQubiFJyALRWPZKe4Rt - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:26:30.371Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:26:30.545Z"}
+{"level":"info","message":"GET /api/chain-actors/6PjhxsRxP6QzcZoN2odBDC3jScpJjbzxfkbFUMm4WmFd - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:26:30.550Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:26:30.733Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:26:30.739Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:26:32.862Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:26:42.863Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:26:52.862Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:27:02.863Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:27:12.863Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:27:22.864Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:27:32.863Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:27:42.863Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:27:52.863Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:28:02.864Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:28:12.864Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:28:22.863Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:28:32.863Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:28:42.863Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:28:52.863Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:29:02.863Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:29:12.863Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:29:22.862Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:29:32.864Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:29:42.863Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:29:52.863Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:30:02.862Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:30:12.863Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:30:22.862Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:30:32.864Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:30:42.863Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:30:52.864Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:31:02.863Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:31:12.864Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:31:22.862Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:31:32.862Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:31:42.863Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:31:51.453Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:31:51.455Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:31:51.459Z"}
+{"level":"info","message":"Loaded 2 chainActors from file","service":"rice-supply-api","timestamp":"2025-09-11T01:32:00.460Z"}
+{"level":"info","message":"Loaded 2 productionSeasons from file","service":"rice-supply-api","timestamp":"2025-09-11T01:32:00.462Z"}
+{"level":"info","message":"Loaded 1 riceBatches from file","service":"rice-supply-api","timestamp":"2025-09-11T01:32:00.462Z"}
+{"level":"warn","message":"Failed to load IDL, using direct blockchain access:","service":"rice-supply-api","timestamp":"2025-09-11T01:32:00.503Z"}
+{"level":"info","message":"Rice Supply Chain API server running on port 3001","service":"rice-supply-api","timestamp":"2025-09-11T01:32:00.528Z"}
+{"level":"info","message":"Environment: development","service":"rice-supply-api","timestamp":"2025-09-11T01:32:00.528Z"}
+{"level":"info","message":"Wallet balance: 0.8699408 SOL","service":"rice-supply-api","timestamp":"2025-09-11T01:32:01.010Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:32:01.448Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:32:11.445Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:32:22.177Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:32:32.176Z"}
+{"level":"info","message":"Loaded 2 chainActors from file","service":"rice-supply-api","timestamp":"2025-09-11T01:32:42.621Z"}
+{"level":"info","message":"Loaded 2 productionSeasons from file","service":"rice-supply-api","timestamp":"2025-09-11T01:32:42.623Z"}
+{"level":"info","message":"Loaded 1 riceBatches from file","service":"rice-supply-api","timestamp":"2025-09-11T01:32:42.623Z"}
+{"level":"warn","message":"Failed to load IDL, using direct blockchain access:","service":"rice-supply-api","timestamp":"2025-09-11T01:32:42.662Z"}
+{"level":"info","message":"Rice Supply Chain API server running on port 3001","service":"rice-supply-api","timestamp":"2025-09-11T01:32:42.689Z"}
+{"level":"info","message":"Environment: development","service":"rice-supply-api","timestamp":"2025-09-11T01:32:42.690Z"}
+{"level":"info","message":"Wallet balance: 0.8699408 SOL","service":"rice-supply-api","timestamp":"2025-09-11T01:32:43.198Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:32:52.180Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:33:02.177Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:33:12.178Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:33:55.177Z"}
+{"level":"info","message":"Loaded 2 chainActors from file","service":"rice-supply-api","timestamp":"2025-09-11T01:34:22.428Z"}
+{"level":"info","message":"Loaded 2 productionSeasons from file","service":"rice-supply-api","timestamp":"2025-09-11T01:34:22.430Z"}
+{"level":"info","message":"Loaded 1 riceBatches from file","service":"rice-supply-api","timestamp":"2025-09-11T01:34:22.431Z"}
+{"level":"warn","message":"Failed to load IDL, using direct blockchain access:","service":"rice-supply-api","timestamp":"2025-09-11T01:34:22.469Z"}
+{"level":"info","message":"Rice Supply Chain API server running on port 3001","service":"rice-supply-api","timestamp":"2025-09-11T01:34:22.493Z"}
+{"level":"info","message":"Environment: development","service":"rice-supply-api","timestamp":"2025-09-11T01:34:22.493Z"}
+{"level":"info","message":"Wallet balance: 0.8699408 SOL","service":"rice-supply-api","timestamp":"2025-09-11T01:34:23.028Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:34:55.182Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:34:58.652Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:34:58.654Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:34:58.656Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:35:08.645Z"}
+{"level":"info","message":"POST /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:35:12.052Z"}
+{"level":"info","message":"POST /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:35:17.925Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:35:18.646Z"}
+{"level":"info","message":"POST /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:35:24.317Z"}
+{"level":"info","message":"Saved 3 chainActors to file","service":"rice-supply-api","timestamp":"2025-09-11T01:35:24.319Z"}
+{"level":"info","message":"Chain actor created on blockchain: G2M2G46bXAFwbAxMSmQUywJaAxcpf8ynn7r4y9LWufMK, tx: file-persistence-1757554524319","service":"rice-supply-api","timestamp":"2025-09-11T01:35:24.320Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:35:28.644Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:35:38.644Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:35:48.644Z"}
+{"level":"info","message":"POST /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:35:50.588Z"}
+{"level":"info","message":"Saved 3 productionSeasons to file","service":"rice-supply-api","timestamp":"2025-09-11T01:35:50.590Z"}
+{"level":"info","message":"Production season created on blockchain: CiFZp6iuAPuAQG4aHkwEsYYCsScJgD734iPQpGbDs5Sy, tx: file-persistence-1757554550589","service":"rice-supply-api","timestamp":"2025-09-11T01:35:50.590Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:35:58.645Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:36:08.645Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:36:15.546Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:36:15.547Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:36:15.549Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:36:25.538Z"}
+{"level":"info","message":"POST /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:36:28.726Z"}
+{"level":"info","message":"POST /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:36:32.365Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:36:35.538Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:36:41.426Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:36:41.430Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:36:41.431Z"}
+{"level":"info","message":"POST /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:36:47.952Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:36:51.420Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:37:01.421Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:37:11.419Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:37:21.420Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:37:31.419Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:37:41.419Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:37:51.418Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:38:01.420Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:38:11.419Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:38:21.421Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:38:31.421Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:38:41.420Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:38:51.420Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:39:01.420Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:39:11.420Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:39:21.420Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:39:31.420Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:39:41.419Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:39:51.421Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:40:01.420Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:40:09.312Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:40:09.312Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:40:09.314Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:40:19.308Z"}
+{"level":"info","message":"POST /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:40:24.517Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:40:29.308Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:40:39.308Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:40:49.308Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:40:59.307Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:41:09.308Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:41:19.306Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:41:29.306Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:41:39.307Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:41:49.306Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:41:59.309Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:42:09.306Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:42:19.306Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:42:26.480Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:42:26.485Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:42:26.486Z"}
+{"level":"info","message":"POST /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:42:32.232Z"}
+{"level":"info","message":"Saved 4 chainActors to file","service":"rice-supply-api","timestamp":"2025-09-11T01:42:32.234Z"}
+{"level":"info","message":"Chain actor created on blockchain: C7YyGKcZ2d9ZovMeen6xhMpqSPbpmS6WvtEAvP3BX29C, tx: file-persistence-1757554952233","service":"rice-supply-api","timestamp":"2025-09-11T01:42:32.234Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:42:32.239Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:42:34.700Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:42:34.703Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:42:34.704Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:42:36.204Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:42:37.331Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:42:44.692Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:42:46.288Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:42:46.290Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:42:46.292Z"}
+{"level":"info","message":"Loaded 4 chainActors from file","service":"rice-supply-api","timestamp":"2025-09-11T01:42:56.001Z"}
+{"level":"info","message":"Loaded 3 productionSeasons from file","service":"rice-supply-api","timestamp":"2025-09-11T01:42:56.003Z"}
+{"level":"info","message":"Loaded 1 riceBatches from file","service":"rice-supply-api","timestamp":"2025-09-11T01:42:56.003Z"}
+{"level":"warn","message":"Failed to load IDL, using direct blockchain access:","service":"rice-supply-api","timestamp":"2025-09-11T01:42:56.043Z"}
+{"level":"info","message":"Rice Supply Chain API server running on port 3001","service":"rice-supply-api","timestamp":"2025-09-11T01:42:56.068Z"}
+{"level":"info","message":"Environment: development","service":"rice-supply-api","timestamp":"2025-09-11T01:42:56.068Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:42:56.274Z"}
+{"level":"info","message":"Wallet balance: 0.8699408 SOL","service":"rice-supply-api","timestamp":"2025-09-11T01:42:56.803Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:43:00.134Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:43:00.136Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:43:00.138Z"}
+{"level":"info","message":"GET /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:43:01.830Z"}
+{"level":"info","message":"GET /api/chain-actors/FqmahXUd8uAgrrFoRBRtmpjg3rQubiFJyALRWPZKe4Rt - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:43:01.841Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:43:02.615Z"}
+{"level":"info","message":"GET /api/chain-actors/6PjhxsRxP6QzcZoN2odBDC3jScpJjbzxfkbFUMm4WmFd - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:43:02.620Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:43:02.814Z"}
+{"level":"info","message":"GET /api/chain-actors/G2M2G46bXAFwbAxMSmQUywJaAxcpf8ynn7r4y9LWufMK - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:43:02.820Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:43:03.043Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:43:10.125Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:43:20.125Z"}
+{"level":"info","message":"GET /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:43:23.020Z"}
+{"level":"info","message":"GET /api/chain-actors/FqmahXUd8uAgrrFoRBRtmpjg3rQubiFJyALRWPZKe4Rt - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:43:23.027Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:43:24.014Z"}
+{"level":"info","message":"GET /api/chain-actors/6PjhxsRxP6QzcZoN2odBDC3jScpJjbzxfkbFUMm4WmFd - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:43:24.020Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:43:24.213Z"}
+{"level":"info","message":"GET /api/chain-actors/G2M2G46bXAFwbAxMSmQUywJaAxcpf8ynn7r4y9LWufMK - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:43:24.219Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:43:25.509Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:43:30.124Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:43:40.124Z"}
+{"level":"info","message":"POST /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:43:42.769Z"}
+{"level":"info","message":"Saved 4 productionSeasons to file","service":"rice-supply-api","timestamp":"2025-09-11T01:43:42.773Z"}
+{"level":"info","message":"Production season created on blockchain: CTYXzEx2CP8kAJSg9gF5LB9ohTf6WSMCYB4WjMKYtQ7f, tx: file-persistence-1757555022772","service":"rice-supply-api","timestamp":"2025-09-11T01:43:42.773Z"}
+{"level":"info","message":"GET /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:43:42.779Z"}
+{"level":"info","message":"GET /api/chain-actors/FqmahXUd8uAgrrFoRBRtmpjg3rQubiFJyALRWPZKe4Rt - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:43:42.786Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:43:43.273Z"}
+{"level":"info","message":"GET /api/chain-actors/6PjhxsRxP6QzcZoN2odBDC3jScpJjbzxfkbFUMm4WmFd - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:43:43.279Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:43:43.391Z"}
+{"level":"info","message":"GET /api/chain-actors/G2M2G46bXAFwbAxMSmQUywJaAxcpf8ynn7r4y9LWufMK - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:43:43.396Z"}
+{"level":"info","message":"GET /api/chain-actors/6PjhxsRxP6QzcZoN2odBDC3jScpJjbzxfkbFUMm4WmFd - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:43:43.573Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:43:43.682Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:43:50.125Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:43:56.920Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:43:56.921Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:43:56.924Z"}
+{"level":"info","message":"Loaded 4 chainActors from file","service":"rice-supply-api","timestamp":"2025-09-11T01:44:01.328Z"}
+{"level":"info","message":"Loaded 4 productionSeasons from file","service":"rice-supply-api","timestamp":"2025-09-11T01:44:01.330Z"}
+{"level":"info","message":"Loaded 1 riceBatches from file","service":"rice-supply-api","timestamp":"2025-09-11T01:44:01.330Z"}
+{"level":"warn","message":"Failed to load IDL, using direct blockchain access:","service":"rice-supply-api","timestamp":"2025-09-11T01:44:01.368Z"}
+{"level":"info","message":"Rice Supply Chain API server running on port 3001","service":"rice-supply-api","timestamp":"2025-09-11T01:44:01.391Z"}
+{"level":"info","message":"Environment: development","service":"rice-supply-api","timestamp":"2025-09-11T01:44:01.392Z"}
+{"level":"info","message":"Wallet balance: 0.8699408 SOL","service":"rice-supply-api","timestamp":"2025-09-11T01:44:02.113Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:44:03.619Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:44:03.622Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:44:03.623Z"}
+{"level":"info","message":"GET /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:44:05.606Z"}
+{"level":"info","message":"GET /api/chain-actors/FqmahXUd8uAgrrFoRBRtmpjg3rQubiFJyALRWPZKe4Rt - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:44:05.612Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:44:05.795Z"}
+{"level":"info","message":"GET /api/chain-actors/6PjhxsRxP6QzcZoN2odBDC3jScpJjbzxfkbFUMm4WmFd - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:44:05.801Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:44:05.990Z"}
+{"level":"info","message":"GET /api/chain-actors/G2M2G46bXAFwbAxMSmQUywJaAxcpf8ynn7r4y9LWufMK - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:44:05.999Z"}
+{"level":"info","message":"GET /api/chain-actors/6PjhxsRxP6QzcZoN2odBDC3jScpJjbzxfkbFUMm4WmFd - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:44:06.106Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:44:06.203Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:44:13.603Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:44:23.604Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:44:33.603Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:44:43.601Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:44:53.601Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:45:03.603Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:45:13.603Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:45:23.602Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:45:33.601Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:45:43.602Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:45:53.602Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:46:03.602Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:46:13.602Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:46:23.602Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:46:33.602Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:46:43.602Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:46:53.601Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:47:03.602Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:47:13.602Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:47:23.601Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:47:33.601Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:47:43.601Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:47:53.602Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:48:03.602Z"}
+{"level":"info","message":"Loaded 4 chainActors from file","service":"rice-supply-api","timestamp":"2025-09-11T01:59:03.663Z"}
+{"level":"info","message":"Loaded 4 productionSeasons from file","service":"rice-supply-api","timestamp":"2025-09-11T01:59:03.665Z"}
+{"level":"info","message":"Loaded 1 riceBatches from file","service":"rice-supply-api","timestamp":"2025-09-11T01:59:03.665Z"}
+{"level":"warn","message":"Failed to load IDL, using direct blockchain access:","service":"rice-supply-api","timestamp":"2025-09-11T01:59:03.705Z"}
+{"level":"info","message":"Rice Supply Chain API server running on port 3001","service":"rice-supply-api","timestamp":"2025-09-11T01:59:03.728Z"}
+{"level":"info","message":"Environment: development","service":"rice-supply-api","timestamp":"2025-09-11T01:59:03.728Z"}
+{"level":"info","message":"Wallet balance: 0.8699408 SOL","service":"rice-supply-api","timestamp":"2025-09-11T01:59:04.214Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:18.148Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:19.527Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:19.529Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:19.531Z"}
+{"level":"info","message":"GET /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:21.542Z"}
+{"level":"info","message":"GET /api/chain-actors/FqmahXUd8uAgrrFoRBRtmpjg3rQubiFJyALRWPZKe4Rt - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:21.547Z"}
+{"level":"info","message":"GET /api/milled-rice - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:21.981Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:59:22.435Z"}
+{"level":"info","message":"GET /api/chain-actors/6PjhxsRxP6QzcZoN2odBDC3jScpJjbzxfkbFUMm4WmFd - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:22.440Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:22.445Z"}
+{"level":"info","message":"GET /api/production-seasons/3Reguei7S4VSjcM3XBoSWy1U1KB8PH1nXippxmKBgM3J - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:22.458Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:59:22.736Z"}
+{"level":"info","message":"GET /api/chain-actors/G2M2G46bXAFwbAxMSmQUywJaAxcpf8ynn7r4y9LWufMK - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:22.744Z"}
+{"level":"info","message":"GET /api/chain-actors/6PjhxsRxP6QzcZoN2odBDC3jScpJjbzxfkbFUMm4WmFd - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:23.052Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:59:23.351Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:23.495Z"}
+{"level":"info","message":"GET /api/milled-rice - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:24.197Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:25.941Z"}
+{"level":"info","message":"GET /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:29.197Z"}
+{"level":"info","message":"GET /api/chain-actors/FqmahXUd8uAgrrFoRBRtmpjg3rQubiFJyALRWPZKe4Rt - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:29.203Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:29.516Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:29.949Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:59:30.113Z"}
+{"level":"info","message":"GET /api/chain-actors/6PjhxsRxP6QzcZoN2odBDC3jScpJjbzxfkbFUMm4WmFd - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:30.117Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:59:30.216Z"}
+{"level":"info","message":"GET /api/chain-actors/G2M2G46bXAFwbAxMSmQUywJaAxcpf8ynn7r4y9LWufMK - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:30.221Z"}
+{"level":"info","message":"GET /api/chain-actors/6PjhxsRxP6QzcZoN2odBDC3jScpJjbzxfkbFUMm4WmFd - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:30.421Z"}
+{"level":"warn","message":"Failed to retrieve from blockchain, checking mock data: Unexpected end of JSON input","service":"rice-supply-api","timestamp":"2025-09-11T01:59:30.520Z"}
+{"level":"info","message":"GET /api/chain-transactions - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:32.109Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:32.445Z"}
+{"level":"info","message":"GET /api/production-seasons/3Reguei7S4VSjcM3XBoSWy1U1KB8PH1nXippxmKBgM3J - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:32.449Z"}
+{"level":"info","message":"GET /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:33.045Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:33.046Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:33.048Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:39.516Z"}
+{"level":"info","message":"POST /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:40.701Z"}
+{"level":"info","message":"Saved 2 riceBatches to file","service":"rice-supply-api","timestamp":"2025-09-11T01:59:41.781Z"}
+{"level":"info","message":"Rice batch created on blockchain: 4mQLNYpJP6sqfo4GA3BYFdKQdy11bCtGFLvAAfhxvCGD, tx: 3NiSQYHBKNai4GnndyETNNd5gouxnk4bjy2qBadVToD7rrkfZtUy156itWVmfcaBKqfcef5NpiX6vGg8ZSLyjkpj","service":"rice-supply-api","timestamp":"2025-09-11T01:59:41.781Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:41.787Z"}
+{"level":"info","message":"GET /api/production-seasons/3Reguei7S4VSjcM3XBoSWy1U1KB8PH1nXippxmKBgM3J - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:41.791Z"}
+{"level":"info","message":"GET /api/production-seasons/3Reguei7S4VSjcM3XBoSWy1U1KB8PH1nXippxmKBgM3J - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:41.796Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:43.715Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:43.716Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:43.718Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:45.324Z"}
+{"level":"info","message":"GET /api/production-seasons/3Reguei7S4VSjcM3XBoSWy1U1KB8PH1nXippxmKBgM3J - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:45.329Z"}
+{"level":"info","message":"GET /api/production-seasons/3Reguei7S4VSjcM3XBoSWy1U1KB8PH1nXippxmKBgM3J - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:45.334Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T01:59:53.703Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:00:03.703Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:00:14.177Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:00:24.177Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:00:34.177Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:00:44.177Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:00:54.177Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:01:04.179Z"}
+{"level":"info","message":"Loaded 4 chainActors from file","service":"rice-supply-api","timestamp":"2025-09-11T02:01:24.359Z"}
+{"level":"info","message":"Loaded 4 productionSeasons from file","service":"rice-supply-api","timestamp":"2025-09-11T02:01:24.361Z"}
+{"level":"info","message":"Loaded 2 riceBatches from file","service":"rice-supply-api","timestamp":"2025-09-11T02:01:24.361Z"}
+{"level":"warn","message":"Failed to load IDL, using direct blockchain access:","service":"rice-supply-api","timestamp":"2025-09-11T02:01:24.402Z"}
+{"level":"info","message":"Rice Supply Chain API server running on port 3001","service":"rice-supply-api","timestamp":"2025-09-11T02:01:24.427Z"}
+{"level":"info","message":"Environment: development","service":"rice-supply-api","timestamp":"2025-09-11T02:01:24.427Z"}
+{"level":"info","message":"Wallet balance: 500000015 SOL","service":"rice-supply-api","timestamp":"2025-09-11T02:01:24.450Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:01:55.182Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:02:03.165Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:02:03.169Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:02:03.170Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:02:13.177Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:02:23.179Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:02:33.177Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:02:43.176Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:02:53.177Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:03:03.177Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:03:55.177Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:03:58.797Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:03:58.799Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:03:58.800Z"}
+{"level":"info","message":"GET /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:04:08.275Z"}
+{"level":"info","message":"GET /api/chain-actors/FqmahXUd8uAgrrFoRBRtmpjg3rQubiFJyALRWPZKe4Rt - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:04:08.279Z"}
+{"level":"info","message":"GET /api/chain-actors/6PjhxsRxP6QzcZoN2odBDC3jScpJjbzxfkbFUMm4WmFd - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:04:08.288Z"}
+{"level":"info","message":"GET /api/chain-actors/G2M2G46bXAFwbAxMSmQUywJaAxcpf8ynn7r4y9LWufMK - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:04:08.295Z"}
+{"level":"info","message":"GET /api/chain-actors/6PjhxsRxP6QzcZoN2odBDC3jScpJjbzxfkbFUMm4WmFd - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:04:08.302Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:04:08.787Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:04:10.129Z"}
+{"level":"info","message":"POST /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:04:16.431Z"}
+{"level":"info","message":"Saved 5 chainActors to file","service":"rice-supply-api","timestamp":"2025-09-11T02:04:16.448Z"}
+{"level":"info","message":"Chain actor created on blockchain: BLypKWA7HBTocjW9NMv3Dp6zwL1XN31vaPjqHBmoe28b, tx: 3CJF6LBKk4XsopdUVhtzSxWT6eTyEm3w67tnM2LTX6YJsKcZye4oxcwDSZxmQ85M6e5i3LVj5LomcRVJatLBiCBE","service":"rice-supply-api","timestamp":"2025-09-11T02:04:16.448Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:04:16.453Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:04:18.787Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:04:19.916Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:04:19.918Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:04:19.920Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:04:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:04:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:04:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:04:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:05:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:05:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:05:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:05:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:05:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:05:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:06:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:06:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:06:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:06:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:06:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:06:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:07:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:07:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:07:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:07:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:07:49.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:07:59.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:08:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:08:19.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:08:29.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:08:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:08:49.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:08:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:09:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:09:19.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:09:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:09:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:09:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:09:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:10:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:10:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:10:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:10:39.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:10:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:10:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:11:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:11:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:11:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:11:39.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:11:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:11:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:12:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:12:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:12:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:12:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:12:49.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:12:59.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:13:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:13:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:13:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:13:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:13:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:13:59.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:14:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:14:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:14:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:14:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:14:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:14:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:15:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:15:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:15:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:15:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:15:49.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:15:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:16:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:16:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:16:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:16:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:16:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:16:59.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:17:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:17:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:17:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:17:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:17:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:17:59.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:18:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:18:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:18:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:18:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:18:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:18:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:19:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:19:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:19:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:19:39.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:19:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:19:59.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:20:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:20:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:20:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:20:39.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:20:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:20:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:21:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:21:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:21:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:21:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:21:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:21:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:22:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:22:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:22:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:22:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:22:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:22:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:23:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:23:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:23:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:23:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:23:49.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:23:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:24:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:24:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:24:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:24:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:24:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:24:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:25:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:25:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:25:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:25:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:25:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:25:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:26:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:26:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:26:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:26:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:26:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:26:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:27:09.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:27:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:27:29.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:27:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:27:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:27:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:28:09.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:28:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:28:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:28:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:28:49.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:28:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:29:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:29:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:29:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:29:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:29:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:29:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:30:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:30:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:30:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:30:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:30:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:30:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:31:09.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:31:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:31:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:31:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:31:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:31:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:32:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:32:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:32:29.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:32:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:32:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:32:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:33:09.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:33:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:33:29.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:33:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:33:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:33:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:34:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:34:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:34:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:34:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:34:49.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:34:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:35:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:35:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:35:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:35:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:35:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:35:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:36:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:36:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:36:29.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:36:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:36:49.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:36:59.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:37:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:37:19.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:37:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:37:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:37:49.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:37:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:38:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:38:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:38:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:38:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:38:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:38:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:39:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:39:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:39:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:39:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:39:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:39:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:40:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:40:19.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:40:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:40:39.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:40:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:40:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:41:09.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:41:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:41:29.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:41:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:41:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:41:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:42:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:42:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:42:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:42:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:42:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:42:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:43:09.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:43:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:43:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:43:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:43:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:43:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:44:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:44:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:44:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:44:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:44:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:44:59.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:45:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:45:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:45:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:45:39.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:45:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:45:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:46:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:46:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:46:29.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:46:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:46:49.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:46:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:47:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:47:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:47:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:47:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:47:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:47:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:48:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:48:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:48:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:48:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:48:49.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:48:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:49:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:49:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:49:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:49:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:49:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:49:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:50:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:50:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:50:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:50:39.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:50:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:50:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:51:09.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:51:19.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:51:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:51:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:51:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:51:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:52:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:52:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:52:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:52:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:52:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:52:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:53:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:53:19.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:53:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:53:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:53:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:53:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:54:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:54:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:54:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:54:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:54:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:54:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:55:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:55:19.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:55:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:55:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:55:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:55:59.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:56:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:56:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:56:29.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:56:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:56:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:56:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:57:09.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:57:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:57:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:57:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:57:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:57:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:58:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:58:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:58:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:58:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:58:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:58:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:59:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:59:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:59:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:59:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:59:49.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T02:59:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:00:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:00:19.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:00:29.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:00:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:00:49.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:00:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:01:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:01:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:01:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:01:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:01:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:01:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:02:09.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:02:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:02:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:02:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:02:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:02:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:03:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:03:19.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:03:29.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:03:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:03:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:03:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:04:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:04:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:04:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:04:39.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:04:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:04:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:05:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:05:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:05:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:05:39.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:05:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:05:59.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:06:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:06:19.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:06:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:06:39.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:06:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:06:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:07:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:07:19.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:07:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:07:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:07:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:07:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:08:09.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:08:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:08:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:08:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:08:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:08:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:09:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:09:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:09:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:09:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:09:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:09:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:10:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:10:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:10:29.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:10:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:10:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:10:59.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:11:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:11:19.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:11:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:11:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:11:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:11:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:12:09.898Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:12:19.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:12:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:12:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:12:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:12:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:13:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:13:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:13:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:13:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:13:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:13:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:14:09.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:14:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:14:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:14:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:14:49.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:14:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:15:09.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:15:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:15:29.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:15:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:15:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:15:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:16:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:16:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:16:29.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:16:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:16:49.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:16:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:17:09.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:17:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:17:29.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:17:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:17:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:17:59.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:18:09.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:18:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:18:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:18:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:18:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:18:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:19:09.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:19:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:19:29.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:19:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:19:49.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:19:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:20:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:20:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:20:29.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:20:39.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:20:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:20:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:21:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:21:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:21:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:21:39.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:21:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:21:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:22:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:22:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:22:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:22:39.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:22:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:22:59.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:23:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:23:19.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:23:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:23:39.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:23:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:23:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:24:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:24:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:24:29.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:24:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:24:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:24:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:25:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:25:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:25:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:25:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:25:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:25:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:26:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:26:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:26:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:26:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:26:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:26:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:27:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:27:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:27:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:27:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:27:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:27:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:28:09.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:28:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:28:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:28:39.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:28:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:28:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:29:09.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:29:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:29:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:29:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:29:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:29:59.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:30:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:30:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:30:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:30:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:30:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:30:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:31:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:31:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:31:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:31:39.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:31:49.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:31:59.897Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:32:09.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:32:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:32:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:32:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:32:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:32:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:33:09.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:33:19.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:33:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:33:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:33:49.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:33:59.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:34:09.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:34:19.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:34:29.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:34:39.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:34:49.896Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:34:59.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:35:09.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:35:19.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:35:29.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:35:39.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:35:49.899Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:35:59.895Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:03.974Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:03.975Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:03.979Z"}
+{"level":"info","message":"GET /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:05.117Z"}
+{"level":"info","message":"GET /api/chain-actors/FqmahXUd8uAgrrFoRBRtmpjg3rQubiFJyALRWPZKe4Rt - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:05.121Z"}
+{"level":"info","message":"GET /api/chain-actors/6PjhxsRxP6QzcZoN2odBDC3jScpJjbzxfkbFUMm4WmFd - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:05.128Z"}
+{"level":"info","message":"GET /api/chain-actors/G2M2G46bXAFwbAxMSmQUywJaAxcpf8ynn7r4y9LWufMK - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:05.135Z"}
+{"level":"info","message":"GET /api/chain-actors/6PjhxsRxP6QzcZoN2odBDC3jScpJjbzxfkbFUMm4WmFd - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:05.141Z"}
+{"level":"info","message":"GET /api/milled-rice - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:05.876Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:06.924Z"}
+{"level":"info","message":"GET /api/production-seasons/3Reguei7S4VSjcM3XBoSWy1U1KB8PH1nXippxmKBgM3J - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:06.929Z"}
+{"level":"info","message":"GET /api/production-seasons/3Reguei7S4VSjcM3XBoSWy1U1KB8PH1nXippxmKBgM3J - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:06.932Z"}
+{"level":"info","message":"GET /api/chain-transactions - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:07.310Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:10.701Z"}
+{"level":"info","message":"GET /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:10.705Z"}
+{"level":"info","message":"GET /api/chain-transactions - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:10.709Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:13.968Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:15.358Z"}
+{"level":"info","message":"GET /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:15.363Z"}
+{"level":"info","message":"GET /api/chain-transactions - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:15.367Z"}
+{"level":"info","message":"GET /api/chain-transactions - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:17.291Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:18.435Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:18.436Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:18.438Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:23.969Z"}
+{"level":"info","message":"POST /api/chain-transactions - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:30.215Z"}
+{"level":"info","message":"Saved 1 chainTransactions to file","service":"rice-supply-api","timestamp":"2025-09-11T03:36:30.226Z"}
+{"level":"info","message":"Chain transaction created on blockchain: CRi3khzKnL97TJoqX77RBF84ATRDUWg93YqbAmhVDh4w, tx: 4gkCo7BqKgDu2GDvrVJRjhWUTgWrPhZ9SoJJ5Vtpt9wDEjeqguf8Dt3HRdZzxqRwy9KMnmkb4iPrZBMk5vNvALro","service":"rice-supply-api","timestamp":"2025-09-11T03:36:30.226Z"}
+{"level":"info","message":"GET /api/chain-transactions - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:30.232Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:33.969Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:36.005Z"}
+{"level":"info","message":"GET /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:36.009Z"}
+{"level":"info","message":"GET /api/chain-transactions - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:36.013Z"}
+{"level":"info","message":"GET /api/rice-batches - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:37.903Z"}
+{"level":"info","message":"GET /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:37.907Z"}
+{"level":"info","message":"GET /api/chain-transactions - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:37.911Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:43.969Z"}
+{"level":"info","message":"GET /api/chain-actors - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:44.251Z"}
+{"level":"info","message":"GET /api/production-seasons - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:45.050Z"}
+{"level":"info","message":"GET /api/chain-actors/FqmahXUd8uAgrrFoRBRtmpjg3rQubiFJyALRWPZKe4Rt - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:45.056Z"}
+{"level":"info","message":"GET /api/chain-actors/6PjhxsRxP6QzcZoN2odBDC3jScpJjbzxfkbFUMm4WmFd - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:45.061Z"}
+{"level":"info","message":"GET /api/chain-actors/G2M2G46bXAFwbAxMSmQUywJaAxcpf8ynn7r4y9LWufMK - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:45.067Z"}
+{"level":"info","message":"GET /api/chain-actors/6PjhxsRxP6QzcZoN2odBDC3jScpJjbzxfkbFUMm4WmFd - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:45.073Z"}
+{"level":"info","message":"GET /api/milled-rice - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:45.522Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:36:53.970Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:37:03.969Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:37:13.969Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:37:23.969Z"}
+{"level":"info","message":"Loaded 5 chainActors from file","service":"rice-supply-api","timestamp":"2025-09-11T03:37:45.229Z"}
+{"level":"info","message":"Loaded 4 productionSeasons from file","service":"rice-supply-api","timestamp":"2025-09-11T03:37:45.231Z"}
+{"level":"info","message":"Loaded 2 riceBatches from file","service":"rice-supply-api","timestamp":"2025-09-11T03:37:45.231Z"}
+{"level":"info","message":"Loaded 1 chainTransactions from file","service":"rice-supply-api","timestamp":"2025-09-11T03:37:45.231Z"}
+{"level":"warn","message":"Failed to load IDL, using direct blockchain access:","service":"rice-supply-api","timestamp":"2025-09-11T03:37:45.273Z"}
+{"level":"info","message":"Solana service initialized with network: devnet","service":"rice-supply-api","timestamp":"2025-09-11T03:37:45.293Z"}
+{"level":"info","message":"Rice Supply Chain API server running on port 3001","service":"rice-supply-api","timestamp":"2025-09-11T03:37:45.302Z"}
+{"level":"info","message":"Environment: development","service":"rice-supply-api","timestamp":"2025-09-11T03:37:45.302Z"}
+{"level":"info","message":"Network: devnet - Wallet balance: 0.8689358 SOL","service":"rice-supply-api","timestamp":"2025-09-11T03:37:46.260Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:37:53.975Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:38:03.970Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:38:13.970Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:38:23.971Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:38:33.969Z"}
+{"level":"info","message":"GET /health - ::1","service":"rice-supply-api","timestamp":"2025-09-11T03:38:43.970Z"}

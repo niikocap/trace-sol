@@ -1,6 +1,6 @@
 use anchor_lang::prelude::*;
 
-declare_id!("816ZRCrPkSAzEyoPvvLiKcfJhvFkqPknK1JeM8MEtgR8");
+declare_id!("Fj91LUA1dkxzpBsbZgpRNrnN6aEs4ZoryUDH89iB6757");
 
 #[program]
 pub mod rice_supply_chain {
@@ -542,8 +542,15 @@ pub enum TransactionStatus {
 
 // Context Structs
 #[derive(Accounts)]
+#[instruction(actor_seed: String)]
 pub struct CreateChainActor<'info> {
-    #[account(init, payer = user, space = 8 + 32 + 64 + 128 + 32 + 32 + 8 + 1 + 8 + 64 + 1 + 64 + 8 + 8)]
+    #[account(
+        init,
+        payer = user,
+        space = 8 + 32 + 64 + 128 + 32 + 32 + 8 + 1 + 8 + 64 + 1 + 64 + 64 + 8 + 8,
+        seeds = [b"chain_actor", actor_seed.as_bytes()],
+        bump
+    )]
     pub chain_actor: Account<'info, ChainActor>,
     #[account(mut)]
     pub user: Signer<'info>,
@@ -551,22 +558,39 @@ pub struct CreateChainActor<'info> {
 }
 
 #[derive(Accounts)]
+#[instruction(actor_seed: String)]
 pub struct UpdateChainActor<'info> {
-    #[account(mut)]
+    #[account(
+        mut,
+        seeds = [b"chain_actor", actor_seed.as_bytes()],
+        bump
+    )]
     pub chain_actor: Account<'info, ChainActor>,
     pub user: Signer<'info>,
 }
 
 #[derive(Accounts)]
+#[instruction(actor_seed: String)]
 pub struct DeleteChainActor<'info> {
-    #[account(mut)]
+    #[account(
+        mut,
+        seeds = [b"chain_actor", actor_seed.as_bytes()],
+        bump
+    )]
     pub chain_actor: Account<'info, ChainActor>,
     pub user: Signer<'info>,
 }
 
 #[derive(Accounts)]
+#[instruction(season_seed: String)]
 pub struct CreateProductionSeason<'info> {
-    #[account(init, payer = user, space = 8 + 32 + 32 + 64 + 8 + 64 + 64 + 8 + 64 + 64 + 64 + 8 + 8 + 4 + 1 + 1 + 32 + 8 + 8)]
+    #[account(
+        init,
+        payer = user,
+        space = 8 + 32 + 32 + 64 + 8 + 64 + 64 + 8 + 64 + 64 + 64 + 8 + 8 + 4 + 1 + 1 + 32 + 64 + 8 + 8,
+        seeds = [b"production_season", season_seed.as_bytes()],
+        bump
+    )]
     pub production_season: Account<'info, ProductionSeason>,
     #[account(mut)]
     pub user: Signer<'info>,
@@ -574,22 +598,39 @@ pub struct CreateProductionSeason<'info> {
 }
 
 #[derive(Accounts)]
+#[instruction(season_seed: String)]
 pub struct UpdateProductionSeason<'info> {
-    #[account(mut)]
+    #[account(
+        mut,
+        seeds = [b"production_season", season_seed.as_bytes()],
+        bump
+    )]
     pub production_season: Account<'info, ProductionSeason>,
     pub user: Signer<'info>,
 }
 
 #[derive(Accounts)]
+#[instruction(season_seed: String)]
 pub struct DeleteProductionSeason<'info> {
-    #[account(mut)]
+    #[account(
+        mut,
+        seeds = [b"production_season", season_seed.as_bytes()],
+        bump
+    )]
     pub production_season: Account<'info, ProductionSeason>,
     pub user: Signer<'info>,
 }
 
 #[derive(Accounts)]
+#[instruction(milling_seed: String)]
 pub struct CreateMilledRice<'info> {
-    #[account(init, payer = user, space = 8 + 32 + 32 + 64 + 64 + 64 + 128 + 4 + 4 + 8 + 8)]
+    #[account(
+        init,
+        payer = user,
+        space = 8 + 32 + 32 + 64 + 64 + 64 + 128 + 4 + 4 + 64 + 8 + 8,
+        seeds = [b"milled_rice", milling_seed.as_bytes()],
+        bump
+    )]
     pub milled_rice: Account<'info, MilledRice>,
     #[account(mut)]
     pub user: Signer<'info>,
@@ -597,15 +638,27 @@ pub struct CreateMilledRice<'info> {
 }
 
 #[derive(Accounts)]
+#[instruction(milling_seed: String)]
 pub struct UpdateMilledRice<'info> {
-    #[account(mut)]
+    #[account(
+        mut,
+        seeds = [b"milled_rice", milling_seed.as_bytes()],
+        bump
+    )]
     pub milled_rice: Account<'info, MilledRice>,
     pub user: Signer<'info>,
 }
 
 #[derive(Accounts)]
+#[instruction(batch_seed: String)]
 pub struct CreateRiceBatch<'info> {
-    #[account(init, payer = user, space = 8 + 32 + 32 + 1 + 4 + 4 + 64 + 8 + 8)]
+    #[account(
+        init,
+        payer = user,
+        space = 8 + 32 + 32 + 1 + 4 + 4 + 64 + 64 + 8 + 8,
+        seeds = [b"rice_batch", batch_seed.as_bytes()],
+        bump
+    )]
     pub rice_batch: Account<'info, RiceBatch>,
     #[account(mut)]
     pub user: Signer<'info>,
@@ -613,22 +666,39 @@ pub struct CreateRiceBatch<'info> {
 }
 
 #[derive(Accounts)]
+#[instruction(batch_seed: String)]
 pub struct UpdateRiceBatch<'info> {
-    #[account(mut)]
+    #[account(
+        mut,
+        seeds = [b"rice_batch", batch_seed.as_bytes()],
+        bump
+    )]
     pub rice_batch: Account<'info, RiceBatch>,
     pub user: Signer<'info>,
 }
 
 #[derive(Accounts)]
+#[instruction(batch_seed: String)]
 pub struct DeleteRiceBatch<'info> {
-    #[account(mut)]
+    #[account(
+        mut,
+        seeds = [b"rice_batch", batch_seed.as_bytes()],
+        bump
+    )]
     pub rice_batch: Account<'info, RiceBatch>,
     pub user: Signer<'info>,
 }
 
 #[derive(Accounts)]
+#[instruction(transaction_seed: String)]
 pub struct CreateChainTransaction<'info> {
-    #[account(init, payer = user, space = 8 + 32 + 32 + 32 + 128 + 8 + 1 + 64 + 64 + 64 + 64 + 1 + 8 + 8)]
+    #[account(
+        init,
+        payer = user,
+        space = 8 + 32 + 32 + 32 + 128 + 8 + 1 + 64 + 64 + 64 + 64 + 1 + 64 + 8 + 8,
+        seeds = [b"chain_transaction", transaction_seed.as_bytes()],
+        bump
+    )]
     pub chain_transaction: Account<'info, ChainTransaction>,
     #[account(mut)]
     pub user: Signer<'info>,
@@ -636,15 +706,25 @@ pub struct CreateChainTransaction<'info> {
 }
 
 #[derive(Accounts)]
+#[instruction(transaction_seed: String)]
 pub struct UpdateChainTransaction<'info> {
-    #[account(mut)]
+    #[account(
+        mut,
+        seeds = [b"chain_transaction", transaction_seed.as_bytes()],
+        bump
+    )]
     pub chain_transaction: Account<'info, ChainTransaction>,
     pub user: Signer<'info>,
 }
 
 #[derive(Accounts)]
+#[instruction(transaction_seed: String)]
 pub struct DeleteChainTransaction<'info> {
-    #[account(mut)]
+    #[account(
+        mut,
+        seeds = [b"chain_transaction", transaction_seed.as_bytes()],
+        bump
+    )]
     pub chain_transaction: Account<'info, ChainTransaction>,
     pub user: Signer<'info>,
 }

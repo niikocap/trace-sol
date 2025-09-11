@@ -1,4 +1,4 @@
-const { Connection, PublicKey, Keypair, SystemProgram } = require('@solana/web3.js');
+const { Connection, PublicKey, Keypair, SystemProgram, Transaction } = require('@solana/web3.js');
 const { Program, AnchorProvider, Wallet, BN } = require('@coral-xyz/anchor');
 const bs58 = require('bs58');
 const fs = require('fs');
@@ -28,9 +28,31 @@ class SolanaService {
     this.loadFromFile();
     
     try {
-      const rpcUrl = process.env.SOLANA_RPC_URL || 'https://api.devnet.solana.com';
-      this.connection = new Connection(rpcUrl, 'confirmed');
-      this.programId = new PublicKey(process.env.SOLANA_PROGRAM_ID);
+      // Network configuration based on environment
+      const network = process.env.SOLANA_NETWORK || 'devnet';
+      let rpcUrl;
+      
+      switch (network) {
+        case 'localnet':
+          rpcUrl = 'http://localhost:8899';
+          break;
+        case 'devnet':
+          rpcUrl = 'https://api.devnet.solana.com';
+          break;
+        case 'mainnet':
+          rpcUrl = 'https://api.mainnet-beta.solana.com';
+          break;
+        case 'file-only':
+          rpcUrl = null; // No blockchain connection
+          break;
+        default:
+          rpcUrl = 'https://api.devnet.solana.com';
+          logger.warn(`Unknown network ${network}, defaulting to devnet`);
+      }
+      
+      this.network = network;
+      this.connection = rpcUrl ? new Connection(rpcUrl, 'confirmed') : null;
+      this.programId = process.env.SOLANA_PROGRAM_ID ? new PublicKey(process.env.SOLANA_PROGRAM_ID) : null;
       
       // Initialize wallet from private key
       if (process.env.SOLANA_WALLET_PRIVATE_KEY) {
@@ -61,13 +83,21 @@ class SolanaService {
         commitment: 'confirmed'
       });
       
-      // For now, we'll use raw Solana transactions instead of Anchor Program
-      // This allows us to interact with the blockchain directly
-      this.program = null; // Disable Anchor program for now
-      logger.info('Solana service initialized with direct blockchain access (no Anchor program)');
+      // Load the IDL and initialize the Anchor program
+      try {
+        const idlPath = path.join(__dirname, './rice_supply_chain_deployed.json');
+        const idl = JSON.parse(fs.readFileSync(idlPath, 'utf8'));
+        this.program = new Program(idl, this.programId, this.provider);
+        logger.info('Anchor program initialized successfully');
+      } catch (idlError) {
+        logger.warn('Failed to load IDL, using direct blockchain access:', idlError.message);
+        this.program = null;
+      }
       
-      // Test connection to devnet asynchronously
+      // Test connection asynchronously
       this.testConnection();
+      
+      logger.info(`Solana service initialized with network: ${this.network}`);
     } catch (error) {
       logger.error('Failed to initialize Solana service:', error);
       // Initialize with minimal setup for development
@@ -80,8 +110,13 @@ class SolanaService {
 
   async testConnection() {
     try {
+      if (!this.connection || this.network === 'file-only') {
+        logger.info(`Network: ${this.network} - File persistence mode (no blockchain connection)`);
+        return;
+      }
+      
       const balance = await this.connection.getBalance(this.wallet.publicKey);
-      logger.info(`Wallet balance: ${balance / 1e9} SOL`);
+      logger.info(`Network: ${this.network} - Wallet balance: ${balance / 1e9} SOL`);
     } catch (error) {
       logger.error('Failed to test Solana connection:', error);
     }
@@ -164,9 +199,11 @@ class SolanaService {
   // Chain Actor Methods
   async createChainActor(data) {
     try {
-      if (!this.connection) {
-        // Fallback to mock if no connection
+      if (!this.connection || this.network === 'file-only') {
+        // File-only mode - no blockchain transactions
         const mockPublicKey = Keypair.generate().publicKey.toString();
+        const signature = 'file-persistence-' + Date.now();
+        
         const mockActor = {
           publicKey: mockPublicKey,
           name: data.name,
@@ -179,36 +216,33 @@ class SolanaService {
           address: data.address,
           farmId: data.farmId,
           farmerId: data.farmerId,
+          blockchainTx: signature,
           createdAt: new Date(),
           updatedAt: new Date()
         };
         
         this.mockData.chainActors.push(mockActor);
-        logger.info(`Mock chain actor created: ${mockPublicKey}`);
+        this.saveToFile('chainActors', this.mockData.chainActors);
+        logger.info(`${this.network} mode - Chain actor created: ${mockPublicKey}, tx: ${signature}`);
         return {
           publicKey: mockPublicKey,
-          transaction: 'mock-transaction-signature'
+          transaction: signature
         };
       }
 
-      // For now, create blockchain transaction but store in mock data with blockchain reference
+      // Create real blockchain transaction (0.001 SOL cost)
       const chainActorKeypair = Keypair.generate();
       
-      // Create a simple transfer transaction as proof of blockchain interaction
-      const { Transaction, sendAndConfirmTransaction } = require('@solana/web3.js');
-      const transferTx = SystemProgram.transfer({
-        fromPubkey: this.wallet.publicKey,
-        toPubkey: chainActorKeypair.publicKey,
-        lamports: 1000000 // 0.001 SOL as marker
-      });
-
-      const transaction = new Transaction().add(transferTx);
-      const signature = await sendAndConfirmTransaction(
-        this.connection,
-        transaction,
-        [this.wallet.payer],
-        { commitment: 'confirmed' }
+      // Create actual Solana transaction as proof
+      const transaction = new Transaction().add(
+        SystemProgram.transfer({
+          fromPubkey: this.wallet.publicKey,
+          toPubkey: chainActorKeypair.publicKey,
+          lamports: 1000000, // 0.001 SOL
+        })
       );
+      
+      const signature = await this.connection.sendTransaction(transaction, [this.wallet.payer]);
 
       // Store data with blockchain reference
       const blockchainActor = {
@@ -223,7 +257,7 @@ class SolanaService {
         address: data.address,
         farmId: data.farmId,
         farmerId: data.farmerId,
-        blockchainTx: signature,
+        blockchainTx: signature, // Real blockchain transaction signature
         createdAt: new Date(),
         updatedAt: new Date()
       };
@@ -232,7 +266,7 @@ class SolanaService {
       this.mockData.chainActors.push(blockchainActor);
       this.saveToFile('chainActors', this.mockData.chainActors);
       
-      logger.info(`Chain actor created on blockchain: ${chainActorKeypair.publicKey.toString()}, tx: ${signature}`);
+      logger.info(`${this.network} mode - Chain actor created on blockchain: ${chainActorKeypair.publicKey.toString()}, tx: ${signature}`);
       return {
         publicKey: chainActorKeypair.publicKey.toString(),
         transaction: signature
@@ -356,24 +390,19 @@ class SolanaService {
         };
       }
 
-      // Create blockchain transaction for production season
+      // Create real blockchain transaction (0.001 SOL cost)
       const productionSeasonKeypair = Keypair.generate();
       
-      // Create a simple transfer transaction as proof of blockchain interaction
-      const { Transaction, sendAndConfirmTransaction } = require('@solana/web3.js');
-      const transferTx = SystemProgram.transfer({
-        fromPubkey: this.wallet.publicKey,
-        toPubkey: productionSeasonKeypair.publicKey,
-        lamports: 1000000 // 0.001 SOL as marker
-      });
-
-      const transaction = new Transaction().add(transferTx);
-      const signature = await sendAndConfirmTransaction(
-        this.connection,
-        transaction,
-        [this.wallet.payer],
-        { commitment: 'confirmed' }
+      // Create actual Solana transaction as proof
+      const transaction = new Transaction().add(
+        SystemProgram.transfer({
+          fromPubkey: this.wallet.publicKey,
+          toPubkey: productionSeasonKeypair.publicKey,
+          lamports: 1000000, // 0.001 SOL
+        })
       );
+      
+      const signature = await this.connection.sendTransaction(transaction, [this.wallet.payer]);
 
       // Store data with blockchain reference
       const blockchainSeason = {
@@ -393,7 +422,7 @@ class SolanaService {
         carbonSmartCertified: data.carbonSmartCertified,
         validationStatus: 'pending',
         validatorId: null,
-        blockchainTx: signature,
+        blockchainTx: signature, // Real blockchain transaction signature
         createdAt: new Date(),
         updatedAt: new Date()
       };
@@ -514,24 +543,19 @@ class SolanaService {
         };
       }
 
-      // Create blockchain transaction for milled rice
+      // Create real blockchain transaction (0.001 SOL cost)
       const milledRiceKeypair = Keypair.generate();
       
-      // Create a simple transfer transaction as proof of blockchain interaction
-      const { Transaction, sendAndConfirmTransaction } = require('@solana/web3.js');
-      const transferTx = SystemProgram.transfer({
-        fromPubkey: this.wallet.publicKey,
-        toPubkey: milledRiceKeypair.publicKey,
-        lamports: 1000000 // 0.001 SOL as marker
-      });
-
-      const transaction = new Transaction().add(transferTx);
-      const signature = await sendAndConfirmTransaction(
-        this.connection,
-        transaction,
-        [this.wallet.payer],
-        { commitment: 'confirmed' }
+      // Create actual Solana transaction as proof
+      const transaction = new Transaction().add(
+        SystemProgram.transfer({
+          fromPubkey: this.wallet.publicKey,
+          toPubkey: milledRiceKeypair.publicKey,
+          lamports: 1000000, // 0.001 SOL
+        })
       );
+      
+      const signature = await this.connection.sendTransaction(transaction, [this.wallet.payer]);
 
       // Store data with blockchain reference
       const blockchainMilledRice = {
@@ -543,7 +567,7 @@ class SolanaService {
         photoUrls: data.photoUrls || [],
         moisture: data.moisture,
         totalWeightProcessedKg: data.totalWeightProcessedKg,
-        blockchainTx: signature,
+        blockchainTx: signature, // Real blockchain transaction signature
         createdAt: new Date(),
         updatedAt: new Date()
       };
@@ -657,24 +681,19 @@ class SolanaService {
         };
       }
 
-      // Create blockchain transaction for rice batch
+      // Create real blockchain transaction (0.001 SOL cost)
       const riceBatchKeypair = Keypair.generate();
       
-      // Create a simple transfer transaction as proof of blockchain interaction
-      const { Transaction, sendAndConfirmTransaction } = require('@solana/web3.js');
-      const transferTx = SystemProgram.transfer({
-        fromPubkey: this.wallet.publicKey,
-        toPubkey: riceBatchKeypair.publicKey,
-        lamports: 1000000 // 0.001 SOL as marker
-      });
-
-      const transaction = new Transaction().add(transferTx);
-      const signature = await sendAndConfirmTransaction(
-        this.connection,
-        transaction,
-        [this.wallet.payer],
-        { commitment: 'confirmed' }
+      // Create actual Solana transaction as proof
+      const transaction = new Transaction().add(
+        SystemProgram.transfer({
+          fromPubkey: this.wallet.publicKey,
+          toPubkey: riceBatchKeypair.publicKey,
+          lamports: 1000000, // 0.001 SOL
+        })
       );
+      
+      const signature = await this.connection.sendTransaction(transaction, [this.wallet.payer]);
 
       // Store data with blockchain reference
       const blockchainBatch = {
@@ -689,7 +708,7 @@ class SolanaService {
         dryingId: data.dryingId,
         validator: data.validator,
         status: data.status,
-        blockchainTx: signature,
+        blockchainTx: signature, // Real blockchain transaction signature
         createdAt: new Date(),
         updatedAt: new Date()
       };
@@ -838,24 +857,19 @@ class SolanaService {
         };
       }
 
-      // Create blockchain transaction for chain transaction
+      // Create real blockchain transaction (0.001 SOL cost)
       const chainTransactionKeypair = Keypair.generate();
       
-      // Create a simple transfer transaction as proof of blockchain interaction
-      const { Transaction, sendAndConfirmTransaction } = require('@solana/web3.js');
-      const transferTx = SystemProgram.transfer({
-        fromPubkey: this.wallet.publicKey,
-        toPubkey: chainTransactionKeypair.publicKey,
-        lamports: 1000000 // 0.001 SOL as marker
-      });
-
-      const transaction = new Transaction().add(transferTx);
-      const signature = await sendAndConfirmTransaction(
-        this.connection,
-        transaction,
-        [this.wallet.payer],
-        { commitment: 'confirmed' }
+      // Create actual Solana transaction as proof
+      const transaction = new Transaction().add(
+        SystemProgram.transfer({
+          fromPubkey: this.wallet.publicKey,
+          toPubkey: chainTransactionKeypair.publicKey,
+          lamports: 1000000, // 0.001 SOL
+        })
       );
+      
+      const signature = await this.connection.sendTransaction(transaction, [this.wallet.payer]);
 
       // Store data with blockchain reference
       const blockchainTransaction = {
@@ -870,7 +884,7 @@ class SolanaService {
         paymentMethod: data.paymentMethod,
         status: 'pending',
         geotagging: data.geotagging,
-        blockchainTx: signature,
+        blockchainTx: signature, // Real blockchain transaction signature
         createdAt: new Date(),
         updatedAt: new Date()
       };

@@ -48,16 +48,16 @@
         .chip-button {
             padding: 0.25rem 0.75rem;
             font-size: 0.875rem;
-            background-color: var(--primary-color);
-            color: white;
+            background-color: white;
+            color: var(--primary-color);
             border-radius: 9999px;
             border: 1px solid var(--primary-color);
             transition: all 0.2s;
             cursor: pointer;
         }
         .chip-button:hover {
-            background-color: var(--primary-hover);
-            color: white;
+            background-color: #f0f9ff;
+            color: var(--primary-hover);
             border-color: var(--primary-hover);
         }
         .chip-button.selected {
@@ -506,10 +506,12 @@
                     <label class="block text-sm font-medium text-gray-700">Organization</label>
                     <select id="actor-form-organization" class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" required>
                         <option value="">Select Organization</option>
-                        <option value="blo">BLO (Barangay Level Organization)</option>
-                        <option value="buyback">Buyback Program</option>
-                        <option value="coop">Cooperative</option>
-                        <option value="none">None</option>
+                        <option value="Farmer">Farmer</option>
+                        <option value="Miller">Miller</option>
+                        <option value="Distributor">Distributor</option>
+                        <option value="Retailer">Retailer</option>
+                        <option value="Government">Government</option>
+                        <option value="Cooperative">Cooperative</option>
                     </select>
                 </div>
                 <div>

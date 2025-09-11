@@ -30,7 +30,7 @@ router.post('/chain-actors',
   validateOptionalPublicKeys(['farmId', 'farmerId']),
   validateArrayField('actorType', 10),
   validateNumericField('assignedTps', 0),
-  validateEnumField('organization', ['blo', 'buyback', 'coop', 'none']),
+  validateEnumField('organization', ['Farmer', 'Miller', 'Distributor', 'Retailer', 'Government', 'Cooperative']),
   chainActorController.createChainActor
 );
 router.put('/chain-actors/:publicKey',
@@ -39,7 +39,7 @@ router.put('/chain-actors/:publicKey',
   validateArrayField('actorType', 10),
   validateNumericField('assignedTps', 0),
   validateNumericField('balance', 0),
-  validateEnumField('organization', ['blo', 'buyback', 'coop', 'none']),
+  validateEnumField('organization', ['Farmer', 'Miller', 'Distributor', 'Retailer', 'Government', 'Cooperative']),
   chainActorController.updateChainActor
 );
 router.delete('/chain-actors/:publicKey',
