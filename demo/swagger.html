@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rice Supply Chain API Documentation</title>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@5.9.0/swagger-ui.css" />
+    <script src="https://unpkg.com/swagger-ui-dist@5.9.0/swagger-ui-bundle.js"></script>
+    <script src="https://unpkg.com/swagger-ui-dist@5.9.0/swagger-ui-standalone-preset.js"></script>
+    <style>
+        body {
+            margin: 0;
+            background: #fafafa;
+        }
+        .swagger-ui .topbar {
+            background-color: #16a34a;
+        }
+        .swagger-ui .topbar .download-url-wrapper .select-label {
+            color: white;
+        }
+        .swagger-ui .topbar .download-url-wrapper input[type=text] {
+            border: 2px solid #16a34a;
+        }
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: #16a34a;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-button:hover {
+            background: #15803d;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-button">← Back to Demo</a>
+    <div id="swagger-ui"></div>
+    
+    <script>
+        const spec = {
+            "openapi": "3.0.0",
+            "info": {
+                "title": "Rice Supply Chain API",
+                "description": "Blockchain-powered Rice Supply Chain Management System API",
+                "version": "1.0.0",
+                "contact": {
+                    "name": "Rice Supply Chain Team"
+                }
+            },
+            "servers": [
+                {
+                    "url": "http://localhost:3001/api",
+                    "description": "Development server"
+                }
+            ],
+            "components": {
+                "schemas": {
+                    "ApiResponse": {
+                        "type": "object",
+                        "properties": {
+                            "success": {"type": "boolean"},
+                            "message": {"type": "string"},
+                            "data": {"type": "object"},
+                            "timestamp": {"type": "string", "format": "date-time"}
+                        }
+                    },
+                    "ChainActorResponse": {
+                        "type": "object",
+                        "properties": {
+                            "success": {"type": "boolean"},
+                            "message": {"type": "string"},
+                            "data": {
+                                "type": "object",
+                                "properties": {
+                                    "actors": {
+                                        "type": "array",
+                                        "items": {"$ref": "#/components/schemas/ChainActor"}
+                                    }
+                                }
+                            },
+                            "timestamp": {"type": "string", "format": "date-time"}
+                        }
+                    },
+                    "SingleChainActorResponse": {
+                        "type": "object",
+                        "properties": {
+                            "success": {"type": "boolean"},
+                            "message": {"type": "string"},
+                            "data": {"$ref": "#/components/schemas/ChainActor"},
+                            "timestamp": {"type": "string", "format": "date-time"}
+                        }
+                    },
+                    "CreateResponse": {
+                        "type": "object",
+                        "properties": {
+                            "success": {"type": "boolean"},
+                            "message": {"type": "string"},
+                            "data": {
+                                "type": "object",
+                                "properties": {
+                                    "publicKey": {"type": "string"},
+                                    "transaction": {"type": "string"}
+                                }
+                            },
+                            "timestamp": {"type": "string", "format": "date-time"}
+                        }
+                    },
+                    "ChainActor": {
+                        "type": "object",
+                        "required": ["name", "actorType", "assignedTps", "pin", "organization"],
+                        "properties": {
+                            "publicKey": {"type": "string", "description": "Solana public key"},
+                            "name": {"type": "string", "description": "Actor name"},
+                            "actorType": {"type": "array", "items": {"type": "string"}, "description": "Types of actor roles"},
+                            "assignedTps": {"type": "number", "description": "Assigned TPS value"},
+                            "pin": {"type": "string", "description": "PIN code"},
+                            "organization": {"type": "string", "enum": ["blo", "buyback", "coop", "none"]},
+                            "farmId": {"type": "string", "description": "Farm ID (optional)"},
+                            "farmerId": {"type": "string", "description": "Farmer ID (optional)"},
+                            "balance": {"type": "number", "description": "Account balance"},
+                            "isActive": {"type": "boolean", "description": "Active status"},
+                            "address": {"type": "string", "description": "Address (optional)"},
+                            "blockchainTx": {"type": "string", "description": "Blockchain transaction signature"},
+                            "createdAt": {"type": "string", "format": "date-time"},
+                            "updatedAt": {"type": "string", "format": "date-time"}
+                        }
+                    },
+                    "ProductionSeasonResponse": {
+                        "type": "object",
+                        "properties": {
+                            "success": {"type": "boolean"},
+                            "message": {"type": "string"},
+                            "data": {
+                                "type": "object",
+                                "properties": {
+                                    "seasons": {
+                                        "type": "array",
+                                        "items": {"$ref": "#/components/schemas/ProductionSeason"}
+                                    }
+                                }
+                            },
+                            "timestamp": {"type": "string", "format": "date-time"}
+                        }
+                    },
+                    "ProductionSeason": {
+                        "type": "object",
+                        "required": ["farmerId", "cropYear", "processedYieldKg", "carbonSmartCertified"],
+                        "properties": {
+                            "publicKey": {"type": "string", "description": "Solana public key"},
+                            "farmerId": {"type": "string", "description": "Farmer public key"},
+                            "cropYear": {"type": "string", "description": "Crop year"},
+                            "processedYieldKg": {"type": "number", "description": "Processed yield in kg"},
+                            "totalYieldKg": {"type": "number", "description": "Total yield in kg"},
+                            "moistureContent": {"type": "number", "description": "Moisture content percentage"},
+                            "variety": {"type": "string", "description": "Rice variety"},
+                            "irrigationPractice": {"type": "string", "description": "Irrigation method"},
+                            "plantingDate": {"type": "string", "format": "date"},
+                            "harvestDate": {"type": "string", "format": "date"},
+                            "carbonSmartCertified": {"type": "boolean", "description": "Carbon certification status"},
+                            "validationStatus": {"type": "string", "enum": ["pending", "validated", "rejected"]},
+                            "validatorId": {"type": "string", "description": "Validator public key"},
+                            "isActive": {"type": "boolean", "description": "Active status"},
+                            "blockchainTx": {"type": "string", "description": "Blockchain transaction signature"},
+                            "createdAt": {"type": "string", "format": "date-time"},
+                            "updatedAt": {"type": "string", "format": "date-time"}
+                        }
+                    },
+                    "MilledRice": {
+                        "type": "object",
+                        "required": ["farmerId", "totalWeightKg", "millingType", "quality", "moisture", "totalWeightProcessedKg"],
+                        "properties": {
+                            "publicKey": {"type": "string", "description": "Solana public key"},
+                            "farmerId": {"type": "string", "description": "Farmer public key"},
+                            "totalWeightKg": {"type": "number", "description": "Total weight in kg"},
+                            "millingType": {"type": "string", "description": "Type of milling"},
+                            "quality": {"type": "string", "description": "Rice quality grade"},
+                            "moisture": {"type": "number", "description": "Moisture content"},
+                            "totalWeightProcessedKg": {"type": "number", "description": "Processed weight in kg"},
+                            "photoUrls": {"type": "array", "items": {"type": "string"}, "description": "Photo URLs"},
+                            "blockchainTx": {"type": "string", "description": "Blockchain transaction signature"},
+                            "createdAt": {"type": "string", "format": "date-time"},
+                            "updatedAt": {"type": "string", "format": "date-time"}
+                        }
+                    },
+                    "RiceBatch": {
+                        "type": "object",
+                        "required": ["qrCode", "batchWeightKg", "seasonId", "status"],
+                        "properties": {
+                            "publicKey": {"type": "string", "description": "Solana public key"},
+                            "qrCode": {"type": "string", "description": "QR code identifier"},
+                            "batchWeightKg": {"type": "number", "description": "Batch weight in kg"},
+                            "seasonId": {"type": "string", "description": "Production season ID"},
+                            "millingId": {"type": "string", "description": "Milling ID"},
+                            "currentHolderId": {"type": "string", "description": "Current holder public key"},
+                            "dryingId": {"type": "string", "description": "Drying process ID"},
+                            "validator": {"type": "string", "description": "Validator public key"},
+                            "moistureContent": {"type": "number", "description": "Moisture content"},
+                            "pricePerKg": {"type": "number", "description": "Price per kg"},
+                            "status": {"type": "string", "enum": ["forSale", "stock", "consumed"]},
+                            "blockchainTx": {"type": "string", "description": "Blockchain transaction signature"},
+                            "createdAt": {"type": "string", "format": "date-time"},
+                            "updatedAt": {"type": "string", "format": "date-time"}
+                        }
+                    },
+                    "ChainTransaction": {
+                        "type": "object",
+                        "required": ["batchIds", "toActorId"],
+                        "properties": {
+                            "publicKey": {"type": "string", "description": "Solana public key"},
+                            "batchIds": {"type": "array", "items": {"type": "string"}, "description": "Batch IDs involved"},
+                            "fromActorId": {"type": "string", "description": "Sender actor ID"},
+                            "toActorId": {"type": "string", "description": "Receiver actor ID"},
+                            "pricePerKg": {"type": "number", "description": "Price per kg"},
+                            "moisture": {"type": "number", "description": "Moisture content"},
+                            "paymentMethod": {"type": "string", "enum": ["cash", "cheque", "online"]},
+                            "paymentReference": {"type": "array", "items": {"type": "string"}},
+                            "geotagging": {"type": "array", "items": {"type": "string"}},
+                            "status": {"type": "string", "enum": ["pending", "loading", "completed", "cancelled", "failed"]},
+                            "blockchainTx": {"type": "string", "description": "Blockchain transaction signature"},
+                            "createdAt": {"type": "string", "format": "date-time"},
+                            "updatedAt": {"type": "string", "format": "date-time"}
+                        }
+                    }
+                }
+            },
+            "paths": {
+                "/chain-actors": {
+                    "get": {
+                        "tags": ["Chain Actors"],
+                        "summary": "Get all chain actors",
+                        "responses": {
+                            "200": {
+                                "description": "List of chain actors",
+                                "content": {
+                                    "application/json": {
+                                        "schema": {"$ref": "#/components/schemas/ChainActorResponse"}
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "post": {
+                        "tags": ["Chain Actors"],
+                        "summary": "Create a new chain actor",
+                        "requestBody": {
+                            "required": true,
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "type": "object",
+                                        "required": ["name", "actorType", "assignedTps", "pin", "organization"],
+                                        "properties": {
+                                            "name": {"type": "string", "example": "John Farmer"},
+                                            "actorType": {"type": "array", "items": {"type": "string"}, "example": ["Farmer"]},
+                                            "assignedTps": {"type": "number", "example": 100},
+                                            "pin": {"type": "string", "example": "1234"},
+                                            "organization": {"type": "string", "enum": ["blo", "buyback", "coop", "none"], "example": "coop"},
+                                            "farmId": {"type": "string", "example": "FARM001"},
+                                            "farmerId": {"type": "string", "example": "FARMER001"}
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "responses": {
+                            "201": {
+                                "description": "Chain actor created successfully",
+                                "content": {
+                                    "application/json": {
+                                        "schema": {"$ref": "#/components/schemas/CreateResponse"}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/chain-actors/{publicKey}": {
+                    "get": {
+                        "tags": ["Chain Actors"],
+                        "summary": "Get chain actor by public key",
+                        "parameters": [
+                            {
+                                "name": "publicKey",
+                                "in": "path",
+                                "required": true,
+                                "schema": {"type": "string"},
+                                "example": "4wcW6BMEKLeEb5JTBtm8uUj7No6eR5XewxApDAbxhX37"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Chain actor details",
+                                "content": {
+                                    "application/json": {
+                                        "schema": {"$ref": "#/components/schemas/SingleChainActorResponse"}
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "put": {
+                        "tags": ["Chain Actors"],
+                        "summary": "Update chain actor",
+                        "parameters": [
+                            {
+                                "name": "publicKey",
+                                "in": "path",
+                                "required": true,
+                                "schema": {"type": "string"}
+                            }
+                        ],
+                        "requestBody": {
+                            "required": true,
+                            "content": {
+                                "application/json": {
+                                    "schema": {"$ref": "#/components/schemas/ChainActor"}
+                                }
+                            }
+                        },
+                        "responses": {
+                            "200": {
+                                "description": "Chain actor updated successfully"
+                            }
+                        }
+                    },
+                    "delete": {
+                        "tags": ["Chain Actors"],
+                        "summary": "Delete chain actor",
+                        "parameters": [
+                            {
+                                "name": "publicKey",
+                                "in": "path",
+                                "required": true,
+                                "schema": {"type": "string"}
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Chain actor deleted successfully"
+                            }
+                        }
+                    }
+                },
+                "/production-seasons": {
+                    "get": {
+                        "tags": ["Production Seasons"],
+                        "summary": "Get all production seasons",
+                        "responses": {
+                            "200": {
+                                "description": "List of production seasons",
+                                "content": {
+                                    "application/json": {
+                                        "schema": {"$ref": "#/components/schemas/ProductionSeasonResponse"}
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "post": {
+                        "tags": ["Production Seasons"],
+                        "summary": "Create a new production season",
+                        "requestBody": {
+                            "required": true,
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "type": "object",
+                                        "required": ["farmerId", "cropYear", "processedYieldKg", "carbonSmartCertified"],
+                                        "properties": {
+                                            "farmerId": {"type": "string", "example": "4wcW6BMEKLeEb5JTBtm8uUj7No6eR5XewxApDAbxhX37"},
+                                            "cropYear": {"type": "string", "example": "2024"},
+                                            "processedYieldKg": {"type": "number", "example": 1000},
+                                            "carbonSmartCertified": {"type": "boolean", "example": true},
+                                            "totalYieldKg": {"type": "number", "example": 1200},
+                                            "moistureContent": {"type": "number", "example": 14},
+                                            "variety": {"type": "string", "example": "Jasmine"},
+                                            "plantingDate": {"type": "string", "format": "date", "example": "2024-01-15"},
+                                            "harvestDate": {"type": "string", "format": "date", "example": "2024-06-15"}
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "responses": {
+                            "201": {
+                                "description": "Production season created successfully",
+                                "content": {
+                                    "application/json": {
+                                        "schema": {"$ref": "#/components/schemas/CreateResponse"}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/production-seasons/{publicKey}": {
+                    "get": {
+                        "tags": ["Production Seasons"],
+                        "summary": "Get production season by public key",
+                        "parameters": [
+                            {
+                                "name": "publicKey",
+                                "in": "path",
+                                "required": true,
+                                "schema": {"type": "string"}
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Production season details"
+                            }
+                        }
+                    },
+                    "put": {
+                        "tags": ["Production Seasons"],
+                        "summary": "Update production season",
+                        "parameters": [
+                            {
+                                "name": "publicKey",
+                                "in": "path",
+                                "required": true,
+                                "schema": {"type": "string"}
+                            }
+                        ],
+                        "requestBody": {
+                            "required": true,
+                            "content": {
+                                "application/json": {
+                                    "schema": {"$ref": "#/components/schemas/ProductionSeason"}
+                                }
+                            }
+                        },
+                        "responses": {
+                            "200": {
+                                "description": "Production season updated successfully"
+                            }
+                        }
+                    },
+                    "delete": {
+                        "tags": ["Production Seasons"],
+                        "summary": "Delete production season",
+                        "parameters": [
+                            {
+                                "name": "publicKey",
+                                "in": "path",
+                                "required": true,
+                                "schema": {"type": "string"}
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Production season deleted successfully"
+                            }
+                        }
+                    }
+                },
+                "/milled-rice": {
+                    "get": {
+                        "tags": ["Milled Rice"],
+                        "summary": "Get all milled rice records",
+                        "responses": {
+                            "200": {
+                                "description": "List of milled rice records"
+                            }
+                        }
+                    },
+                    "post": {
+                        "tags": ["Milled Rice"],
+                        "summary": "Create a new milled rice record",
+                        "requestBody": {
+                            "required": true,
+                            "content": {
+                                "application/json": {
+                                    "schema": {"$ref": "#/components/schemas/MilledRice"}
+                                }
+                            }
+                        },
+                        "responses": {
+                            "201": {
+                                "description": "Milled rice record created successfully"
+                            }
+                        }
+                    }
+                },
+                "/milled-rice/{publicKey}": {
+                    "get": {
+                        "tags": ["Milled Rice"],
+                        "summary": "Get milled rice by public key",
+                        "parameters": [
+                            {
+                                "name": "publicKey",
+                                "in": "path",
+                                "required": true,
+                                "schema": {"type": "string"}
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Milled rice details"
+                            }
+                        }
+                    },
+                    "put": {
+                        "tags": ["Milled Rice"],
+                        "summary": "Update milled rice record",
+                        "parameters": [
+                            {
+                                "name": "publicKey",
+                                "in": "path",
+                                "required": true,
+                                "schema": {"type": "string"}
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Milled rice updated successfully"
+                            }
+                        }
+                    },
+                    "delete": {
+                        "tags": ["Milled Rice"],
+                        "summary": "Delete milled rice record",
+                        "parameters": [
+                            {
+                                "name": "publicKey",
+                                "in": "path",
+                                "required": true,
+                                "schema": {"type": "string"}
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Milled rice deleted successfully"
+                            }
+                        }
+                    }
+                },
+                "/rice-batches": {
+                    "get": {
+                        "tags": ["Rice Batches"],
+                        "summary": "Get all rice batches",
+                        "responses": {
+                            "200": {
+                                "description": "List of rice batches"
+                            }
+                        }
+                    },
+                    "post": {
+                        "tags": ["Rice Batches"],
+                        "summary": "Create a new rice batch",
+                        "requestBody": {
+                            "required": true,
+                            "content": {
+                                "application/json": {
+                                    "schema": {"$ref": "#/components/schemas/RiceBatch"}
+                                }
+                            }
+                        },
+                        "responses": {
+                            "201": {
+                                "description": "Rice batch created successfully"
+                            }
+                        }
+                    }
+                },
+                "/rice-batches/{publicKey}": {
+                    "get": {
+                        "tags": ["Rice Batches"],
+                        "summary": "Get rice batch by public key",
+                        "parameters": [
+                            {
+                                "name": "publicKey",
+                                "in": "path",
+                                "required": true,
+                                "schema": {"type": "string"}
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Rice batch details"
+                            }
+                        }
+                    },
+                    "put": {
+                        "tags": ["Rice Batches"],
+                        "summary": "Update rice batch",
+                        "parameters": [
+                            {
+                                "name": "publicKey",
+                                "in": "path",
+                                "required": true,
+                                "schema": {"type": "string"}
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Rice batch updated successfully"
+                            }
+                        }
+                    },
+                    "delete": {
+                        "tags": ["Rice Batches"],
+                        "summary": "Delete rice batch",
+                        "parameters": [
+                            {
+                                "name": "publicKey",
+                                "in": "path",
+                                "required": true,
+                                "schema": {"type": "string"}
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Rice batch deleted successfully"
+                            }
+                        }
+                    }
+                },
+                "/rice-batches/qr/{qrCode}": {
+                    "get": {
+                        "tags": ["Rice Batches"],
+                        "summary": "Get rice batch by QR code",
+                        "parameters": [
+                            {
+                                "name": "qrCode",
+                                "in": "path",
+                                "required": true,
+                                "schema": {"type": "string"}
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Rice batch details by QR code"
+                            }
+                        }
+                    }
+                },
+                "/chain-transactions": {
+                    "get": {
+                        "tags": ["Chain Transactions"],
+                        "summary": "Get all chain transactions",
+                        "responses": {
+                            "200": {
+                                "description": "List of chain transactions"
+                            }
+                        }
+                    },
+                    "post": {
+                        "tags": ["Chain Transactions"],
+                        "summary": "Create a new chain transaction",
+                        "requestBody": {
+                            "required": true,
+                            "content": {
+                                "application/json": {
+                                    "schema": {"$ref": "#/components/schemas/ChainTransaction"}
+                                }
+                            }
+                        },
+                        "responses": {
+                            "201": {
+                                "description": "Chain transaction created successfully"
+                            }
+                        }
+                    }
+                },
+                "/chain-transactions/{publicKey}": {
+                    "get": {
+                        "tags": ["Chain Transactions"],
+                        "summary": "Get chain transaction by public key",
+                        "parameters": [
+                            {
+                                "name": "publicKey",
+                                "in": "path",
+                                "required": true,
+                                "schema": {"type": "string"}
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Chain transaction details"
+                            }
+                        }
+                    },
+                    "put": {
+                        "tags": ["Chain Transactions"],
+                        "summary": "Update chain transaction",
+                        "parameters": [
+                            {
+                                "name": "publicKey",
+                                "in": "path",
+                                "required": true,
+                                "schema": {"type": "string"}
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Chain transaction updated successfully"
+                            }
+                        }
+                    },
+                    "delete": {
+                        "tags": ["Chain Transactions"],
+                        "summary": "Delete chain transaction",
+                        "parameters": [
+                            {
+                                "name": "publicKey",
+                                "in": "path",
+                                "required": true,
+                                "schema": {"type": "string"}
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Chain transaction deleted successfully"
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        SwaggerUIBundle({
+            url: '',
+            spec: spec,
+            dom_id: '#swagger-ui',
+            deepLinking: true,
+            presets: [
+                SwaggerUIBundle.presets.apis,
+                SwaggerUIStandalonePreset
+            ],
+            plugins: [
+                SwaggerUIBundle.plugins.DownloadUrl
+            ],
+            layout: "StandaloneLayout"
+        });
+    </script>
+</body>
+</html>

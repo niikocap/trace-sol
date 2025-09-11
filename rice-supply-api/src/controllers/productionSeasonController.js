@@ -25,7 +25,11 @@ const getProductionSeason = asyncHandler(async (req, res) => {
 });
 
 // Create new production season
-const createProductionSeason = asyncHandler(async (req, res) => {
+const createProductionSeason = async (req, res) => {
+  console.log('Received season data:', JSON.stringify(req.body, null, 2));
+  console.log('carbonSmartCertified in body:', req.body.carbonSmartCertified);
+  console.log('carbonSmartCertified type:', typeof req.body.carbonSmartCertified);
+  
   const {
     farmerId,
     cropYear,
@@ -59,7 +63,7 @@ const createProductionSeason = asyncHandler(async (req, res) => {
   });
   
   res.status(201).json(formatResponse(result, 'Production season created successfully'));
-});
+};
 
 // Update production season
 const updateProductionSeason = asyncHandler(async (req, res) => {

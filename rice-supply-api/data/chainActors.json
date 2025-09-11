@@ -6,7 +6,7 @@
       "Farmer"
     ],
     "assignedTps": 1,
-    "isActive": true,
+    "isActive": false,
     "balance": 0,
     "pin": "111111",
     "organization": "blo",
@@ -15,7 +15,7 @@
     "farmerId": null,
     "blockchainTx": "i8zHvpiPJ5jarrRuJ5Sj4qwT4LgcvceXwaUTg638jQpFR5uTPeFfRSJraNnhtni9nz4HsyYJQXgRv7EuRi7tc1c",
     "createdAt": "2025-09-10T12:34:58.075Z",
-    "updatedAt": "2025-09-10T12:34:58.075Z"
+    "updatedAt": "2025-09-10T23:45:14.439Z"
   },
   {
     "publicKey": "FS9QjtGBpdwqiCHxegvXhRfR6bJKm4q1T5KQ2iyk58RZ",
@@ -49,5 +49,39 @@
     "blockchainTx": "54B6aJ4nSqrS1Rpif5Fdu5eqfxGDoyQfzcXDhK4bwLZ8TbwdjPWYpGFzdByYCDagCbziUWprgiATxFd48hht4tCs",
     "createdAt": "2025-09-10T12:35:16.403Z",
     "updatedAt": "2025-09-10T12:35:16.403Z"
+  },
+  {
+    "publicKey": "DoQJV32ZSmcoVDDF6zbvsrADdHT8GtvW7Q9Ns3M6ZxeR",
+    "name": "nikko capiroso",
+    "actorType": [
+      "Farmer",
+      "Miller"
+    ],
+    "assignedTps": 1,
+    "isActive": false,
+    "balance": 0,
+    "pin": "111111",
+    "organization": "buyback",
+    "address": null,
+    "farmId": null,
+    "farmerId": null,
+    "blockchainTx": "5cMbmGhsCtookgNKKbNowKodHpZjPP6bvdGAjWhG9LH2ULJxn7GUshRKqcXMxwRcTcE2tbcjjnMsMvPovNhMpSYe",
+    "createdAt": "2025-09-10T23:08:57.148Z",
+    "updatedAt": "2025-09-10T23:46:04.683Z"
+  },
+  {
+    "publicKey": "AfgrP3HHRymfEMv83emMFxrTJZFn4SAFbyDgNjwLJJzY",
+    "name": "Test Actor",
+    "actorType": [
+      "Farmer"
+    ],
+    "assignedTps": 100,
+    "isActive": false,
+    "balance": 0,
+    "pin": "1234",
+    "organization": "coop",
+    "blockchainTx": "2GYUTet5fceZCXCHxdjNap5LGRne8Qwqx1w7XRDYuwPrZZwawmkWgqQ4GxGMK6QewgA64KZaPbmzmhCHp1irDyzt",
+    "createdAt": "2025-09-10T23:27:24.600Z",
+    "updatedAt": "2025-09-10T23:45:55.496Z"
   }
 ]

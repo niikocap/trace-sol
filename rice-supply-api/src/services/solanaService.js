@@ -2,10 +2,19 @@ const { Connection, PublicKey, Keypair, SystemProgram } = require('@solana/web3.
 const { Program, AnchorProvider, Wallet, BN } = require('@coral-xyz/anchor');
 const bs58 = require('bs58');
 const fs = require('fs');
+const path = require('path');
 const { logger } = require('../utils/helpers');
 
 class SolanaService {
   constructor() {
+    // Set up data directory for file persistence
+    this.dataDir = path.join(__dirname, '../../data');
+    
+    // Ensure data directory exists
+    if (!fs.existsSync(this.dataDir)) {
+      fs.mkdirSync(this.dataDir, { recursive: true });
+    }
+
     // In-memory storage for mock data
     this.mockData = {
       chainActors: [],

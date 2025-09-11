@@ -21,7 +21,12 @@ const validatePublicKey = (paramName = 'publicKey') => {
 const validateRequestBody = (requiredFields = []) => {
   return (req, res, next) => {
     const missingFields = requiredFields.filter(field => {
-      return req.body[field] === undefined || req.body[field] === null || req.body[field] === '';
+      const value = req.body[field];
+      // For boolean fields, false is a valid value
+      if (typeof value === 'boolean') {
+        return false;
+      }
+      return value === undefined || value === null || value === '';
     });
     
     if (missingFields.length > 0) {

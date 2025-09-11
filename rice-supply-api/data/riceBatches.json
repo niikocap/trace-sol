@@ -11,6 +11,35 @@
     "status": "forSale",
     "blockchainTx": "5cqtCthsiA7GFaESQ1hiuvKtGfUQPaMGxzPCxfgxbqGgGPKWYYA1ZV66cdV58dXgLDMZtmc2haKVLd1rhGFdqiqX",
     "createdAt": "2025-09-10T13:27:59.652Z",
-    "updatedAt": "2025-09-10T13:27:59.652Z"
+    "updatedAt": "2025-09-10T23:58:57.268Z",
+    "isActive": false
+  },
+  {
+    "publicKey": "FqPimrcrjatFw67pAvpVGN8XZB6BkpSFehG6USjKdGEz",
+    "qrCode": "QR1757545192537",
+    "batchWeightKg": 1000,
+    "moistureContent": 14,
+    "seasonId": "J9fph16siAUwpeeXcWoiMCuqxLtqpTFenrMnzC4yLU31",
+    "pricePerKg": 50,
+    "dryingId": "4wcW6BMEKLeEb5JTBtm8uUj7No6eR5XewxApDAbxhX37",
+    "validator": "4wcW6BMEKLeEb5JTBtm8uUj7No6eR5XewxApDAbxhX37",
+    "status": "forSale",
+    "blockchainTx": "5acUva3ApLUQENcAihCx78XYaLgSR8RTV4tAh5YPiJgnQUpJZt5nFVUx51zQjMi3Sjz2wdWVb7MgUPfnRVRkJpTm",
+    "createdAt": "2025-09-10T22:59:54.687Z",
+    "updatedAt": "2025-09-10T22:59:54.687Z"
+  },
+  {
+    "publicKey": "4VGeK6VgTTC63fx69AK6dscFyfYJAVowDceBMXQMYU49",
+    "qrCode": "QR1757551806152",
+    "batchWeightKg": 1000,
+    "moistureContent": 14,
+    "seasonId": "J9fph16siAUwpeeXcWoiMCuqxLtqpTFenrMnzC4yLU31",
+    "pricePerKg": 50,
+    "dryingId": "FS9QjtGBpdwqiCHxegvXhRfR6bJKm4q1T5KQ2iyk58RZ",
+    "validator": "4wcW6BMEKLeEb5JTBtm8uUj7No6eR5XewxApDAbxhX37",
+    "status": "forSale",
+    "blockchainTx": "522KdVe4o5HpboVi6G8w94KP73QhhAX181A9hA6KSr7GDLcQijsp3pGLEXb3ybxxgX67PRV948FEuFzyX4kP5PQU",
+    "createdAt": "2025-09-11T00:50:07.701Z",
+    "updatedAt": "2025-09-11T00:50:07.701Z"
   }
 ]
